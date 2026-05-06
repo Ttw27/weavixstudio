@@ -9,6 +9,7 @@ import Testimonials from "./components/site/Testimonials";
 import Contact from "./components/site/Contact";
 import Footer from "./components/site/Footer";
 import StickyWhatsApp from "./components/site/StickyWhatsApp";
+import DesignPreviews from "./components/site/DesignPreviews";
 
 const Home = () => {
   return (
@@ -32,6 +33,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/previews" element={<DesignPreviews />} />
         </Routes>
       </BrowserRouter>
     </div>
