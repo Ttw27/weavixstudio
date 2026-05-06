@@ -1,0 +1,79 @@
+{
+  "theme": "dark",
+  "archetype": "Archetype 4 (Swiss & High-Contrast) - Dark Brutalist",
+  "typography": {
+    "google_fonts_url": "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap",
+    "font_family": {
+      "headings": "'Bricolage Grotesque', sans-serif",
+      "body": "'IBM Plex Mono', monospace",
+      "accent": "'Bricolage Grotesque', sans-serif"
+    },
+    "hierarchy": {
+      "h1": "text-[12vw] leading-[0.85] tracking-tighter uppercase font-black",
+      "h2": "text-5xl sm:text-6xl md:text-7xl leading-none tracking-tight uppercase font-extrabold",
+      "h3": "text-2xl sm:text-3xl leading-tight font-bold uppercase",
+      "body": "text-base sm:text-lg leading-relaxed tracking-tight",
+      "overline": "text-xs uppercase tracking-[0.2em] font-bold"
+    },
+    "custom_instructions": "Headings must be extremely tight. Use fluid clamp for massive text. Never center-align by default; use left alignment for structural tension."
+  },
+  "colors": {
+    "background": "#050505",
+    "surface": "#0F0F0F",
+    "text_primary": "#F5F5F0",
+    "text_secondary": "#A1A1AA",
+    "accent_primary": "#FF2A2A",
+    "accent_hover": "#FF5555",
+    "border": "#27272A",
+    "custom_instructions": "Never use pure white or pure black without texture. Primary accent is Signal Red. Use it sparingly for massive impact (CTAs, key lines)."
+  },
+  "layout_and_spacing": {
+    "spacing_scale": "Generous: p-6, p-12, p-24, p-32",
+    "grid_system": "Mode A: 'Tetris' Grid for portfolio, asymmetrical overlaps.",
+    "surface_strategy": "Grid Borders (Technical Look). Container: border-collapse. Items have border-r border-b. Expose the skeleton.",
+    "custom_instructions": "Avoid symmetrical center-aligned layouts. Use massive negative space. Build structural tension. Containers with borders must have internal padding (p-8)."
+  },
+  "components_and_motion": {
+    "libraries": [
+      "framer-motion",
+      "lucide-react",
+      "react-fast-marquee"
+    ],
+    "animations": [
+      "Hover states: Sharp background color fill (e.g., from transparent to Signal Red) with instant or extremely fast transition (0.1s).",
+      "Scroll: Fade-up and slight scale-up for portfolio items.",
+      "Marquee: Massive outline text running in background for services."
+    ],
+    "buttons": "Brutalist: sharp corners (rounded-none), thick borders (border-2), high contrast hover states (invert colors). No soft shadows."
+  },
+  "media_and_assets": {
+    "image_style": "High contrast, desaturated or raw. Use CSS grayscale over images, removing grayscale on hover.",
+    "urls": {
+      "hero_background": "CSS noise texture overlay (bg-repeat) combined with dark gradient, no photograph needed for hero to emphasize typography.",
+      "portfolio_1": "https://images.unsplash.com/photo-1648134859211-4a1b57575f4e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzN8MHwxfHNlYXJjaHw0fHxtb2Rlcm4lMjB3ZWJzaXRlJTIwbW9ja3VwfGVufDB8fHx8MTc3ODA3ODY2MHww&ixlib=rb-4.1.0&q=85",
+      "portfolio_2": "https://images.unsplash.com/photo-1634084462412-b54873c0a56d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzN8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjB3ZWJzaXRlJTIwbW9ja3VwfGVufDB8fHx8MTc3ODA3ODY2MHww&ixlib=rb-4.1.0&q=85",
+      "portfolio_3": "https://images.pexels.com/photos/8408538/pexels-photo-8408538.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "testimonial_1": "https://images.unsplash.com/photo-1762522926157-bcc04bf0b10a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MTN8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdCUyMGhlYWRzaG90fGVufDB8fHx8MTc3ODA3ODY2MHww&ixlib=rb-4.1.0&q=85",
+      "testimonial_2": "https://images.unsplash.com/photo-1769636929388-99eff95d3bf1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MTN8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdCUyMGhlYWRzaG90fGVufDB8fHx8MTc3ODA3ODY2MHww&ixlib=rb-4.1.0&q=85",
+      "testimonial_3": "https://images.pexels.com/photos/32721690/pexels-photo-32721690.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    }
+  },
+  "page_sections_instructions": {
+    "hero": "Massive typography H1 taking up 80% of viewport. 'YOUR STUDIO'. Raw, unpolished. A running marquee underneath. Include WhatsApp and Calendly CTA buttons with stark high-contrast style.",
+    "services": "Grid Borders ('Technical' Look). Expose the skeleton. Services: Web Dev, AI Automation, App Dev, Ad Management, Social Media. Use IBM Plex Mono for technical descriptions.",
+    "portfolio": "Tetris grid. Asymmetrical image placement. Images must use 'grayscale hover:grayscale-0' transition.",
+    "process": "Numbered list with massive brutalist numbers (01, 02, 03) in the background. Tight typography.",
+    "testimonials": "Raw text quotes. Small, unpolished headshots (square cut, not rounded).",
+    "contact": "Massive footer. 'LET'S BUILD' in clamp(4rem, 10vw, 12rem). Huge Signal Red CTAs for WhatsApp and Calendly. Sticky WhatsApp icon in bottom right."
+  },
+  "instructions_to_main_agent": [
+    "DO NOT use generic Shadcn cards with rounded borders and soft shadows. Use raw HTML/Tailwind for structural tension.",
+    "Enforce strict grid borders (border-collapse, border-border) on the Services and Process sections.",
+    "Implement 'react-fast-marquee' for a massive background kinetic text element (e.g. 'AI AUTOMATION • WEB DEV • ').",
+    "Use data-testid attributes on all interactive elements (buttons, links).",
+    "Ensure the hero heading is massive, tight-tracked, and uses Bricolage Grotesque.",
+    "The entire aesthetic must feel technical, raw, and high-contrast. Use the Signal Red sparsely for maximum impact.",
+    "No teal, no purple. Use only Void Black, Bone White, and Signal Red.",
+    "Include global styles in index.css to import fonts and set brutalist anti-aliasing."
+  ]
+}
