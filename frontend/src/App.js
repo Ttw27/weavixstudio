@@ -11,6 +11,7 @@ import Contact from "./components/site/Contact";
 import Footer from "./components/site/Footer";
 import StickyWhatsApp from "./components/site/StickyWhatsApp";
 import ProjectDetail from "./components/site/ProjectDetail";
+import ServiceDetail from "./components/site/ServiceDetail";
 import DesignPreviews from "./components/site/DesignPreviews";
 
 const ScrollToTopOrAnchor = () => {
@@ -62,6 +63,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/work/:id" element={<ProjectDetail />} />
+          <Route path="/services/:slug" element={<ServiceDetail />} />
           <Route path="/previews" element={<DesignPreviews />} />
         </Routes>
       </BrowserRouter>

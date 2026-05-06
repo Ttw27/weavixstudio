@@ -20,6 +20,7 @@ export const siteConfig = {
   services: [
     {
       code: "01",
+      slug: "websites",
       title: "Website Development",
       tag: "Web",
       copy: "Fast, conversion-focused sites and web apps. Shipped end-to-end — design, build, deploy.",
@@ -28,6 +29,7 @@ export const siteConfig = {
     },
     {
       code: "02",
+      slug: "ai-automation",
       title: "AI Automation",
       tag: "AI Ops",
       copy: "Automate the boring stuff: lead qualification, support triage, reporting, data entry.",
@@ -36,6 +38,7 @@ export const siteConfig = {
     },
     {
       code: "03",
+      slug: "app-dev",
       title: "App Dev + AI",
       tag: "Apps",
       copy: "Mobile & web apps with AI built-in — chat, vision, voice, recommendations.",
@@ -44,6 +47,7 @@ export const siteConfig = {
     },
     {
       code: "04",
+      slug: "ad-management",
       title: "Ad Management",
       tag: "Paid",
       copy: "Meta & Google ads with in-house creative. Whole funnel — creative, buying, CRO.",
@@ -52,6 +56,7 @@ export const siteConfig = {
     },
     {
       code: "05",
+      slug: "social-media",
       title: "Social Media",
       tag: "Organic",
       copy: "Content strategy, posting, community. We sound like your brand — not a template.",
@@ -60,6 +65,7 @@ export const siteConfig = {
     },
     {
       code: "06",
+      slug: "creative-studio",
       title: "Creative Studio",
       tag: "Assets",
       copy: "Standalone video & image creatives for ads, launches and organic — shot, edited, delivered.",
