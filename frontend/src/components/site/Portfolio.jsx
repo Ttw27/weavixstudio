@@ -1,92 +1,101 @@
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 import { siteConfig } from "../../lib/siteConfig";
+import ProjectPreview from "./ProjectPreview";
 
-// Tetris-inspired layout. Uses col-span / row-span for asymmetry.
-const layout = [
-  "md:col-span-7 md:row-span-3", // big
-  "md:col-span-5 md:row-span-2",
-  "md:col-span-5 md:row-span-3",
-  "md:col-span-7 md:row-span-2",
-  "md:col-span-4 md:row-span-3",
-  "md:col-span-8 md:row-span-3",
-];
+const tilts = ["tilt-l", "tilt-r", "tilt-l-3", "tilt-r-3", "tilt-r", "tilt-l"];
 
 export const Portfolio = () => {
   return (
-    <section id="work" data-testid="portfolio-section" className="relative border-t border-[var(--line)]">
-      <div className="px-6 md:px-10 py-14 md:py-20 border-b border-[var(--line)] flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+    <section
+      id="work"
+      data-testid="portfolio-section"
+      className="relative py-20 md:py-28 px-5 md:px-10 bg-[var(--bg-2)]"
+    >
+      <div className="max-w-[1400px] mx-auto mb-14 md:mb-20 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
         <div>
-          <div className="eyebrow mb-4">[ 02 ] Selected Work</div>
-          <h2 className="display-xl text-[var(--text)] max-w-4xl">
+          <span className="sticker bg-[var(--p-pink)] text-white mb-5">♥ recent work</span>
+          <h2 className="display-xl text-[var(--ink)] max-w-3xl mt-4">
             Real projects.<br />
-            <span className="text-[var(--accent)]">Real outcomes.</span>
+            <span className="squiggle">Real outcomes.</span>
           </h2>
         </div>
-        <p className="font-mono text-sm text-[var(--text-dim)] max-w-md">
+        <p className="font-body text-base text-[var(--ink-soft)] max-w-md leading-relaxed">
           A slice of recent work across web, AI, apps, paid and organic.
-          Full case studies on request.
+          Click a card for the features, stack and results.
         </p>
       </div>
 
-      <div
-        className="grid grid-cols-1 md:grid-cols-12 auto-rows-[180px] md:auto-rows-[140px]"
-        style={{ gridAutoFlow: "dense" }}
-      >
+      <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 md:gap-9">
         {siteConfig.projects.map((p, i) => (
-          <motion.a
+          <motion.div
             key={p.id}
-            href="#contact"
-            data-testid={`project-card-${p.id}`}
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.7, delay: (i % 3) * 0.08 }}
-            className={`group relative overflow-hidden border-b border-r border-[var(--line)] ${layout[i % layout.length]}`}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.5, delay: (i % 3) * 0.06 }}
+            className={tilts[i % tilts.length]}
           >
-            <img
-              src={p.image}
-              alt={p.title}
-              className="absolute inset-0 w-full h-full object-cover img-grayscale"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10 group-hover:from-black/95 transition-all" />
-
-            <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-between">
-              <div className="flex items-center justify-between font-mono text-[11px] uppercase tracking-[0.2em] text-[var(--text-dim)]">
-                <span>{p.id}</span>
-                <span className="border border-[var(--line)] bg-black/60 backdrop-blur-sm px-2 py-1">
-                  {p.kind}
-                </span>
+            <Link
+              to={`/work/${p.id}`}
+              data-testid={`project-card-${p.id}`}
+              className="block group"
+            >
+              {/* Preview tile */}
+              <div className="relative aspect-[4/3] w-full border-[2.5px] border-[var(--ink)] overflow-hidden rounded-3xl shadow-[var(--shadow-blunt)] group-hover:shadow-[var(--shadow-blunt-lg)] group-hover:-translate-x-0.5 group-hover:-translate-y-0.5 transition-all">
+                <ProjectPreview project={p} />
               </div>
 
-              <div>
-                <h3 className="font-display uppercase tracking-tight leading-none text-2xl md:text-4xl text-[var(--text)]">
-                  {p.title}
-                </h3>
-                <div className="mt-3 flex items-end justify-between gap-4">
-                  <div>
-                    <p className="font-mono text-xs text-[var(--text-dim)]">
-                      {p.client}
-                    </p>
-                    <p className="font-mono text-sm text-[var(--text)] mt-1">
-                      {p.summary}
-                    </p>
+              {/* Meta */}
+              <div className="mt-5 flex items-start justify-between gap-4">
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 flex-wrap mb-2">
+                    <span className="sticker bg-white text-[var(--ink)]">{p.kind}</span>
+                    <span className="font-body text-xs font-bold text-[var(--ink-soft)]">
+                      {p.client} · {p.year}
+                    </span>
                   </div>
-                  <div className="hidden sm:flex flex-col items-end gap-1">
-                    {p.metrics.map((m) => (
-                      <span
-                        key={m}
-                        className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--accent)]"
-                      >
-                        {m}
-                      </span>
-                    ))}
-                  </div>
+                  <h3 className="font-display text-2xl text-[var(--ink)] leading-tight">
+                    {p.title}
+                  </h3>
+                  <p className="font-body text-sm text-[var(--ink-soft)] mt-1 leading-snug">
+                    {p.tagline}
+                  </p>
+
+                  {p.results?.length > 0 && (
+                    <div className="mt-3 flex gap-2 flex-wrap">
+                      {p.results.slice(0, 2).map((r) => (
+                        <span
+                          key={r.k}
+                          className="text-[11px] font-bold text-[var(--ink)] bg-[var(--p-yellow)] border-[1.5px] border-[var(--ink)] px-2 py-0.5 rounded-full"
+                        >
+                          {r.v} {r.k.toLowerCase()}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                <div className="shrink-0 mt-1">
+                  <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[var(--p-pink)] border-[2px] border-[var(--ink)] shadow-[3px_3px_0_0_var(--ink)] group-hover:rotate-45 transition-transform">
+                    <ArrowUpRight className="w-4 h-4 text-[var(--ink)]" />
+                  </span>
                 </div>
               </div>
-            </div>
-          </motion.a>
+            </Link>
+          </motion.div>
         ))}
+      </div>
+
+      <div className="max-w-[1400px] mx-auto mt-14 md:mt-20 flex justify-center">
+        <a
+          href="#contact"
+          data-testid="portfolio-cta"
+          className="btn-pill btn-pill-ink"
+        >
+          Got a project? Let's talk →
+        </a>
       </div>
     </section>
   );

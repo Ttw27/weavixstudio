@@ -1,42 +1,48 @@
 import { motion } from "framer-motion";
-import { siteConfig } from "../../lib/siteConfig";
+import { siteConfig, colorMap } from "../../lib/siteConfig";
 
 export const Process = () => {
   return (
-    <section id="process" data-testid="process-section" className="relative border-t border-[var(--line)]">
-      <div className="px-6 md:px-10 py-14 md:py-20 border-b border-[var(--line)] flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+    <section
+      id="process"
+      data-testid="process-section"
+      className="relative py-20 md:py-28 px-5 md:px-10"
+    >
+      <div className="max-w-[1400px] mx-auto mb-14 md:mb-20 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
         <div>
-          <div className="eyebrow mb-4">[ 03 ] How we work</div>
-          <h2 className="display-xl text-[var(--text)] max-w-4xl">
+          <span className="sticker bg-[var(--p-blue)] mb-5">⚡ how we work</span>
+          <h2 className="display-xl text-[var(--ink)] max-w-3xl mt-4">
             Four phases.<br />
-            <span className="outline-text">Zero theatrics.</span>
+            <span className="squiggle">Zero theatrics.</span>
           </h2>
         </div>
-        <p className="font-mono text-sm text-[var(--text-dim)] max-w-md">
+        <p className="font-body text-base text-[var(--ink-soft)] max-w-md leading-relaxed">
           Senior operators, async by default, weekly demos. We'd rather ship
           than present.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2">
+      <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-7">
         {siteConfig.process.map((step, i) => (
           <motion.div
             key={step.n}
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6, delay: (i % 2) * 0.1 }}
+            transition={{ duration: 0.5, delay: i * 0.08 }}
             data-testid={`process-step-${step.n}`}
-            className="relative p-8 md:p-12 border-b border-r border-[var(--line)] overflow-hidden min-h-[260px]"
+            className="card-blunt p-7 md:p-8 min-h-[260px] flex flex-col justify-between"
+            style={{ background: colorMap[step.color] }}
           >
-            <span className="proc-number absolute -top-4 md:-top-6 right-4 md:right-8 text-[9rem] md:text-[14rem] pointer-events-none select-none">
-              {step.n}
-            </span>
-
-            <div className="relative">
-              <div className="eyebrow text-[var(--accent)]">PHASE {step.n}</div>
-              <h3 className="mt-4 display-lg text-[var(--text)]">{step.title}</h3>
-              <p className="mt-4 font-mono text-sm text-[var(--text-dim)] leading-relaxed max-w-md">
+            <div className="flex items-start justify-between">
+              <span className="font-display text-6xl md:text-7xl text-[var(--ink)] leading-none">
+                {step.n}
+              </span>
+              <span className="font-hand text-2xl text-[var(--ink)]">step</span>
+            </div>
+            <div>
+              <h3 className="display-lg text-[var(--ink)]">{step.title}</h3>
+              <p className="mt-3 font-body text-sm text-[var(--ink)] leading-relaxed opacity-90">
                 {step.body}
               </p>
             </div>
