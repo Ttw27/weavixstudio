@@ -7,7 +7,7 @@ export const Contact = () => {
     <section
       id="contact"
       data-testid="contact-section"
-      className="relative py-20 md:py-28 px-5 md:px-10 overflow-hidden"
+      className="relative py-14 md:py-20 px-5 md:px-10 overflow-hidden"
     >
       {/* Floating fun shapes */}
       <div className="absolute top-20 right-[5%] w-24 h-24 rounded-full bg-[var(--p-yellow)] border-[3px] border-[var(--ink)] shadow-[var(--shadow-blunt)] tilt-r-3" />

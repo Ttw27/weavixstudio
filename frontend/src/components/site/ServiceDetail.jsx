@@ -14,7 +14,7 @@ const ideaPalette = ["yellow", "pink", "blue", "mint", "lilac", "orange"];
 export default function ServiceDetail() {
   const { slug } = useParams();
   const content = servicesContent[slug];
-  if (!content) return <Navigate to="/#services" replace />;
+  if (!content) return <Navigate to="/services" replace />;
 
   const serviceMeta = siteConfig.services.find((s) => s.slug === slug);
   const serviceIndex = siteConfig.services.findIndex((s) => s.slug === slug);
@@ -35,7 +35,7 @@ export default function ServiceDetail() {
 
         <div className="max-w-[1400px] mx-auto relative">
           <Link
-            to="/#services"
+            to="/services"
             data-testid="back-to-services"
             className="inline-flex items-center gap-2 font-body text-sm font-bold text-[var(--ink-soft)] hover:text-[var(--ink)]"
           >

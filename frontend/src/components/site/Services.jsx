@@ -3,22 +3,24 @@ import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { siteConfig, colorMap } from "../../lib/siteConfig";
 
-export const Services = () => {
+export const Services = ({ hideHeader = false }) => {
   return (
-    <section id="services" data-testid="services-section" className="relative py-20 md:py-28 px-5 md:px-10">
-      <div className="max-w-[1400px] mx-auto mb-14 md:mb-20 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
-        <div>
-          <span className="sticker bg-[var(--p-yellow)] mb-5">★ what we do</span>
-          <h2 className="display-xl text-[var(--ink)] max-w-3xl mt-4">
-            One studio. <br />
-            <span className="squiggle">Six superpowers.</span>
-          </h2>
+    <section id="services" data-testid="services-section" className="relative py-14 md:py-20 px-5 md:px-10">
+      {!hideHeader && (
+        <div className="max-w-[1400px] mx-auto mb-10 md:mb-14 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+          <div>
+            <span className="sticker bg-[var(--p-yellow)] mb-5">★ what we do</span>
+            <h2 className="display-xl text-[var(--ink)] max-w-3xl mt-4">
+              One studio. <br />
+              <span className="squiggle">Eight superpowers.</span>
+            </h2>
+          </div>
+          <p className="font-body text-base text-[var(--ink-soft)] max-w-md leading-relaxed">
+            From first pixel to paid scale — pick one, or hand us the whole stack.
+            Click any card for ideas you might not have thought of yet.
+          </p>
         </div>
-        <p className="font-body text-base text-[var(--ink-soft)] max-w-md leading-relaxed">
-          From first pixel to paid scale — pick one, or hand us the whole stack.
-          Click any card for ideas you might not have thought of yet.
-        </p>
-      </div>
+      )}
 
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         {siteConfig.services.map((s, i) => (

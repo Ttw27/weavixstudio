@@ -59,23 +59,23 @@ body {
 .display-xxl {
     font-family: 'Fredoka', sans-serif;
     font-weight: 700;
-    line-height: 0.92;
-    letter-spacing: -0.035em;
-    font-size: clamp(3rem, 11vw, 12rem);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    font-size: clamp(2.25rem, 6.5vw, 5.75rem);
 }
 .display-xl {
     font-family: 'Fredoka', sans-serif;
     font-weight: 700;
-    line-height: 0.95;
-    letter-spacing: -0.025em;
-    font-size: clamp(2.25rem, 6.5vw, 5.5rem);
+    line-height: 0.98;
+    letter-spacing: -0.022em;
+    font-size: clamp(1.75rem, 4vw, 3.5rem);
 }
 .display-lg {
     font-family: 'Fredoka', sans-serif;
     font-weight: 700;
-    line-height: 1;
-    letter-spacing: -0.02em;
-    font-size: clamp(1.6rem, 3vw, 2.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.018em;
+    font-size: clamp(1.25rem, 1.9vw, 1.75rem);
 }
 .eyebrow {
     font-family: 'Nunito', sans-serif;
@@ -90,15 +90,15 @@ body {
 .btn-pill {
     display: inline-flex;
     align-items: center;
-    gap: 0.6rem;
-    padding: 0.95rem 1.5rem;
-    border: 2.5px solid var(--ink);
+    gap: 0.5rem;
+    padding: 0.7rem 1.25rem;
+    border: 2px solid var(--ink);
     border-radius: 999px;
     background: var(--surface);
     color: var(--ink);
     font-family: 'Fredoka', sans-serif;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.875rem;
     box-shadow: var(--shadow-blunt-sm);
     transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.2s ease;
     cursor: pointer;
@@ -120,14 +120,14 @@ body {
 /* Card with hard shadow */
 .card-blunt {
     background: var(--surface);
-    border: 2.5px solid var(--ink);
-    box-shadow: var(--shadow-blunt);
-    border-radius: 28px;
+    border: 2px solid var(--ink);
+    box-shadow: var(--shadow-blunt-sm);
+    border-radius: 22px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .card-blunt:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: var(--shadow-blunt-lg);
+    transform: translate(-1px, -1px);
+    box-shadow: var(--shadow-blunt);
 }
 
 /* Sticker rotation utilities */
@@ -149,9 +149,9 @@ body {
 .marquee-text {
     font-family: 'Fredoka', sans-serif;
     font-weight: 700;
-    font-size: clamp(2.5rem, 8vw, 9rem);
+    font-size: clamp(1.75rem, 4.5vw, 4.5rem);
     line-height: 1;
-    padding: 0 1.5rem;
+    padding: 0 1.25rem;
     white-space: nowrap;
     color: var(--ink);
 }

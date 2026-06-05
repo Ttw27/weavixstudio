@@ -2,11 +2,91 @@
 // Goal: give prospects "I need this" moments — ideas they hadn't thought of.
 
 export const servicesContent = {
+  "digital-ecosystems": {
+    slug: "digital-ecosystems",
+    code: "01",
+    title: "Digital Ecosystems",
+    heroColor: "yellow",
+    tagline: "One unified platform. Not eight disconnected tools.",
+    intro:
+      "Most growing businesses end up with a Frankenstein stack: a Squarespace site, Calendly for bookings, a Google Sheet for clients, Mailchimp for emails, Airtable for projects, Stripe for invoices, Slack for chat, Notion for docs, and three Make/Zapier flows holding it all together with duct tape. We replace it with one bespoke ecosystem — built around how YOUR business actually runs. Your branding everywhere, your data in one place, AI woven through the seams.",
+    painPoints: [
+      {
+        title: "Your tools don't talk to each other",
+        body: "Customer info lives in 4 places. Updating an email means logging into 3 tools. Nothing syncs unless you copy-paste.",
+      },
+      {
+        title: "You're paying for 8 SaaS subscriptions",
+        body: "Each tool charges per seat. Total spend creeps past £500/month for software you don't fully use.",
+      },
+      {
+        title: "Customers see a patchwork experience",
+        body: "Your site feels modern. Then they hit a generic Calendly page, a Stripe email, a Squarespace form. Trust dips at every handoff.",
+      },
+    ],
+    ideas: [
+      {
+        tag: "portal",
+        title: "A branded customer portal that replaces 4 tools",
+        body: "Login once: see projects, invoices, files, bookings, support, contracts. Everything on YOUR domain, in YOUR brand. No more 'check your inbox for the link from Acme Software Inc.'",
+      },
+      {
+        tag: "ops",
+        title: "A staff dashboard that runs your whole business",
+        body: "One screen for your team — clients, leads, tasks, revenue, schedule, AI tools. Instead of 7 browser tabs, one branded HQ that everyone actually uses.",
+      },
+      {
+        tag: "onboarding",
+        title: "Automated client onboarding from form to first call",
+        body: "Lead form → contract sent → signed → invoice raised → portal access granted → welcome video → calendar invite — all without you touching anything.",
+      },
+      {
+        tag: "mobile",
+        title: "A companion mobile app for your service",
+        body: "Your customers get push notifications, scan-to-pay, document uploads, AI chat — all in a branded app. Instant credibility upgrade vs. competitors with just a website.",
+      },
+      {
+        tag: "data",
+        title: "Live business dashboard for you, the owner",
+        body: "Revenue today, leads this week, ops health, ad spend — pulled live from every system and shown in one TV-ready board. Decide in seconds, not after monthly meetings.",
+      },
+      {
+        tag: "ai",
+        title: "AI layered across every customer touchpoint",
+        body: "Smart search on your site, an AI receptionist on your portal, AI-drafted replies in your inbox, AI summaries on every call. The whole ecosystem gets smarter without your team having to learn another tool.",
+      },
+      {
+        tag: "knowledge",
+        title: "A self-service knowledge base your AI runs",
+        body: "Customers and staff ask questions in plain English. The AI answers from your real docs, SOPs and history. Cuts inbound tickets by 60%+.",
+      },
+      {
+        tag: "replace",
+        title: "Internal tools that replace 3 SaaS subscriptions",
+        body: "We rebuild the bits you actually use as one tailored app. Often pays for itself by month 6 in cancelled subscriptions alone.",
+      },
+    ],
+    deliverables: [
+      { t: "Discovery & blueprint", b: "We map every tool you use, every customer journey, every data flow. Output: a single architecture diagram of your new platform." },
+      { t: "Bespoke site + portal", b: "Marketing front-end + logged-in customer area, designed as one continuous experience." },
+      { t: "Staff dashboard", b: "Internal HQ for your team — clients, ops, finance, AI tools." },
+      { t: "Integrations & migration", b: "We move data and wire connections to existing tools you're keeping (Stripe, Xero, etc.) and decommission what's redundant." },
+      { t: "Custom AI layer", b: "AI agents, smart search and assistants embedded across the platform." },
+      { t: "Ongoing care", b: "Monthly retainer for updates, new modules, monitoring." },
+    ],
+    relatedProjects: ["northline", "halden"],
+    faq: [
+      { q: "Is this only for big companies?", a: "No — our sweet spot is small businesses doing £200k–£5m where complexity is starting to bite. The smaller you are, the more leverage a unified system gives." },
+      { q: "Will it be hard to maintain?", a: "We build on standard stack (Next.js + Postgres + Supabase). Any developer can pick it up later. You're never locked in." },
+      { q: "How long?", a: "Phase 1 (site + portal MVP) ships in 8–10 weeks. We then add modules monthly based on impact." },
+    ],
+  },
+
   websites: {
     slug: "websites",
-    code: "01",
+    code: "02",
     title: "Website Development",
-    heroColor: "yellow",
+    heroColor: "pink",
     tagline: "A site that actually converts — not just a pretty brochure.",
     intro:
       "Most small-business sites leak money. They load slow, read like a template, and give prospects zero reason to pick up the phone. We build sites that look sharp AND pull their weight — fast, measurable, and easy for your team to update.",
@@ -25,46 +105,14 @@ export const servicesContent = {
       },
     ],
     ideas: [
-      {
-        tag: "lead gen",
-        title: "A quote calculator that qualifies before you speak",
-        body: "Prospects pick 3 options, get an instant range, and only the serious ones land in your inbox — with context.",
-      },
-      {
-        tag: "trust",
-        title: "A live 'who we're helping right now' section",
-        body: "Pulled from your CRM. Social proof that updates itself and shows you're busy (in a good way).",
-      },
-      {
-        tag: "booking",
-        title: "A Calendly-free booking flow built into your site",
-        body: "Prospects pick a slot, answer 3 questions, and arrive on the call already warmed up.",
-      },
-      {
-        tag: "content",
-        title: "A blog you'll actually post on",
-        body: "One-click publishing from Notion. No CMS training, no 'let me just email the dev'.",
-      },
-      {
-        tag: "speed",
-        title: "A site that loads in under a second",
-        body: "90+ Lighthouse scores, edge-deployed, image-optimised. Google (and your customers) will notice.",
-      },
-      {
-        tag: "portal",
-        title: "A private client portal behind the marketing site",
-        body: "Logins, documents, updates, invoices — all branded, all yours, no new SaaS subscription.",
-      },
-      {
-        tag: "smart",
-        title: "A site that personalises copy by industry",
-        body: "A visitor from a restaurant sees restaurant wording. From a clinic, clinic wording. Same site, 2x conversion.",
-      },
-      {
-        tag: "ops",
-        title: "Forms that write to Slack + CRM + spreadsheet at once",
-        body: "No more copy-pasting leads. No more missed enquiries. Everyone sees everything in real time.",
-      },
+      { tag: "lead gen", title: "A quote calculator that qualifies before you speak", body: "Prospects pick 3 options, get an instant range, and only the serious ones land in your inbox — with context." },
+      { tag: "trust", title: "A live 'who we're helping right now' section", body: "Pulled from your CRM. Social proof that updates itself and shows you're busy (in a good way)." },
+      { tag: "booking", title: "A Calendly-free booking flow built into your site", body: "Prospects pick a slot, answer 3 questions, and arrive on the call already warmed up." },
+      { tag: "content", title: "A blog you'll actually post on", body: "One-click publishing from Notion. No CMS training, no 'let me just email the dev'." },
+      { tag: "speed", title: "A site that loads in under a second", body: "90+ Lighthouse scores, edge-deployed, image-optimised. Google (and your customers) will notice." },
+      { tag: "portal", title: "A private client portal behind the marketing site", body: "Logins, documents, updates, invoices — all branded, all yours, no new SaaS subscription." },
+      { tag: "smart", title: "A site that personalises copy by industry", body: "A visitor from a restaurant sees restaurant wording. From a clinic, clinic wording. Same site, 2x conversion." },
+      { tag: "ops", title: "Forms that write to Slack + CRM + spreadsheet at once", body: "No more copy-pasting leads. No more missed enquiries. Everyone sees everything in real time." },
     ],
     deliverables: [
       { t: "Design system", b: "Reusable tokens, components, pages — so your site stays consistent as it grows." },
@@ -81,91 +129,6 @@ export const servicesContent = {
     ],
   },
 
-  "ai-automation": {
-    slug: "ai-automation",
-    code: "02",
-    title: "AI Automation",
-    heroColor: "pink",
-    tagline: "Give your team back 20 hours a week. Seriously.",
-    intro:
-      "Every business has invisible tasks that eat hours: chasing emails, copying data between tools, summarising calls, qualifying leads. AI is now cheap enough and good enough to do most of them better than a junior staff member — and never takes a sick day. We find the boring work, wrap AI around it, and ship it into your existing tools.",
-    painPoints: [
-      {
-        title: "You're drowning in inbound",
-        body: "Half your day is replying to the same 10 questions. Good leads get lost in the noise.",
-      },
-      {
-        title: "Your team copy-pastes for a living",
-        body: "Same info, 4 different tools, every day. You know it's daft. You don't have time to fix it.",
-      },
-      {
-        title: "You don't know what's actually happening",
-        body: "Reports live in three heads. By the time you pull a number, it's already stale.",
-      },
-    ],
-    ideas: [
-      {
-        tag: "inbound",
-        title: "An AI that qualifies every lead overnight",
-        body: "Reads their email, checks their website, scores them 0-100, drafts a personal reply, and books warm ones to Calendly — while you sleep.",
-      },
-      {
-        tag: "support",
-        title: "A support agent that handles 70% of tickets",
-        body: "Trained on your docs, answers in your tone of voice, hands off gracefully when it's not sure. Available 24/7.",
-      },
-      {
-        tag: "back-office",
-        title: "Invoice & receipt auto-reconciliation",
-        body: "Forwarded receipts get parsed, matched to vendors, categorised, and posted to Xero/QuickBooks. Saves one finance hire.",
-      },
-      {
-        tag: "meetings",
-        title: "Calls that summarise themselves",
-        body: "Every Zoom/Meet call auto-transcribed, summarised, action-items posted to Slack, CRM updated. No more 'who was going to send that?'",
-      },
-      {
-        tag: "sales",
-        title: "AI-drafted follow-ups with your voice",
-        body: "After every call, a draft follow-up email appears in your outbox — referencing what was actually said. You hit send.",
-      },
-      {
-        tag: "content",
-        title: "A content multiplier",
-        body: "Feed it one podcast / video / long-form post. Out comes 5 reels scripts, 10 tweets, 3 emails, a blog post. All in your voice.",
-      },
-      {
-        tag: "monitoring",
-        title: "Competitor & review watchdog",
-        body: "Pings you the second a competitor changes pricing, drops a feature, or a review mentions your brand. Nothing missed.",
-      },
-      {
-        tag: "hiring",
-        title: "Resume screener that actually screens",
-        body: "500 applicants? An AI ranks them against your ideal profile, surfaces the top 20, and drafts intro emails.",
-      },
-      {
-        tag: "reporting",
-        title: "A weekly AI report that writes itself",
-        body: "Every Monday, a plain-English summary of your KPIs (revenue, leads, spend, reviews) lands in your inbox. No dashboards needed.",
-      },
-    ],
-    deliverables: [
-      { t: "Workflow audit", b: "Half-day with your team. We map every repetitive task and rank by leverage." },
-      { t: "Agent / pipeline build", b: "Custom LLM agents or deterministic pipelines — we pick the right tool per job." },
-      { t: "Integrations", b: "CRM (HubSpot/Pipedrive), Slack, email, Sheets, Notion, your custom DB." },
-      { t: "Guardrails & approvals", b: "Human-in-the-loop where it matters. Auto-pilot where it doesn't." },
-      { t: "Monitoring dashboard", b: "See exactly what the AI did, what it escalated, what it cost." },
-      { t: "Training for your team", b: "So you own it, not us." },
-    ],
-    relatedProjects: ["halden"],
-    faq: [
-      { q: "Will it replace my staff?", a: "No — it amplifies them. Our clients usually redeploy people to higher-value work, not let them go." },
-      { q: "What about data privacy?", a: "We default to private deployments (your cloud or a dedicated tenant). No training on your data, ever." },
-      { q: "What does it cost to run?", a: "Typically $50–$500/month in API costs for most SMB use cases. Payback is usually < 8 weeks." },
-    ],
-  },
-
   "app-dev": {
     slug: "app-dev",
     code: "03",
@@ -175,60 +138,19 @@ export const servicesContent = {
     intro:
       "The best new apps don't bolt AI on at the end. They're built around it. We design and ship iOS, Android and web apps where the AI does the heavy lifting — chat, vision, voice, recommendations, even acting on your user's behalf. Idea → App Store in 10–14 weeks.",
     painPoints: [
-      {
-        title: "You have an idea but no dev team",
-        body: "You've sketched it on napkins. You need someone senior enough to say 'yes, but simpler'.",
-      },
-      {
-        title: "Your existing app is 'just a dashboard'",
-        body: "Users log in, see numbers, log out. It could be 10x more useful with a little AI.",
-      },
-      {
-        title: "You're stuck paying SaaS rent forever",
-        body: "Three tools that barely talk to each other. You'd rather own the stack — if only it were affordable.",
-      },
+      { title: "You have an idea but no dev team", body: "You've sketched it on napkins. You need someone senior enough to say 'yes, but simpler'." },
+      { title: "Your existing app is 'just a dashboard'", body: "Users log in, see numbers, log out. It could be 10x more useful with a little AI." },
+      { title: "You're stuck paying SaaS rent forever", body: "Three tools that barely talk to each other. You'd rather own the stack — if only it were affordable." },
     ],
     ideas: [
-      {
-        tag: "chat-first",
-        title: "A chat-first app for your niche",
-        body: "Like ChatGPT, but it knows YOUR industry (legal, fitness, real estate) and is wrapped in a clean, branded mobile app. Subscription revenue from day one.",
-      },
-      {
-        tag: "vision",
-        title: "Point-your-camera apps",
-        body: "Snap a plant → care guide. Snap a meal → calorie count. Snap a wine label → tasting notes + where to buy. Magical UX, 3-week build.",
-      },
-      {
-        tag: "voice",
-        title: "A voice journaling / coaching app",
-        body: "User talks, AI listens, reflects back patterns, tracks mood, suggests next steps. Habit-forming and perfect for wellness brands.",
-      },
-      {
-        tag: "agent",
-        title: "An AI agent that does things for users",
-        body: "Books restaurants, negotiates bills, hunts for cheaper insurance, drafts difficult emails. Real actions, not just chat.",
-      },
-      {
-        tag: "recs",
-        title: "A recommendation engine with taste",
-        body: "Outfit picks, wine pairings, recipe suggestions, content curation — personalised from 10 questions and a photo.",
-      },
-      {
-        tag: "b2b",
-        title: "An internal tool that replaces 3 SaaS tools",
-        body: "Your ops team's workflow, purpose-built, with AI everywhere it saves time. Pays for itself by month 3.",
-      },
-      {
-        tag: "marketplace",
-        title: "A niche marketplace with an AI matchmaker",
-        body: "Two sides of a market (freelancers ↔ clients, tutors ↔ students, etc.) matched by AI instead of a search bar.",
-      },
-      {
-        tag: "community",
-        title: "A community app with an AI concierge",
-        body: "Members ask the AI 'who should I meet?' or 'what events match me?' — it knows everyone in the community.",
-      },
+      { tag: "chat-first", title: "A chat-first app for your niche", body: "Like ChatGPT, but it knows YOUR industry (legal, fitness, real estate) and is wrapped in a clean, branded mobile app. Subscription revenue from day one." },
+      { tag: "vision", title: "Point-your-camera apps", body: "Snap a plant → care guide. Snap a meal → calorie count. Snap a wine label → tasting notes + where to buy. Magical UX, 3-week build." },
+      { tag: "voice", title: "A voice journaling / coaching app", body: "User talks, AI listens, reflects back patterns, tracks mood, suggests next steps. Habit-forming and perfect for wellness brands." },
+      { tag: "agent", title: "An AI agent that does things for users", body: "Books restaurants, negotiates bills, hunts for cheaper insurance, drafts difficult emails. Real actions, not just chat." },
+      { tag: "recs", title: "A recommendation engine with taste", body: "Outfit picks, wine pairings, recipe suggestions, content curation — personalised from 10 questions and a photo." },
+      { tag: "b2b", title: "An internal tool that replaces 3 SaaS tools", body: "Your ops team's workflow, purpose-built, with AI everywhere it saves time. Pays for itself by month 3." },
+      { tag: "marketplace", title: "A niche marketplace with an AI matchmaker", body: "Two sides of a market (freelancers ↔ clients, tutors ↔ students, etc.) matched by AI instead of a search bar." },
+      { tag: "community", title: "A community app with an AI concierge", body: "Members ask the AI 'who should I meet?' or 'what events match me?' — it knows everyone in the community." },
     ],
     deliverables: [
       { t: "Product scoping", b: "2-week sprint to pin down MVP, user journeys, monetisation." },
@@ -245,59 +167,151 @@ export const servicesContent = {
     ],
   },
 
-  "ad-management": {
-    slug: "ad-management",
+  "ai-automation": {
+    slug: "ai-automation",
     code: "04",
-    title: "Ad Management",
+    title: "AI Automation",
     heroColor: "mint",
-    tagline: "Ads that pay for themselves — creative, buying, and CRO under one roof.",
+    tagline: "Give your team back 20 hours a week. Seriously.",
     intro:
-      "Most agencies either make ads OR buy media. We do both, so we can kill bad creative fast and double-down on winners without a three-way email chain. Meta, Google, TikTok, YouTube — we run the whole funnel and show you the numbers every week.",
+      "Every business has invisible tasks that eat hours: chasing emails, copying data between tools, summarising calls, qualifying leads. AI is now cheap enough and good enough to do most of them better than a junior staff member — and never takes a sick day. We find the boring work, wrap AI around it, and ship it into your existing tools.",
+    painPoints: [
+      { title: "You're drowning in inbound", body: "Half your day is replying to the same 10 questions. Good leads get lost in the noise." },
+      { title: "Your team copy-pastes for a living", body: "Same info, 4 different tools, every day. You know it's daft. You don't have time to fix it." },
+      { title: "You don't know what's actually happening", body: "Reports live in three heads. By the time you pull a number, it's already stale." },
+    ],
+    ideas: [
+      { tag: "inbound", title: "An AI that qualifies every lead overnight", body: "Reads their email, checks their website, scores them 0-100, drafts a personal reply, and books warm ones to Calendly — while you sleep." },
+      { tag: "support", title: "A support agent that handles 70% of tickets", body: "Trained on your docs, answers in your tone of voice, hands off gracefully when it's not sure. Available 24/7." },
+      { tag: "back-office", title: "Invoice & receipt auto-reconciliation", body: "Forwarded receipts get parsed, matched to vendors, categorised, and posted to Xero/QuickBooks. Saves one finance hire." },
+      { tag: "meetings", title: "Calls that summarise themselves", body: "Every Zoom/Meet call auto-transcribed, summarised, action-items posted to Slack, CRM updated." },
+      { tag: "sales", title: "AI-drafted follow-ups with your voice", body: "After every call, a draft follow-up email appears in your outbox — referencing what was actually said. You hit send." },
+      { tag: "content", title: "A content multiplier", body: "Feed it one podcast / video / long-form post. Out comes 5 reels scripts, 10 tweets, 3 emails, a blog post. All in your voice." },
+      { tag: "monitoring", title: "Competitor & review watchdog", body: "Pings you the second a competitor changes pricing, drops a feature, or a review mentions your brand. Nothing missed." },
+      { tag: "hiring", title: "Resume screener that actually screens", body: "500 applicants? An AI ranks them against your ideal profile, surfaces the top 20, and drafts intro emails." },
+      { tag: "reporting", title: "A weekly AI report that writes itself", body: "Every Monday, a plain-English summary of your KPIs lands in your inbox. No dashboards needed." },
+    ],
+    deliverables: [
+      { t: "Workflow audit", b: "Half-day with your team. We map every repetitive task and rank by leverage." },
+      { t: "Agent / pipeline build", b: "Custom LLM agents or deterministic pipelines — we pick the right tool per job." },
+      { t: "Integrations", b: "CRM (HubSpot/Pipedrive), Slack, email, Sheets, Notion, your custom DB." },
+      { t: "Guardrails & approvals", b: "Human-in-the-loop where it matters. Auto-pilot where it doesn't." },
+      { t: "Monitoring dashboard", b: "See exactly what the AI did, what it escalated, what it cost." },
+      { t: "Training for your team", b: "So you own it, not us." },
+    ],
+    relatedProjects: ["halden"],
+    faq: [
+      { q: "Will it replace my staff?", a: "No — it amplifies them. Our clients usually redeploy people to higher-value work, not let them go." },
+      { q: "What about data privacy?", a: "We default to private deployments. No training on your data, ever." },
+      { q: "What does it cost to run?", a: "Typically $50–$500/month in API costs. Payback is usually < 8 weeks." },
+    ],
+  },
+
+  "custom-ai": {
+    slug: "custom-ai",
+    code: "05",
+    title: "Custom AI & Prompts",
+    heroColor: "lilac",
+    tagline: "Stop arguing with ChatGPT. Start using AI that already knows your business.",
+    intro:
+      "Most people using ChatGPT, Claude or Midjourney waste hours fighting prompts, getting generic outputs, and burning credits on bad attempts. We build custom AI tools — branded GPTs, prompt libraries, personal AI assistants, design-tool helpers — all trained on YOUR business, YOUR voice, YOUR knowledge. Your team gets perfect outputs on the first try, without becoming prompt engineers.",
     painPoints: [
       {
-        title: "Your ads stopped working",
-        body: "ROAS used to be 3x. Now it's 1.2x and Meta keeps asking for more budget.",
+        title: "ChatGPT keeps giving generic answers",
+        body: "You re-explain your business every conversation. Outputs sound nothing like you. Half the time you give up and write it yourself.",
       },
       {
-        title: "Your creative is the bottleneck",
-        body: "You have the budget. You don't have 15 fresh videos a month. The algorithm is starving.",
+        title: "Your team doesn't know what to ask AI",
+        body: "Some people use it daily, some never. There's no shared playbook. The leverage is uneven.",
       },
       {
-        title: "You don't trust your agency",
-        body: "Reports are vague, tests are slow, nobody explains why spend went up and sales went down.",
+        title: "Design tools burn through credits",
+        body: "Midjourney, DALL·E, Sora — you pay per attempt and most attempts are wrong. Hundreds of dollars on outputs you don't use.",
       },
     ],
     ideas: [
       {
-        tag: "creative",
-        title: "A fresh video ad every 48 hours",
-        body: "We shoot a library of raw content once, then edit 3–4 new variants per week. The algorithm never gets bored.",
+        tag: "branded-gpt",
+        title: "A branded custom GPT trained on your business",
+        body: "Knows your products, your tone, your pricing, your processes. Your team (or your CUSTOMERS) chat with it like ChatGPT — but it always answers in your voice and references real facts about you.",
       },
       {
-        tag: "ugc",
-        title: "AI-generated UGC-style creatives",
-        body: "A synthetic 'customer' holding your product, talking to camera. Yes, it's fake. Yes, it converts. Compliance-safe.",
+        tag: "prompt-library",
+        title: "A one-click prompt library for your team",
+        body: "A shared workspace with 50+ pre-engineered prompts: 'write a proposal', 'summarise this call', 'reply to a complaint', 'draft a social post'. Click, fill 2 blanks, perfect output. No prompt engineering needed.",
       },
       {
-        tag: "funnel",
-        title: "A 3-step warm-up funnel",
-        body: "Cold audience sees a story ad → retargeted with a demo → hit with an offer. 10x cheaper than cold → offer.",
+        tag: "personal-ai",
+        title: "A personal AI assistant for the founder",
+        body: "Knows your calendar, your inbox, your priorities, your writing style. Drafts emails, summarises Slack, prepares for meetings, remembers what matters to you. Like a chief of staff that never sleeps.",
       },
       {
-        tag: "test",
-        title: "Systematic creative testing",
-        body: "Hook → visual → CTA, tested as separate variables. We find what actually moves the needle, not just what 'looks cool'.",
+        tag: "design-ai",
+        title: "Design-tool AI that gets it right first time",
+        body: "Custom prompt templates for Midjourney, Nano Banana, Sora — pre-loaded with your brand colours, style, aspect ratios. Type 'product shot of new earrings on marble' — get a usable image in one try, not twenty.",
       },
       {
-        tag: "search",
-        title: "Intent capture on Google",
-        body: "Your best prospects are typing something right now. Performance Max + smart negative keywords = cheap, hot leads.",
+        tag: "website-ai",
+        title: "An AI assistant on your website",
+        body: "Visitors ask questions in plain English: 'how much for X?', 'do you ship to Y?', 'book me for Tuesday'. It answers from your real info and books warm leads to your calendar.",
       },
       {
-        tag: "report",
-        title: "A weekly human report in plain English",
-        body: "What we spent, what worked, what we're testing next. No dashboards you won't read.",
+        tag: "ask-anything",
+        title: "An 'ask anything' agent for your team",
+        body: "Plug it into your Drive, Notion, Slack history, SharePoint. Anyone can ask 'what did we agree with that client last quarter?' or 'what's our return policy for EU customers?' and get an instant, sourced answer.",
       },
+      {
+        tag: "voice",
+        title: "A voice clone of you for emails and content",
+        body: "We train a private model on your past writing. Your team drafts in YOUR voice without you. Editorial consistency at scale.",
+      },
+      {
+        tag: "sop-agent",
+        title: "Your SOPs as living AI agents",
+        body: "Instead of staff reading a 40-page handbook, they chat with it. The AI walks them through onboarding a client, handling a refund, or escalating a problem — in their workflow, not a PDF.",
+      },
+      {
+        tag: "training",
+        title: "A 90-minute team training on practical AI",
+        body: "We sit with your team and teach them how to actually use the tools — with the prompts we built for your business. ROI lands the same week.",
+      },
+    ],
+    deliverables: [
+      { t: "AI discovery", b: "Half-day to find where AI saves real time: writing, design, support, sales, ops, content." },
+      { t: "Custom GPT(s)", b: "Built on OpenAI or Claude — branded, private, trained on your knowledge." },
+      { t: "Prompt library", b: "Notion or branded webapp with 30–80 pre-built, one-click prompts." },
+      { t: "Personal AI / assistant", b: "Voice-cloned, calendar-aware, inbox-aware. For founders or key roles." },
+      { t: "Design-tool playbooks", b: "Saved prompts for Midjourney / Nano Banana / Sora with your brand baked in." },
+      { t: "Team training", b: "Live workshop + recorded SOPs + Slack support for 30 days." },
+    ],
+    relatedProjects: ["halden", "kairo"],
+    faq: [
+      { q: "Is my data safe?", a: "Yes. We use private deployments and ChatGPT Enterprise / Claude Pro / Azure OpenAI for sensitive data. Nothing trains the public models." },
+      { q: "What if I already use ChatGPT?", a: "Perfect — we layer on top. Your team keeps the tool they know; we make it 10x more useful." },
+      { q: "How much?", a: "Starter packages from £2k (prompt library + 1 custom GPT + training). Full ecosystem builds vary. We scope after a 30-min call." },
+    ],
+  },
+
+  "ad-management": {
+    slug: "ad-management",
+    code: "06",
+    title: "Ad Management",
+    heroColor: "orange",
+    tagline: "Ads that pay for themselves — creative, buying, and CRO under one roof.",
+    intro:
+      "Most agencies either make ads OR buy media. We do both, so we can kill bad creative fast and double-down on winners without a three-way email chain. Meta, Google, TikTok, YouTube — we run the whole funnel and show you the numbers every week.",
+    painPoints: [
+      { title: "Your ads stopped working", body: "ROAS used to be 3x. Now it's 1.2x and Meta keeps asking for more budget." },
+      { title: "Your creative is the bottleneck", body: "You have the budget. You don't have 15 fresh videos a month. The algorithm is starving." },
+      { title: "You don't trust your agency", body: "Reports are vague, tests are slow, nobody explains why spend went up and sales went down." },
+    ],
+    ideas: [
+      { tag: "creative", title: "A fresh video ad every 48 hours", body: "We shoot a library of raw content once, then edit 3–4 new variants per week. The algorithm never gets bored." },
+      { tag: "ugc", title: "AI-generated UGC-style creatives", body: "A synthetic 'customer' holding your product, talking to camera. Yes, it's fake. Yes, it converts. Compliance-safe." },
+      { tag: "funnel", title: "A 3-step warm-up funnel", body: "Cold audience sees a story ad → retargeted with a demo → hit with an offer. 10x cheaper than cold → offer." },
+      { tag: "test", title: "Systematic creative testing", body: "Hook → visual → CTA, tested as separate variables. We find what actually moves the needle." },
+      { tag: "search", title: "Intent capture on Google", body: "Your best prospects are typing something right now. Performance Max + smart negative keywords = cheap, hot leads." },
+      { tag: "report", title: "A weekly human report in plain English", body: "What we spent, what worked, what we're testing next. No dashboards you won't read." },
     ],
     deliverables: [
       { t: "Creative production", b: "Video + image ads shot, edited, graded in-house. 12–20 fresh assets / month." },
@@ -315,57 +329,24 @@ export const servicesContent = {
 
   "social-media": {
     slug: "social-media",
-    code: "05",
+    code: "07",
     title: "Social Media",
-    heroColor: "lilac",
+    heroColor: "yellow",
     tagline: "Content that actually sounds like you — not another template mill.",
     intro:
       "Most agencies will post generic 'Monday motivation' to your feed and call it strategy. We build a content engine around your actual voice, your actual customers, and your actual business goals. Reels, posts, community, UGC — the whole system.",
     painPoints: [
-      {
-        title: "Posting feels like a chore",
-        body: "You know it matters. You don't have time. You're 4 weeks behind on your calendar.",
-      },
-      {
-        title: "Your content sounds like everyone else",
-        body: "Stock photos, generic quotes, zero point of view. Nothing anyone would screenshot.",
-      },
-      {
-        title: "You don't see any business impact",
-        body: "Followers don't pay bills. You're tired of posting into a void.",
-      },
+      { title: "Posting feels like a chore", body: "You know it matters. You don't have time. You're 4 weeks behind on your calendar." },
+      { title: "Your content sounds like everyone else", body: "Stock photos, generic quotes, zero point of view. Nothing anyone would screenshot." },
+      { title: "You don't see any business impact", body: "Followers don't pay bills. You're tired of posting into a void." },
     ],
     ideas: [
-      {
-        tag: "reels",
-        title: "A reels engine that doesn't burn you out",
-        body: "One 2-hour shoot every 4 weeks = 8–12 reels. Scripted, edited, captioned, scheduled. You show up, we handle the rest.",
-      },
-      {
-        tag: "thought",
-        title: "Thought leadership for founders who hate writing",
-        body: "We interview you for 30 mins weekly. That's 20 posts, 2 newsletters and 10 reel scripts. In your voice, from your brain.",
-      },
-      {
-        tag: "ugc",
-        title: "A creator network feeding your feed",
-        body: "We source, brief and coordinate 5–15 micro-creators per month. Their reach, your brand, their authenticity.",
-      },
-      {
-        tag: "community",
-        title: "A community that waits for your posts",
-        body: "DM replies, comment conversations, polls and behind-the-scenes. Not megaphone — dialogue.",
-      },
-      {
-        tag: "launch",
-        title: "A launch cascade for every drop",
-        body: "Tease, reveal, drop, recap — synchronised across Instagram, TikTok, email and paid. Nothing falls flat.",
-      },
-      {
-        tag: "b2b",
-        title: "LinkedIn as a lead machine",
-        body: "Personal brand posts for founders + company page + DM outreach. B2B inbound without being cringe.",
-      },
+      { tag: "reels", title: "A reels engine that doesn't burn you out", body: "One 2-hour shoot every 4 weeks = 8–12 reels. Scripted, edited, captioned, scheduled. You show up, we handle the rest." },
+      { tag: "thought", title: "Thought leadership for founders who hate writing", body: "We interview you for 30 mins weekly. That's 20 posts, 2 newsletters and 10 reel scripts. In your voice, from your brain." },
+      { tag: "ugc", title: "A creator network feeding your feed", body: "We source, brief and coordinate 5–15 micro-creators per month. Their reach, your brand, their authenticity." },
+      { tag: "community", title: "A community that waits for your posts", body: "DM replies, comment conversations, polls and behind-the-scenes. Not megaphone — dialogue." },
+      { tag: "launch", title: "A launch cascade for every drop", body: "Tease, reveal, drop, recap — synchronised across Instagram, TikTok, email and paid." },
+      { tag: "b2b", title: "LinkedIn as a lead machine", body: "Personal brand posts for founders + company page + DM outreach. B2B inbound without being cringe." },
     ],
     deliverables: [
       { t: "Content strategy", b: "Pillars, cadence, voice guide. The 'why' behind every post." },
@@ -383,56 +364,24 @@ export const servicesContent = {
 
   "creative-studio": {
     slug: "creative-studio",
-    code: "06",
+    code: "08",
     title: "Creative Studio",
-    heroColor: "orange",
+    heroColor: "blue",
     tagline: "Video, photo, motion — made for the feed, the ad, the hero section.",
     intro:
       "Need a launch film? Product photography? 15 ad variants by Friday? We run an in-house creative team that ships at advertising speed. Concept, script, shoot, edit, grade, cutdowns. Every format you need, from one team.",
     painPoints: [
-      {
-        title: "Your assets look stitched together",
-        body: "Stock photos + cousin's iPhone + DIY Canva. The inconsistency is bleeding trust.",
-      },
-      {
-        title: "You need variants yesterday",
-        body: "The ad works at 9:16 but not at 1:1, and the edit house takes 2 weeks.",
-      },
-      {
-        title: "You have no visual system",
-        body: "Every piece of content is a coin-flip. Beautiful or ugly, who knows.",
-      },
+      { title: "Your assets look stitched together", body: "Stock photos + cousin's iPhone + DIY Canva. The inconsistency is bleeding trust." },
+      { title: "You need variants yesterday", body: "The ad works at 9:16 but not at 1:1, and the edit house takes 2 weeks." },
+      { title: "You have no visual system", body: "Every piece of content is a coin-flip. Beautiful or ugly, who knows." },
     ],
     ideas: [
-      {
-        tag: "launch",
-        title: "A 60-second launch film",
-        body: "The hero video for your product page, your biggest ad, your investor deck. One shoot, infinite cuts.",
-      },
-      {
-        tag: "ad-variants",
-        title: "15 ad creatives from one shoot",
-        body: "Shoot once, edit forever. Hooks, CTAs, proof points — varied to feed the algorithm.",
-      },
-      {
-        tag: "product",
-        title: "Product photography that doesn't scream 'stock'",
-        body: "Lifestyle, studio, flat-lay, moving product. Mixed into your feed so it flows naturally.",
-      },
-      {
-        tag: "motion",
-        title: "Explainer animation",
-        body: "2D motion graphic explaining how your product works — perfect for landing pages and onboarding.",
-      },
-      {
-        tag: "podcast",
-        title: "Podcast clips, done for you",
-        body: "You record. We extract 10 reels, a trailer, and a YouTube chapter mark-up from every episode.",
-      },
-      {
-        tag: "system",
-        title: "A reusable visual system",
-        body: "LUTs, fonts, templates, sound design. Everyone on your team can make on-brand content in 5 minutes." },
+      { tag: "launch", title: "A 60-second launch film", body: "The hero video for your product page, your biggest ad, your investor deck. One shoot, infinite cuts." },
+      { tag: "ad-variants", title: "15 ad creatives from one shoot", body: "Shoot once, edit forever. Hooks, CTAs, proof points — varied to feed the algorithm." },
+      { tag: "product", title: "Product photography that doesn't scream 'stock'", body: "Lifestyle, studio, flat-lay, moving product." },
+      { tag: "motion", title: "Explainer animation", body: "2D motion graphic explaining how your product works — perfect for landing pages and onboarding." },
+      { tag: "podcast", title: "Podcast clips, done for you", body: "You record. We extract 10 reels, a trailer, and a YouTube chapter mark-up from every episode." },
+      { tag: "system", title: "A reusable visual system", body: "LUTs, fonts, templates, sound design. Everyone on your team can make on-brand content in 5 minutes." },
     ],
     deliverables: [
       { t: "Concept & script", b: "Treatments, storyboards, shot lists. Nothing random on set." },

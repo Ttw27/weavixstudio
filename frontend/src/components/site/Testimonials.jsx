@@ -5,9 +5,9 @@ export const Testimonials = () => {
   return (
     <section
       data-testid="testimonials-section"
-      className="relative py-20 md:py-28 px-5 md:px-10 bg-[var(--bg-2)]"
+      className="relative py-14 md:py-20 px-5 md:px-10 bg-[var(--bg-2)]"
     >
-      <div className="max-w-[1400px] mx-auto mb-14 md:mb-20">
+      <div className="max-w-[1400px] mx-auto mb-10 md:mb-14">
         <span className="sticker bg-[var(--p-mint)] mb-5">💬 kind words</span>
         <h2 className="display-xl text-[var(--ink)] max-w-3xl mt-4">
           What founders say<br />

@@ -21,7 +21,7 @@ export default function ProjectDetail() {
       <section className="pt-28 md:pt-36 px-5 md:px-10">
         <div className="max-w-[1400px] mx-auto">
           <Link
-            to="/#work"
+            to="/work"
             data-testid="back-to-work"
             className="inline-flex items-center gap-2 font-body text-sm font-bold text-[var(--ink-soft)] hover:text-[var(--ink)]"
           >

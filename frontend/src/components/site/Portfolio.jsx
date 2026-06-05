@@ -6,26 +6,28 @@ import ProjectPreview from "./ProjectPreview";
 
 const tilts = ["tilt-l", "tilt-r", "tilt-l-3", "tilt-r-3", "tilt-r", "tilt-l"];
 
-export const Portfolio = () => {
+export const Portfolio = ({ hideHeader = false }) => {
   return (
     <section
       id="work"
       data-testid="portfolio-section"
-      className="relative py-20 md:py-28 px-5 md:px-10 bg-[var(--bg-2)]"
+      className="relative py-14 md:py-20 px-5 md:px-10 bg-[var(--bg-2)]"
     >
-      <div className="max-w-[1400px] mx-auto mb-14 md:mb-20 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
-        <div>
-          <span className="sticker bg-[var(--p-pink)] text-white mb-5">♥ recent work</span>
-          <h2 className="display-xl text-[var(--ink)] max-w-3xl mt-4">
-            Real projects.<br />
-            <span className="squiggle">Real outcomes.</span>
-          </h2>
+      {!hideHeader && (
+        <div className="max-w-[1400px] mx-auto mb-10 md:mb-14 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+          <div>
+            <span className="sticker bg-[var(--p-pink)] text-white mb-5">♥ recent work</span>
+            <h2 className="display-xl text-[var(--ink)] max-w-3xl mt-4">
+              Real projects.<br />
+              <span className="squiggle">Real outcomes.</span>
+            </h2>
+          </div>
+          <p className="font-body text-base text-[var(--ink-soft)] max-w-md leading-relaxed">
+            A slice of recent work across web, AI, apps, paid and organic.
+            Click a card for the features, stack and results.
+          </p>
         </div>
-        <p className="font-body text-base text-[var(--ink-soft)] max-w-md leading-relaxed">
-          A slice of recent work across web, AI, apps, paid and organic.
-          Click a card for the features, stack and results.
-        </p>
-      </div>
+      )}
 
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 md:gap-9">
         {siteConfig.projects.map((p, i) => (
@@ -88,14 +90,14 @@ export const Portfolio = () => {
         ))}
       </div>
 
-      <div className="max-w-[1400px] mx-auto mt-14 md:mt-20 flex justify-center">
-        <a
-          href="#contact"
+      <div className="max-w-[1400px] mx-auto mt-10 md:mt-14 flex justify-center">
+        <Link
+          to="/contact"
           data-testid="portfolio-cta"
           className="btn-pill btn-pill-ink"
         >
           Got a project? Let's talk →
-        </a>
+        </Link>
       </div>
     </section>
   );

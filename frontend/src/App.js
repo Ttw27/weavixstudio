@@ -13,20 +13,14 @@ import StickyWhatsApp from "./components/site/StickyWhatsApp";
 import ProjectDetail from "./components/site/ProjectDetail";
 import ServiceDetail from "./components/site/ServiceDetail";
 import DesignPreviews from "./components/site/DesignPreviews";
+import WorkPage from "./pages/WorkPage";
+import ServicesPage from "./pages/ServicesPage";
+import ProcessPage from "./pages/ProcessPage";
+import ContactPage from "./pages/ContactPage";
 
-const ScrollToTopOrAnchor = () => {
+const ScrollToTopOnRouteChange = () => {
   const location = useLocation();
   useEffect(() => {
-    // Handle nav-driven scroll-to-section
-    const target = location.state?.scrollTo;
-    if (target) {
-      setTimeout(() => {
-        const el = document.getElementById(target);
-        if (el) el.scrollIntoView({ behavior: "smooth" });
-      }, 60);
-      return;
-    }
-    // Handle hash links like /#work coming from outside
     if (location.hash) {
       const el = document.getElementById(location.hash.replace("#", ""));
       if (el) {
@@ -35,7 +29,7 @@ const ScrollToTopOrAnchor = () => {
       }
     }
     window.scrollTo({ top: 0, behavior: "instant" });
-  }, [location]);
+  }, [location.pathname, location.hash]);
   return null;
 };
 
@@ -59,11 +53,15 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <ScrollToTopOrAnchor />
+        <ScrollToTopOnRouteChange />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/work" element={<WorkPage />} />
           <Route path="/work/:id" element={<ProjectDetail />} />
+          <Route path="/services" element={<ServicesPage />} />
           <Route path="/services/:slug" element={<ServiceDetail />} />
+          <Route path="/process" element={<ProcessPage />} />
+          <Route path="/contact" element={<ContactPage />} />
           <Route path="/previews" element={<DesignPreviews />} />
         </Routes>
       </BrowserRouter>
