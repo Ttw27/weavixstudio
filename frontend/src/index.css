@@ -136,6 +136,16 @@ body {
 .tilt-l-3 { transform: rotate(-3deg); }
 .tilt-r-3 { transform: rotate(3deg); }
 
+/* Disable tilts on small screens to prevent horizontal overflow */
+@media (max-width: 767px) {
+    .tilt-md-only.tilt-l,
+    .tilt-md-only.tilt-r,
+    .tilt-md-only.tilt-l-3,
+    .tilt-md-only.tilt-r-3 {
+        transform: none;
+    }
+}
+
 /* Squiggle underline */
 .squiggle {
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 8' preserveAspectRatio='none'><path d='M0 4 Q 15 0 30 4 T 60 4 T 90 4 T 120 4' stroke='%23FF5C8A' stroke-width='3' fill='none' stroke-linecap='round'/></svg>");

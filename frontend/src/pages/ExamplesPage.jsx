@@ -197,10 +197,10 @@ export default function ExamplesPage() {
       </section>
 
       {/* Examples grid */}
-      <section className="px-5 md:px-10 mt-8 md:mt-10">
+      <section className="px-5 md:px-10 mt-8 md:mt-10 overflow-hidden">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-7 md:gap-8">
           {visible.map((ex, i) => (
-            <div key={ex.id} className={tilts[i % tilts.length]}>
+            <div key={ex.id} className={`tilt-md-only ${tilts[i % tilts.length]}`}>
               <ExampleCard ex={ex} index={i} />
             </div>
           ))}
