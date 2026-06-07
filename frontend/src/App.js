@@ -3,6 +3,7 @@ import "@/App.css";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/site/Navbar";
 import Hero from "./components/site/Hero";
+import AiReady from "./components/site/AiReady";
 import Services from "./components/site/Services";
 import Portfolio from "./components/site/Portfolio";
 import Process from "./components/site/Process";
@@ -38,6 +39,7 @@ const Home = () => {
     <main data-testid="home-page" className="bg-[var(--bg)] text-[var(--ink)]">
       <Navbar />
       <Hero />
+      <AiReady />
       <Services />
       <Portfolio />
       <Process />

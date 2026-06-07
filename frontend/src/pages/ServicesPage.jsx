@@ -1,4 +1,5 @@
 import PageShell from "./PageShell";
+import AiReady from "../components/site/AiReady";
 import Services from "../components/site/Services";
 import { siteConfig, waLink } from "../lib/siteConfig";
 
@@ -29,6 +30,7 @@ export default function ServicesPage() {
       </section>
 
       <Services hideHeader />
+      <AiReady />
     </PageShell>
   );
 }
