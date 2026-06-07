@@ -5,6 +5,7 @@ import { siteConfig, waLink } from "../../lib/siteConfig";
 const links = [
   { label: "Work", to: "/work" },
   { label: "Services", to: "/services" },
+  { label: "Examples", to: "/examples" },
   { label: "Process", to: "/process" },
   { label: "Contact", to: "/contact" },
 ];

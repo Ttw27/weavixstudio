@@ -18,6 +18,7 @@ import WorkPage from "./pages/WorkPage";
 import ServicesPage from "./pages/ServicesPage";
 import ProcessPage from "./pages/ProcessPage";
 import ContactPage from "./pages/ContactPage";
+import ExamplesPage from "./pages/ExamplesPage";
 
 const ScrollToTopOnRouteChange = () => {
   const location = useLocation();
@@ -64,6 +65,7 @@ function App() {
           <Route path="/services/:slug" element={<ServiceDetail />} />
           <Route path="/process" element={<ProcessPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/examples" element={<ExamplesPage />} />
           <Route path="/previews" element={<DesignPreviews />} />
         </Routes>
       </BrowserRouter>

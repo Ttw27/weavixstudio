@@ -84,6 +84,15 @@ export default function ServiceDetail() {
             >
               WhatsApp →
             </a>
+            {slug === "digital-ecosystems" && (
+              <Link
+                to="/examples"
+                data-testid="service-examples-link"
+                className="btn-pill bg-[var(--p-mint)]"
+              >
+                See ecosystem examples →
+              </Link>
+            )}
           </div>
         </div>
       </section>

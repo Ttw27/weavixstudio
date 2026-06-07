@@ -1,0 +1,33 @@
+{
+  "summary": "Frontend-only testing of the new /examples page, filter functionality, navbar/footer/cross-links, and previous routes. 14 of 15 functional checks passed. Only failure is a horizontal overflow at 375px viewport on /examples caused by the tilt-* rotation classes on the example cards.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [
+      {
+        "screen": "/examples at 375px (mobile)",
+        "issues": [
+          "Horizontal overflow detected (document.scrollWidth=390 vs clientWidth=375). Caused by rotated example cards using tilt-r, tilt-l-3, tilt-r-3 classes — when rotated, the article.card-blunt extends right=388-390px beyond the 375px viewport. Other widths (1440/1024/768) are fine. Suggested fix: wrap the grid section with `overflow-hidden`, or skip tilts on mobile (lg:tilt-x), or reduce rotation magnitude on small screens."
+        ]
+      }
+    ]
+  },
+  "test_report_links": [],
+  "action_items": [
+    "Fix horizontal overflow on /examples at 375px caused by tilt-* rotation classes on example cards. Easiest fix: add `overflow-hidden` to the wrapping section (px-5 md:px-10 mt-8...) or to <main>, OR apply tilts only at md+ breakpoints."
+  ],
+  "critical_code_review_comments": [
+    "examplesContent.js — Category 'service' is labeled 'Services & trades' and includes both 'dental' and 'trades'; the testing requirement only required filter-hospitality => only cafe, which works. All other filters (service, digital, retail, health) also show exactly 1-2 cards as defined.",
+    "ExamplesPage.jsx is clean, ~250 lines, uses motion/Link properly. No console errors during full flow.",
+    "All required data-testid attributes are present (examples-page, examples-calendly, examples-back, filter-*, example-*, examples-cta-calendly, examples-cta-whatsapp).",
+    "Navbar (nav-link-examples, nav-mobile-examples), Footer (link to /examples), ServiceDetail (service-examples-link), AiReady (ai-ready-examples) are all wired correctly."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A", "frontend": "93%"},
+  "seed_data_creation": "None",
+  "retest_needed": true,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Iteration 6 validated the new /examples page. All testids present, filter logic works (filter-hospitality shows 1 cafe card, filter-all restores 6). Navbar, mobile nav, Footer, ServiceDetail cross-link (service-examples-link → /examples) and AiReady link (ai-ready-examples → /examples) all work. Previous routes /work, /services, /process, /contact, /previews all return 200 without errors. Only outstanding issue: 375px horizontal overflow on /examples page due to tilt-* classes on rotated cards (scrollWidth 390 vs clientWidth 375). No console errors detected on any page.",
+  "rca of the issue": "RCA: The tilt-r (~-1.5deg rotation common) and tilt-l-3/tilt-r-3 (~3deg rotation) classes on example card wrappers create rotated bounding boxes that exceed viewport width on mobile. Tested at 375x844, found .tilt-r-3 wrapper at right=384px and .tilt-l-3 wrapper at right=388px, exceeding the 375px viewport. Fix: add `overflow-x: clip` (or overflow-hidden) on the parent section/grid, OR conditionally apply tilts only at md: breakpoint."
+}

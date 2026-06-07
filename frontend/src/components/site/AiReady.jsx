@@ -191,6 +191,13 @@ export const AiReady = () => {
             >
               See AI services →
             </Link>
+            <Link
+              to="/examples"
+              data-testid="ai-ready-examples"
+              className="btn-pill bg-[var(--p-mint)]"
+            >
+              See examples
+            </Link>
           </div>
         </div>
       </div>
