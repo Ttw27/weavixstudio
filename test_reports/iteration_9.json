@@ -1,0 +1,25 @@
+{
+  "summary": "Iteration 9 — frontend-only test of /examples hybrid layout. All requested behaviours pass: 4 featured big cards (cafe/dental/trades/coach) render with full inline breakdown in 2-col desktop grid; 9 filter buttons present; 20 compact teasers in 'all' view (no duplication of featured ids); compact cards open drawer with scroll-lock; drawer closes via X and overlay; hospitality filter hides featured and shows exactly cafe + restaurant-chain + boutique-hotel as compact; all other filters render correct counts; mobile 375px stacks featured 1-col with zero horizontal overflow; home route still loads. One non-blocking React console warning about duplicate keys originates from <AnimatePresence> in Drawer (motion.div overlay and motion.aside have no key props).",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [],
+  "action_items": [
+    "Optional: Add `key` props to the two direct children of <AnimatePresence> inside Drawer (motion.div overlay + motion.aside) in /app/frontend/src/pages/ExamplesPage.jsx to silence the recurring React warning 'Encountered two children with the same key'. Also consider moving <AnimatePresence> to the parent so the drawer can animate out on close.",
+    "Optional data note: `etsy` appears in both `digital` and `retail` categories in examplesContent.js — intentional double-listing? Filter counts: digital=4, retail=3 confirmed."
+  ],
+  "critical_code_review_comments": [
+    "ExamplesPage.jsx Drawer: <AnimatePresence> wraps two siblings (overlay + aside) without keys → React key warning. Also AnimatePresence is rendered inside the Drawer component which is conditionally mounted by parent, so exit animations won't actually play. The AnimatePresence should live in the parent component, and Drawer should always render but the parent should swap based on `openExample` presence.",
+    "ExamplesPage.jsx (line 274-424) is ~425 lines and contains 3 sub-components (FeaturedCard, TeaserCard, Drawer). Acceptable now, but if more variants are added, consider splitting Drawer into its own file."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "n/a", "frontend": "100%"},
+  "seed_data_creation": "none",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "Hybrid layout on /examples verified end-to-end. Featured: cafe/dental/trades/coach. Compact 'all' = 20 cards. Filter hospitality returns 3 (cafe, restaurant-chain, boutique-hotel). Drawer scroll-lock + close via X & overlay both work. Only outstanding nit: React duplicate-key warning from AnimatePresence in Drawer (non-blocking).",
+  "rca of the issue": "React warning RCA: In ExamplesPage.jsx ~line 144, <AnimatePresence> wraps <motion.div data-testid='example-drawer-overlay'/> and <motion.aside data-testid={`example-drawer-${ex.id}`}/> as direct siblings without `key` props. AnimatePresence assigns implicit keys to children and complains when multiple unkeyed children co-exist. Fix: add key='overlay' and key={`drawer-${ex.id}`} to those two elements, OR refactor to hoist AnimatePresence into ExamplesPage so the Drawer can animate on exit when openId becomes null."
+}

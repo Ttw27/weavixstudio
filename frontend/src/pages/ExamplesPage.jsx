@@ -6,11 +6,104 @@ import PageShell from "./PageShell";
 import { siteConfig, waLink, colorMap } from "../lib/siteConfig";
 import { examples, categories } from "../lib/examplesContent";
 
-// Resolve background colour for the special "ink" color
+const FEATURED_COUNT = 4;
+const tilts = ["tilt-l", "tilt-r", "tilt-l-3", "tilt-r-3"];
+
+// Resolve background colour
 const bgFor = (c) => (c === "ink" ? "var(--ink)" : colorMap[c] || "var(--surface)");
 const fgFor = (c) => (c === "ink" ? "var(--bg)" : "var(--ink)");
 
-// Compact teaser card — shown in the grid
+// FEATURED — large 2-col card (fully expanded breakdown)
+const FeaturedCard = ({ ex, index }) => (
+  <motion.article
+    initial={{ opacity: 0, y: 24 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: "-60px" }}
+    transition={{ duration: 0.5, delay: (index % 2) * 0.05 }}
+    data-testid={`featured-${ex.id}`}
+    className="card-blunt overflow-hidden"
+    style={{ background: bgFor(ex.color) }}
+  >
+    {/* Header */}
+    <div className="p-6 md:p-7 border-b-2 border-[var(--ink)]/15" style={{ color: fgFor(ex.color) }}>
+      <div className="flex items-start gap-3">
+        <span
+          className="inline-flex items-center justify-center w-12 h-12 rounded-2xl text-2xl border-2 border-[var(--ink)] shadow-[3px_3px_0_0_var(--ink)]"
+          style={{ background: "var(--surface)", color: "var(--ink)" }}
+        >
+          {ex.icon}
+        </span>
+        <div>
+          <div className="font-mono text-[10px] uppercase tracking-[0.18em] opacity-70">
+            Featured · {String(index + 1).padStart(2, "0")}
+          </div>
+          <h3 className="font-display text-xl md:text-2xl leading-tight">{ex.industry}</h3>
+          <div className="font-body text-xs opacity-70 mt-0.5">{ex.size}</div>
+        </div>
+      </div>
+      <p className="mt-4 font-body text-sm md:text-[15px] leading-relaxed">{ex.tagline}</p>
+    </div>
+
+    {/* Body */}
+    <div className="p-6 md:p-7 bg-[var(--surface)] space-y-5">
+      <div>
+        <div className="font-hand text-2xl text-[var(--p-pink)] mb-1">before</div>
+        <ul className="flex flex-wrap gap-1.5">
+          {ex.before.map((b) => (
+            <li key={b} className="font-body text-[11px] text-[var(--ink)] bg-[var(--bg-2)] border border-[var(--ink)]/30 px-2 py-1 rounded-full line-through opacity-70">
+              {b}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <div className="font-hand text-2xl text-[var(--ink)] mb-1">what we integrated</div>
+        <ul className="space-y-1.5">
+          {ex.integrated.map((it) => (
+            <li key={it} className="flex items-start gap-2 font-body text-sm text-[var(--ink)]">
+              <span className="text-[var(--p-pink)] font-bold">+</span>
+              <span>{it}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <div className="font-hand text-2xl text-[var(--p-pink)] mb-1">
+          <Sparkles className="w-4 h-4 inline-block mr-1" /> custom AI we added
+        </div>
+        <ul className="space-y-1.5">
+          {ex.ai.map((a) => (
+            <li key={a} className="flex items-start gap-2 font-body text-sm text-[var(--ink)]">
+              <span className="text-[var(--p-pink)]">✦</span>
+              <span>{a}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    {/* Quote + results */}
+    <div className="p-6 md:p-7 border-t-2 border-[var(--ink)]" style={{ background: bgFor(ex.color), color: fgFor(ex.color) }}>
+      <blockquote className="font-display text-lg md:text-xl leading-tight">
+        <span className="font-hand text-3xl text-[var(--p-pink)]">"</span>
+        {ex.quote}
+        <span className="font-hand text-3xl text-[var(--p-pink)]">"</span>
+      </blockquote>
+      <div className="mt-2 font-body text-xs opacity-80">— {ex.quoteBy}</div>
+      <div className="mt-5 flex flex-wrap gap-2">
+        {ex.results.map((r) => (
+          <span key={r.k} className="font-body text-[11px] font-bold text-[var(--ink)] bg-[var(--surface)] border-2 border-[var(--ink)] px-2.5 py-1 rounded-full">
+            {r.v} <span className="opacity-60 font-normal">· {r.k}</span>
+          </span>
+        ))}
+      </div>
+    </div>
+  </motion.article>
+);
+
+// COMPACT — small teaser
 const TeaserCard = ({ ex, onClick, index }) => (
   <motion.button
     type="button"
@@ -25,25 +118,18 @@ const TeaserCard = ({ ex, onClick, index }) => (
   >
     <div className="flex items-start justify-between mb-3">
       <span
-        className="inline-flex items-center justify-center w-11 h-11 rounded-2xl text-xl border-2 border-current/30 shadow-[3px_3px_0_0_currentColor]"
-        style={{ background: ex.color === "ink" ? "var(--p-yellow)" : "var(--surface)", color: "var(--ink)" }}
+        className="inline-flex items-center justify-center w-11 h-11 rounded-2xl text-xl border-2 border-[var(--ink)] shadow-[3px_3px_0_0_var(--ink)]"
+        style={{ background: "var(--surface)", color: "var(--ink)" }}
       >
         {ex.icon}
       </span>
-      <span
-        className="font-body text-[10px] uppercase tracking-[0.18em] font-bold opacity-70 mt-1"
-      >
+      <span className="font-body text-[10px] uppercase tracking-[0.18em] font-bold opacity-70 mt-1">
         #{String(index + 1).padStart(2, "0")}
       </span>
     </div>
-
     <h3 className="font-display text-lg leading-tight">{ex.industry}</h3>
     <div className="font-body text-[11px] mt-1 opacity-75">{ex.size}</div>
-
-    <p className="mt-3 font-body text-[13px] leading-snug opacity-90 flex-1">
-      {ex.tagline}
-    </p>
-
+    <p className="mt-3 font-body text-[13px] leading-snug opacity-90 flex-1">{ex.tagline}</p>
     <div className="mt-4 flex items-center gap-1.5 font-display text-sm">
       <span className="underline decoration-2 underline-offset-2">See breakdown</span>
       <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -51,7 +137,7 @@ const TeaserCard = ({ ex, onClick, index }) => (
   </motion.button>
 );
 
-// Full breakdown — shown in the side drawer
+// Drawer (full breakdown on demand for compact cards)
 const Drawer = ({ ex, onClose }) => {
   if (!ex) return null;
   return (
@@ -72,15 +158,9 @@ const Drawer = ({ ex, onClose }) => {
         className="fixed top-0 right-0 z-50 h-full w-full md:w-[640px] bg-[var(--bg)] overflow-y-auto border-l-2 border-[var(--ink)]"
         data-testid={`example-drawer-${ex.id}`}
       >
-        {/* Drawer header */}
-        <div
-          className="p-6 md:p-8 border-b-2 border-[var(--ink)]"
-          style={{ background: bgFor(ex.color), color: fgFor(ex.color) }}
-        >
+        <div className="p-6 md:p-8 border-b-2 border-[var(--ink)]" style={{ background: bgFor(ex.color), color: fgFor(ex.color) }}>
           <div className="flex items-start justify-between mb-3">
-            <span
-              className="inline-flex items-center justify-center w-14 h-14 rounded-2xl text-2xl border-2 border-[var(--ink)] shadow-[3px_3px_0_0_var(--ink)] bg-[var(--surface)]"
-            >
+            <span className="inline-flex items-center justify-center w-14 h-14 rounded-2xl text-2xl border-2 border-[var(--ink)] shadow-[3px_3px_0_0_var(--ink)] bg-[var(--surface)]">
               {ex.icon}
             </span>
             <button
@@ -97,16 +177,12 @@ const Drawer = ({ ex, onClose }) => {
           <p className="mt-4 font-body text-sm md:text-base leading-relaxed">{ex.tagline}</p>
         </div>
 
-        {/* Drawer body */}
         <div className="p-6 md:p-8 space-y-7">
           <section>
             <div className="font-hand text-2xl text-[var(--p-pink)] mb-2">before</div>
             <ul className="flex flex-wrap gap-1.5">
               {ex.before.map((b) => (
-                <li
-                  key={b}
-                  className="font-body text-xs text-[var(--ink)] bg-[var(--bg-2)] border border-[var(--ink)]/30 px-2 py-1 rounded-full line-through opacity-70"
-                >
+                <li key={b} className="font-body text-xs text-[var(--ink)] bg-[var(--bg-2)] border border-[var(--ink)]/30 px-2 py-1 rounded-full line-through opacity-70">
                   {b}
                 </li>
               ))}
@@ -117,10 +193,7 @@ const Drawer = ({ ex, onClose }) => {
             <div className="font-hand text-2xl text-[var(--ink)] mb-2">what we integrated</div>
             <ul className="space-y-1.5">
               {ex.integrated.map((it) => (
-                <li
-                  key={it}
-                  className="flex items-start gap-2 font-body text-sm text-[var(--ink)]"
-                >
+                <li key={it} className="flex items-start gap-2 font-body text-sm text-[var(--ink)]">
                   <span className="text-[var(--p-pink)] font-bold">+</span>
                   <span>{it}</span>
                 </li>
@@ -130,15 +203,11 @@ const Drawer = ({ ex, onClose }) => {
 
           <section>
             <div className="font-hand text-2xl text-[var(--p-pink)] mb-2">
-              <Sparkles className="w-4 h-4 inline-block mr-1" />
-              custom AI we added
+              <Sparkles className="w-4 h-4 inline-block mr-1" /> custom AI we added
             </div>
             <ul className="space-y-1.5">
               {ex.ai.map((a) => (
-                <li
-                  key={a}
-                  className="flex items-start gap-2 font-body text-sm text-[var(--ink)]"
-                >
+                <li key={a} className="flex items-start gap-2 font-body text-sm text-[var(--ink)]">
                   <span className="text-[var(--p-pink)]">✦</span>
                   <span>{a}</span>
                 </li>
@@ -146,54 +215,30 @@ const Drawer = ({ ex, onClose }) => {
             </ul>
           </section>
 
-          <section
-            className="card-blunt p-5"
-            style={{ background: bgFor(ex.color), color: fgFor(ex.color) }}
-          >
+          <section className="card-blunt p-5" style={{ background: bgFor(ex.color), color: fgFor(ex.color) }}>
             <blockquote className="font-display text-lg md:text-xl leading-tight">
               <span className="font-hand text-3xl text-[var(--p-pink)]">"</span>
               {ex.quote}
               <span className="font-hand text-3xl text-[var(--p-pink)]">"</span>
             </blockquote>
             <div className="mt-2 font-body text-xs opacity-80">— {ex.quoteBy}</div>
-
             <div className="mt-4 flex flex-wrap gap-2">
               {ex.results.map((r) => (
-                <span
-                  key={r.k}
-                  className="font-body text-[11px] font-bold text-[var(--ink)] bg-[var(--surface)] border-2 border-[var(--ink)] px-2.5 py-1 rounded-full"
-                >
+                <span key={r.k} className="font-body text-[11px] font-bold text-[var(--ink)] bg-[var(--surface)] border-2 border-[var(--ink)] px-2.5 py-1 rounded-full">
                   {r.v} <span className="opacity-60 font-normal">· {r.k}</span>
                 </span>
               ))}
             </div>
           </section>
 
-          {/* CTA */}
           <section className="card-blunt p-5 bg-[var(--ink)] text-[var(--bg)]">
-            <div className="font-hand text-2xl text-[var(--p-yellow)]">
-              want this for your business?
-            </div>
-            <p className="mt-2 font-body text-sm opacity-80">
-              25-min chat. We'll tell you honestly what would work for you.
-            </p>
+            <div className="font-hand text-2xl text-[var(--p-yellow)]">want this for your business?</div>
+            <p className="mt-2 font-body text-sm opacity-80">25-min chat. We'll tell you honestly what would work for you.</p>
             <div className="mt-4 flex flex-wrap gap-2">
-              <a
-                href={siteConfig.calendlyUrl}
-                target="_blank"
-                rel="noreferrer"
-                data-testid="drawer-calendly"
-                className="btn-pill btn-pill-yellow"
-              >
+              <a href={siteConfig.calendlyUrl} target="_blank" rel="noreferrer" data-testid="drawer-calendly" className="btn-pill btn-pill-yellow">
                 <Calendar className="w-4 h-4" /> Book a chat
               </a>
-              <a
-                href={waLink()}
-                target="_blank"
-                rel="noreferrer"
-                data-testid="drawer-whatsapp"
-                className="btn-pill bg-[var(--surface)]"
-              >
+              <a href={waLink()} target="_blank" rel="noreferrer" data-testid="drawer-whatsapp" className="btn-pill bg-[var(--surface)]">
                 WhatsApp
               </a>
             </div>
@@ -208,7 +253,6 @@ export default function ExamplesPage() {
   const [active, setActive] = useState("all");
   const [openId, setOpenId] = useState(null);
 
-  // Lock body scroll while the drawer is open
   useEffect(() => {
     document.body.style.overflow = openId ? "hidden" : "";
     return () => {
@@ -216,12 +260,14 @@ export default function ExamplesPage() {
     };
   }, [openId]);
 
-  const visible =
-    active === "all"
-      ? examples
-      : examples.filter((e) =>
-          categories.find((c) => c.id === active)?.ids?.includes(e.id)
-        );
+  // When 'all', split featured + rest. When filtered, show only filtered as compact (no featured).
+  const isAll = active === "all";
+  const featured = isAll ? examples.slice(0, FEATURED_COUNT) : [];
+  const moreList = isAll
+    ? examples.slice(FEATURED_COUNT)
+    : examples.filter((e) =>
+        categories.find((c) => c.id === active)?.ids?.includes(e.id)
+      );
 
   const openExample = examples.find((e) => e.id === openId);
 
@@ -242,11 +288,10 @@ export default function ExamplesPage() {
             look like?
           </h1>
           <p className="mt-5 max-w-3xl font-body text-base md:text-lg text-[var(--ink-soft)] leading-relaxed">
-            Pick a business closest to{" "}
-            <span className="font-hand text-2xl text-[var(--p-pink)]">yours</span>{" "}
-            and tap it. We'll show you what their messy stack looked like
-            before, what we built, the custom AI we added, and what the owner
-            said after.
+            Below are four featured builds in full — then 20 more in compact
+            tiles you can tap to expand. Pick the one closest to{" "}
+            <span className="font-hand text-2xl text-[var(--p-pink)]">your</span>{" "}
+            business.
           </p>
 
           <div className="mt-7 flex flex-wrap gap-2.5">
@@ -270,10 +315,29 @@ export default function ExamplesPage() {
         </div>
       </section>
 
+      {/* Featured grid (2-col big cards) */}
+      {featured.length > 0 && (
+        <section className="px-5 md:px-10 mt-12 md:mt-16">
+          <div className="max-w-[1400px] mx-auto">
+            <div className="flex items-end justify-between mb-6 md:mb-8">
+              <span className="sticker bg-[var(--p-yellow)]">★ featured</span>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+              {featured.map((ex, i) => (
+                <div key={ex.id} className={`tilt-md-only ${tilts[i % tilts.length]}`}>
+                  <FeaturedCard ex={ex} index={i} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Filter tabs */}
-      <section className="px-5 md:px-10 mt-10 md:mt-14 sticky top-14 md:top-16 z-30 bg-[var(--bg)]/85 backdrop-blur-md py-3 border-y border-[var(--ink)]/15">
+      <section className="px-5 md:px-10 mt-14 md:mt-20 sticky top-14 md:top-16 z-30 bg-[var(--bg)]/90 backdrop-blur-md py-3 border-y border-[var(--ink)]/15">
         <div className="max-w-[1400px] mx-auto">
           <div className="flex items-center gap-2 flex-wrap">
+            <span className="font-hand text-xl text-[var(--p-pink)] mr-1 hidden md:inline">browse:</span>
             {categories.map((c) => (
               <button
                 key={c.id}
@@ -297,23 +361,37 @@ export default function ExamplesPage() {
 
       {/* Compact grid */}
       <section className="px-5 md:px-10 mt-6 mb-16">
-        <div className="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-5">
-          <AnimatePresence mode="popLayout">
-            {visible.map((ex, i) => (
-              <TeaserCard
-                key={ex.id}
-                ex={ex}
-                index={i}
-                onClick={() => setOpenId(ex.id)}
-              />
-            ))}
-          </AnimatePresence>
+        <div className="max-w-[1400px] mx-auto">
+          <div className="mb-5 md:mb-7 flex items-end justify-between">
+            <h2 className="font-display text-xl md:text-2xl text-[var(--ink)]">
+              {isAll ? "More examples" : `${moreList.length} matching example${moreList.length === 1 ? "" : "s"}`}
+            </h2>
+            {isAll && (
+              <p className="font-body text-xs text-[var(--ink-soft)] hidden md:block">
+                Tap any tile for the full breakdown ↗
+              </p>
+            )}
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-5">
+            <AnimatePresence mode="popLayout">
+              {moreList.map((ex, i) => (
+                <TeaserCard
+                  key={ex.id}
+                  ex={ex}
+                  index={i}
+                  onClick={() => setOpenId(ex.id)}
+                />
+              ))}
+            </AnimatePresence>
+          </div>
+
+          {moreList.length === 0 && (
+            <p className="mt-10 text-center font-body text-[var(--ink-soft)]">
+              No examples in this category yet.
+            </p>
+          )}
         </div>
-        {visible.length === 0 && (
-          <p className="max-w-[1400px] mx-auto mt-10 text-center font-body text-[var(--ink-soft)]">
-            No examples in this category yet.
-          </p>
-        )}
       </section>
 
       {/* "Don't see yours?" CTA */}
@@ -331,32 +409,17 @@ export default function ExamplesPage() {
             </p>
           </div>
           <div className="flex flex-wrap gap-3 shrink-0">
-            <a
-              href={siteConfig.calendlyUrl}
-              target="_blank"
-              rel="noreferrer"
-              data-testid="examples-cta-calendly"
-              className="btn-pill btn-pill-yellow"
-            >
+            <a href={siteConfig.calendlyUrl} target="_blank" rel="noreferrer" data-testid="examples-cta-calendly" className="btn-pill btn-pill-yellow">
               Book a chat
             </a>
-            <a
-              href={waLink()}
-              target="_blank"
-              rel="noreferrer"
-              data-testid="examples-cta-whatsapp"
-              className="btn-pill bg-[var(--surface)]"
-            >
+            <a href={waLink()} target="_blank" rel="noreferrer" data-testid="examples-cta-whatsapp" className="btn-pill bg-[var(--surface)]">
               WhatsApp
             </a>
           </div>
         </div>
       </section>
 
-      {/* Detail drawer */}
-      {openExample && (
-        <Drawer ex={openExample} onClose={() => setOpenId(null)} />
-      )}
+      {openExample && <Drawer ex={openExample} onClose={() => setOpenId(null)} />}
     </PageShell>
   );
 }
