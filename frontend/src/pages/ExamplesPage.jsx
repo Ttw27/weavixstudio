@@ -143,6 +143,7 @@ const Drawer = ({ ex, onClose }) => {
   return (
     <AnimatePresence>
       <motion.div
+        key="overlay"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -151,6 +152,7 @@ const Drawer = ({ ex, onClose }) => {
         data-testid="example-drawer-overlay"
       />
       <motion.aside
+        key="drawer"
         initial={{ x: "100%" }}
         animate={{ x: 0 }}
         exit={{ x: "100%" }}
