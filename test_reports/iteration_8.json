@@ -1,0 +1,37 @@
+{
+  "summary": "Frontend-only test of /examples redesign (compact teaser grid + side drawer + 24 examples + 9 categories). All requirements verified successfully — no issues found.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "ExamplesPage.jsx is well-structured (~360 lines). Good separation: TeaserCard + Drawer + main component.",
+    "Body scroll lock correctly uses useEffect cleanup to reset overflow on unmount — prevents stuck-scroll bug.",
+    "Drawer uses AnimatePresence + spring physics — smooth UX.",
+    "Filter counts are computed inline on every render — fine for 24 items, but if list grows to 100+, consider useMemo."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A", "frontend": "100%"},
+  "test_credentials": "N/A",
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "Verified: 24 teaser cards render with correct data-testid (example-{id}). All 9 filter buttons present with correct counts (All:24, Service:4, Hospitality:3, Digital:4, Retail:3, Health:5, Pro:3, Education:2, Community:2). Filter selections show correct subsets: hospitality=[cafe, restaurant-chain, boutique-hotel], pro=[accountant, estate-agent, law-firm], education=[driving-school, tutor], community=[wedding-planner, cycling-club]. Drawer opens on teaser click with data-testid example-drawer-{id}, overlay data-testid example-drawer-overlay present, drawer-close + drawer-calendly + drawer-whatsapp CTAs all present. Body scroll lock toggles correctly (document.body.style.overflow='hidden' when open, '' when closed). Drawer closes via X button AND via overlay click. No console errors. Mobile viewport (375px) has no horizontal overflow; drawer takes full width on mobile. examples-cta-calendly + examples-cta-whatsapp present at bottom.",
+  "verified_features": [
+    "examples-page testid present",
+    "24 teaser cards (cafe, dental, trades, coach, ecom, fitness, football, etsy, accountant, estate-agent, restaurant-chain, agency, gp-clinic, boutique-hotel, driving-school, tutor, law-firm, vet, landscaping, podcaster, removals, wedding-planner, salon, cycling-club)",
+    "Compact teaser style (icon + name + size + tagline + 'See breakdown' affordance)",
+    "Drawer opens with full breakdown content (before/integrated/AI/quote/results/CTAs)",
+    "Drawer overlay click closes drawer",
+    "Drawer close button closes drawer",
+    "Body scroll lock when drawer open",
+    "9 filter categories with counts",
+    "Sticky filter bar (sticky top-14 md:top-16)",
+    "Mobile responsive (no horizontal overflow at 375px)",
+    "No console errors"
+  ]
+}
