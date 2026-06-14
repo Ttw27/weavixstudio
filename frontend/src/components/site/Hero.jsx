@@ -103,8 +103,8 @@ export const Hero = () => {
       </div>
 
       {/* Marquee */}
-      <div className="relative mt-10 md:mt-14 border-y-2 border-[var(--ink)] py-3 md:py-4 bg-[var(--p-yellow)]">
-        <Marquee gradient={false} speed={50} pauseOnHover={false}>
+      <div className="relative mt-10 md:mt-14 border-y-2 border-[var(--ink)] py-2 md:py-2.5 bg-[var(--p-yellow)]">
+        <Marquee gradient={false} speed={40} pauseOnHover={false}>
           <span className="marquee-text">
             digital ecosystems <span className="text-[var(--p-pink)]">★</span> custom AI{" "}
             <span className="text-[var(--p-pink)]">★</span> websites{" "}

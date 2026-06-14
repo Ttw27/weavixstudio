@@ -1,0 +1,41 @@
+{
+  "summary": "Frontend-only iteration 11: validated the hero marquee size reduction and the new 'Three ways to work with us' section across all 8 service detail pages. 17/17 checks passed, 0 console errors.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [],
+  "tested_routes": [
+    "/", "/work", "/examples", "/process", "/contact", "/readiness-plan",
+    "/services/digital-ecosystems", "/services/websites", "/services/app-dev",
+    "/services/ai-automation", "/services/custom-ai", "/services/ad-management",
+    "/services/social-media", "/services/creative-studio"
+  ],
+  "verified_behaviour": [
+    "Hero .marquee-text computed font-size at 1920px viewport = 35.2px (was ~72px); clamp(0.95rem,2.2vw,2.2rem) applied as intended — roughly half the prior size.",
+    "All 8 service detail pages render data-testid='three-ways-section'.",
+    "All 8 pages expose mode-own (Set up. Hand over.), mode-ai (Set up + expert AI inside.), mode-managed (We drive for 3-6 months.).",
+    "mode-ai shows '★ most popular' badge and has md:scale-[1.03] class for slight scale-up at md+ breakpoints.",
+    "Section headline contains both 'You own it.' and 'We help you run it.'",
+    "Section paragraph mentions the exact service title on each page (e.g. 'Ad Management', 'Digital Ecosystems', 'Website Development', 'App Development + AI', 'AI Automation', 'Custom AI & Prompts', 'Social Media', 'Creative Studio').",
+    "Hand-drawn 'mix & match' note present at bottom of every three-ways section.",
+    "Service intros mention 'you own/yours', AI and the '3-6 month' managed option.",
+    "No console errors on any service detail page nor on /, /work, /examples, /process, /contact, /readiness-plan.",
+    "Mobile (375x844) on /services/ad-management: three-ways cards stack 1-col vertically (tops 5018 -> 5300 -> 5606) with no horizontal overflow (scrollWidth == windowWidth = 375)."
+  ],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "ThreeWays.jsx and ServiceDetail.jsx are clean, well-scoped, no DRY violations.",
+    "Marquee CSS clamp implemented correctly with proper min/preferred/max units."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "n/a", "frontend": "100%"},
+  "test_credentials": "n/a",
+  "seed_data_creation": "none",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "Iteration 11 verified marquee size reduction + new ThreeWays section across all 8 service detail pages. All checks green, no follow-up required.",
+  "rca_of_the_issue": "n/a — no issues found."
+}

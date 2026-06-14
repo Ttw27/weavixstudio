@@ -7,9 +7,9 @@ export const servicesContent = {
     code: "01",
     title: "Digital Ecosystems",
     heroColor: "yellow",
-    tagline: "One unified platform. Not eight disconnected tools.",
+    tagline: "We build the platform — YOU own it. With an expert AI baked in.",
     intro:
-      "Most growing businesses end up with a Frankenstein stack: a Squarespace site, Calendly for bookings, a Google Sheet for clients, Mailchimp for emails, Airtable for projects, Stripe for invoices, Slack for chat, Notion for docs, and three Make/Zapier flows holding it all together with duct tape. We replace it with one bespoke ecosystem — built around how YOUR business actually runs. Your branding everywhere, your data in one place, AI woven through the seams.",
+      "Bigger than hiring an agency. We design a digital platform that you fully own and can run yourself: every login, dashboard, integration is yours. We then plug an expert AI into your whole stack — quietly analysing, recommending and improving the system as it learns your business. Prefer hands-off at first? We'll drive it for 3–6 months while you learn the controls. Then it's all yours.",
     painPoints: [
       {
         title: "Your tools don't talk to each other",
@@ -87,9 +87,9 @@ export const servicesContent = {
     code: "02",
     title: "Website Development",
     heroColor: "pink",
-    tagline: "A site that actually converts — not just a pretty brochure.",
+    tagline: "A site you own and can run yourself — with an AI co-pilot built in.",
     intro:
-      "Most small-business sites leak money. They load slow, read like a template, and give prospects zero reason to pick up the phone. We build sites that look sharp AND pull their weight — fast, measurable, and easy for your team to update.",
+      "A website isn't something you 'pay an agency to keep alive'. It's an asset your team should fully control. We build yours on a stack you can run yourself, with an editor your team will actually use, plus an expert AI that watches traffic, suggests improvements and even drafts A/B test ideas. Want us to drive it for the first 3–6 months while you find your feet? We can. Want to take the keys from day one? Also fine.",
     painPoints: [
       {
         title: "Your site is embarrassing to share",
@@ -172,9 +172,9 @@ export const servicesContent = {
     code: "04",
     title: "AI Automation",
     heroColor: "mint",
-    tagline: "Give your team back 20 hours a week. Seriously.",
+    tagline: "Automations on YOUR infrastructure — no black box.",
     intro:
-      "Every business has invisible tasks that eat hours: chasing emails, copying data between tools, summarising calls, qualifying leads. AI is now cheap enough and good enough to do most of them better than a junior staff member — and never takes a sick day. We find the boring work, wrap AI around it, and ship it into your existing tools.",
+      "Other people will sell you 'AI automation' that runs on their servers, in their accounts, using their prompts — and the moment you leave, it all leaves with them. We build YOUR automations on YOUR infrastructure. You see every workflow, every prompt, every cost. We add an oversight AI that audits the automations themselves — flagging drift, edge cases and new savings. We can monitor it for the first 3–6 months while you learn it. Then it's yours to keep.",
     painPoints: [
       { title: "You're drowning in inbound", body: "Half your day is replying to the same 10 questions. Good leads get lost in the noise." },
       { title: "Your team copy-pastes for a living", body: "Same info, 4 different tools, every day. You know it's daft. You don't have time to fix it." },
@@ -212,9 +212,9 @@ export const servicesContent = {
     code: "05",
     title: "Custom AI & Prompts",
     heroColor: "lilac",
-    tagline: "Stop arguing with ChatGPT. Start using AI that already knows your business.",
+    tagline: "Your AI tools. Your prompts. Your data. We even keep tuning them.",
     intro:
-      "Most people using ChatGPT, Claude or Midjourney waste hours fighting prompts, getting generic outputs, and burning credits on bad attempts. We build custom AI tools — branded GPTs, prompt libraries, personal AI assistants, design-tool helpers — all trained on YOUR business, YOUR voice, YOUR knowledge. Your team gets perfect outputs on the first try, without becoming prompt engineers.",
+      "The prompts are yours. The data stays yours. We train custom GPTs on YOUR knowledge, give your team a one-click prompt library, and bake in an expert 'AI ops' agent that watches usage and re-tunes prompts as your business evolves. We can run AI operations for 3–6 months while everyone gets confident — or just deliver the kit and step back. Either way, you never lose access or ownership.",
     painPoints: [
       {
         title: "ChatGPT keeps giving generic answers",
@@ -297,9 +297,9 @@ export const servicesContent = {
     code: "06",
     title: "Ad Management",
     heroColor: "orange",
-    tagline: "Ads that pay for themselves — creative, buying, and CRO under one roof.",
+    tagline: "Ads on YOUR accounts — full transparency, plus an AI strategist watching 24/7.",
     intro:
-      "Most agencies either make ads OR buy media. We do both, so we can kill bad creative fast and double-down on winners without a three-way email chain. Meta, Google, TikTok, YouTube — we run the whole funnel and show you the numbers every week.",
+      "Most agencies run your campaigns from THEIR ad accounts. You can't see what's happening, you don't own the data, and the day you leave — they keep everything. We don't do that. We plug straight into YOUR Meta, Google and TikTok accounts, build a dashboard so you see every penny, and bake in an expert AI that watches your campaigns 24/7 and tells you (or implements) what to change. We can run the whole thing for the first 3–6 months while you learn the ropes — but you own everything from day one.",
     painPoints: [
       { title: "Your ads stopped working", body: "ROAS used to be 3x. Now it's 1.2x and Meta keeps asking for more budget." },
       { title: "Your creative is the bottleneck", body: "You have the budget. You don't have 15 fresh videos a month. The algorithm is starving." },
@@ -332,9 +332,9 @@ export const servicesContent = {
     code: "07",
     title: "Social Media",
     heroColor: "yellow",
-    tagline: "Content that actually sounds like you — not another template mill.",
+    tagline: "A content system YOU run, with an expert AI watching what works.",
     intro:
-      "Most agencies will post generic 'Monday motivation' to your feed and call it strategy. We build a content engine around your actual voice, your actual customers, and your actual business goals. Reels, posts, community, UGC — the whole system.",
+      "Most agencies post to YOUR feed from THEIR scheduling tool — you can't see the calendar, the analytics, or what's planned next week. We give you a content system on YOUR side: planning, drafting, scheduling, analytics all in one branded dashboard. Plus an expert AI that watches performance and suggests (or drafts) the next moves automatically. We can manage it for 3–6 months while you find your rhythm, or just set it up and hand it over.",
     painPoints: [
       { title: "Posting feels like a chore", body: "You know it matters. You don't have time. You're 4 weeks behind on your calendar." },
       { title: "Your content sounds like everyone else", body: "Stock photos, generic quotes, zero point of view. Nothing anyone would screenshot." },
@@ -367,9 +367,9 @@ export const servicesContent = {
     code: "08",
     title: "Creative Studio",
     heroColor: "blue",
-    tagline: "Video, photo, motion — made for the feed, the ad, the hero section.",
+    tagline: "Your brand kit, your edit projects, your AI that drafts new variants on demand.",
     intro:
-      "Need a launch film? Product photography? 15 ad variants by Friday? We run an in-house creative team that ships at advertising speed. Concept, script, shoot, edit, grade, cutdowns. Every format you need, from one team.",
+      "You'll never need to wait for 'your agency' to release the files. Everything we make lands in YOUR folders, YOUR brand kit, YOUR edit projects — straight away. We add an expert creative AI that learns your style and drafts new variants whenever you need them. Shoots, edits and motion on retainer for 3–6 months if you want — or just set up the system and your team takes over from there.",
     painPoints: [
       { title: "Your assets look stitched together", body: "Stock photos + cousin's iPhone + DIY Canva. The inconsistency is bleeding trust." },
       { title: "You need variants yesterday", body: "The ad works at 9:16 but not at 1:1, and the edit house takes 2 weeks." },

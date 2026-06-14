@@ -7,6 +7,7 @@ import ProjectPreview from "./ProjectPreview";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import StickyWhatsApp from "./StickyWhatsApp";
+import ThreeWays from "./ThreeWays";
 
 const tilts = ["tilt-l", "tilt-r", "tilt-l-3", "tilt-r-3", "tilt-r", "tilt-l"];
 const ideaPalette = ["yellow", "pink", "blue", "mint", "lilac", "orange"];
@@ -213,9 +214,12 @@ export default function ServiceDetail() {
         </div>
       </section>
 
+      {/* THREE WAYS TO WORK WITH US */}
+      <ThreeWays serviceTitle={content.title} />
+
       {/* RELATED PROJECTS */}
       {relatedProjects.length > 0 && (
-        <section className="px-5 md:px-10 mt-24 md:mt-32">
+        <section className="px-5 md:px-10 mt-20 md:mt-28">
           <div className="max-w-[1400px] mx-auto">
             <span className="sticker bg-[var(--p-mint)] mb-4">👀 we've done this</span>
             <h2 className="display-xl !text-3xl md:!text-5xl text-[var(--ink)] mt-3">

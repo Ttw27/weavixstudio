@@ -159,9 +159,9 @@ body {
 .marquee-text {
     font-family: 'Fredoka', sans-serif;
     font-weight: 700;
-    font-size: clamp(1.75rem, 4.5vw, 4.5rem);
+    font-size: clamp(0.95rem, 2.2vw, 2.2rem);
     line-height: 1;
-    padding: 0 1.25rem;
+    padding: 0 0.9rem;
     white-space: nowrap;
     color: var(--ink);
 }
