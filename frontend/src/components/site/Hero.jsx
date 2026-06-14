@@ -48,8 +48,21 @@ export const Hero = () => {
         <motion.p
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.25 }}
-          className="mt-6 max-w-2xl font-body text-sm md:text-base text-[var(--ink-soft)] leading-relaxed"
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-5 max-w-2xl font-display text-base md:text-lg text-[var(--ink)] leading-snug"
+        >
+          A standalone website? That's so{" "}
+          <span className="line-through opacity-60">2018</span>. Today it's
+          about whole <span className="text-[var(--p-pink)]">digital ecosystems</span> —
+          ones that <span className="bg-[var(--p-yellow)] px-1 rounded">lower costs</span>,
+          put AI to work, and give you back your time.
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mt-4 max-w-2xl font-body text-sm md:text-base text-[var(--ink-soft)] leading-relaxed"
         >
           Sites, apps, customer portals, automations and{" "}
           <span className="font-hand text-xl text-[var(--p-pink)]">custom AIs</span>{" "}
@@ -60,26 +73,24 @@ export const Hero = () => {
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.6, delay: 0.45 }}
           className="mt-7 flex flex-wrap gap-2.5"
         >
+          <Link
+            to="/readiness-plan"
+            data-testid="hero-readiness-btn"
+            className="btn-pill btn-pill-pink"
+          >
+            Get my free readiness plan <ArrowRight className="w-4 h-4" />
+          </Link>
           <a
             href={siteConfig.calendlyUrl}
             target="_blank"
             rel="noreferrer"
             data-testid="hero-calendly-btn"
-            className="btn-pill btn-pill-pink"
-          >
-            <Calendar className="w-4 h-4" /> Book a chat
-          </a>
-          <a
-            href={waLink()}
-            target="_blank"
-            rel="noreferrer"
-            data-testid="hero-whatsapp-btn"
             className="btn-pill btn-pill-yellow"
           >
-            Message on WhatsApp <ArrowRight className="w-4 h-4" />
+            <Calendar className="w-4 h-4" /> Or book a chat
           </a>
           <Link
             to="/services"

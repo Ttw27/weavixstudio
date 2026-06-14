@@ -88,31 +88,29 @@ export const AiFrustration = () => {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
+              <Link
+                to="/readiness-plan"
+                data-testid="ai-frustration-readiness"
+                className="btn-pill btn-pill-yellow"
+              >
+                Get my free plan <ArrowRight className="w-4 h-4" />
+              </Link>
               <a
                 href={siteConfig.calendlyUrl}
                 target="_blank"
                 rel="noreferrer"
                 data-testid="ai-frustration-calendly"
-                className="btn-pill btn-pill-yellow"
+                className="btn-pill bg-[var(--p-pink)]"
               >
-                <Calendar className="w-4 h-4" /> Book a 25-min chat
+                <Calendar className="w-4 h-4" /> Or book a chat
               </a>
               <Link
                 to="/services/custom-ai"
                 data-testid="ai-frustration-learn"
-                className="btn-pill bg-[var(--p-pink)]"
-              >
-                See Custom AI service <ArrowRight className="w-4 h-4" />
-              </Link>
-              <a
-                href={waLink()}
-                target="_blank"
-                rel="noreferrer"
-                data-testid="ai-frustration-whatsapp"
                 className="btn-pill bg-[var(--surface)]"
               >
-                WhatsApp
-              </a>
+                Custom AI service
+              </Link>
             </div>
           </div>
 

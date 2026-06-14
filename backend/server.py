@@ -37,6 +37,49 @@ class StatusCheck(BaseModel):
 class StatusCheckCreate(BaseModel):
     client_name: str
 
+# --- Leads (Readiness Plan submissions) ---
+class LeadCreate(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+
+    business_name: str
+    industry: str
+    business_size: str
+    biggest_time_drain: str
+    current_tools: list[str] = []
+    interested_in: list[str] = []
+    monthly_software_spend: str = ""
+    name: str
+    email: str
+    phone: str = ""
+    extra_notes: str = ""
+
+class Lead(LeadCreate):
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    status: str = "new"
+
+@api_router.post("/leads", response_model=Lead)
+async def create_lead(input: LeadCreate):
+    lead = Lead(**input.model_dump())
+    doc = lead.model_dump()
+    doc['created_at'] = doc['created_at'].isoformat()
+    await db.leads.insert_one(doc)
+    logger.info(f"New readiness-plan lead: {lead.business_name} ({lead.email})")
+    return lead
+
+@api_router.get("/leads", response_model=List[Lead])
+async def list_leads(admin_token: str = ""):
+    # Lightweight protection — clients pass ?admin_token=... matching env var
+    expected = os.environ.get('ADMIN_TOKEN', '')
+    if not expected or admin_token != expected:
+        return []
+    leads = await db.leads.find({}, {"_id": 0}).sort("created_at", -1).to_list(1000)
+    for lead in leads:
+        if isinstance(lead.get('created_at'), str):
+            lead['created_at'] = datetime.fromisoformat(lead['created_at'])
+    return leads
+
+
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
 async def root():

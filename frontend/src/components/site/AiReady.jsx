@@ -92,12 +92,19 @@ export const AiReady = () => {
           <div className="card-blunt p-5 bg-[var(--p-yellow)] max-w-xs hidden md:block tilt-r">
             <div className="font-hand text-2xl text-[var(--ink)]">free</div>
             <div className="font-display text-lg text-[var(--ink)] leading-tight mt-1">
-              25-minute AI readiness chat
+              Personalised AI readiness plan
             </div>
             <p className="font-body text-xs text-[var(--ink)] opacity-80 mt-2">
-              We'll spot 2–3 quick wins for your business. No deck, no pitch,
-              no commitment.
+              90-second questionnaire → we email you a tailored plan showing
+              what we'd build and what it'd save. No call required.
             </p>
+            <Link
+              to="/readiness-plan"
+              data-testid="ai-ready-side-cta"
+              className="btn-pill btn-pill-ink !py-1.5 !px-3 mt-4 text-xs"
+            >
+              Start <ArrowRight className="w-3 h-3" />
+            </Link>
           </div>
         </div>
 
@@ -158,31 +165,30 @@ export const AiReady = () => {
               ready when you are
             </div>
             <h3 className="display-lg !text-2xl md:!text-3xl text-[var(--bg)] mt-1">
-              Book a free 25-min AI readiness chat.
+              Get your free, personalised AI readiness plan.
             </h3>
             <p className="mt-3 font-body text-sm text-[var(--bg)] opacity-80">
-              No prep needed. We'll tell you — honestly — where AI would make
-              the biggest difference in your business, and where it wouldn't.
+              Answer 7 quick questions. We'll email back the exact AI moves
+              we'd make for your business — including estimated time and money
+              saved. No call required.
             </p>
           </div>
           <div className="flex flex-wrap gap-3 shrink-0">
+            <Link
+              to="/readiness-plan"
+              data-testid="ai-ready-readiness"
+              className="btn-pill btn-pill-yellow"
+            >
+              Get my plan <ArrowRight className="w-4 h-4" />
+            </Link>
             <a
               href={siteConfig.calendlyUrl}
               target="_blank"
               rel="noreferrer"
               data-testid="ai-ready-calendly"
-              className="btn-pill btn-pill-yellow"
-            >
-              Book the chat <ArrowRight className="w-4 h-4" />
-            </a>
-            <a
-              href={waLink()}
-              target="_blank"
-              rel="noreferrer"
-              data-testid="ai-ready-whatsapp"
               className="btn-pill bg-[var(--surface)]"
             >
-              WhatsApp instead
+              Or book a chat
             </a>
             <Link
               to="/services/custom-ai"
