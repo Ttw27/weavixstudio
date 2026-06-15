@@ -5,8 +5,9 @@ from motor.motor_asyncio import AsyncIOMotorClient
 import os
 import logging
 import json
+import asyncio
 import jwt
-import httpx
+import resend
 from pathlib import Path
 from pydantic import BaseModel, Field, ConfigDict
 from typing import List, Optional, Any
@@ -152,7 +153,8 @@ PUBLIC_SETTINGS_KEYS = [
 ]
 ADMIN_ONLY_KEYS = [
     "admin_password", "admin_notify_email",
-    "resend_api_key", "google_ads_id", "facebook_ads_id",
+    "resend_api_key", "resend_from_email",
+    "google_ads_id", "facebook_ads_id",
 ]
 SEO_PAGE_KEYS = [
     "seo_home", "seo_work", "seo_services", "seo_examples", "seo_process",
@@ -223,6 +225,7 @@ async def send_lead_email(lead: dict):
     api_key = await get_setting("resend_api_key")
     to_addr = await get_setting("admin_notify_email")
     studio = await get_setting("studioName", "Your Studio")
+    from_email = await get_setting("resend_from_email", "onboarding@resend.dev")
     if not api_key or not to_addr:
         logger.info("Resend not configured; skipping email notification.")
         return
@@ -241,21 +244,46 @@ async def send_lead_email(lead: dict):
     <p><strong>Extra notes:</strong> {lead.get('extra_notes') or '—'}</p>
     """
     try:
-        async with httpx.AsyncClient(timeout=15) as cx:
-            r = await cx.post(
-                "https://api.resend.com/emails",
-                headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
-                json={
-                    "from": f"{studio} <onboarding@resend.dev>",
-                    "to": [to_addr],
-                    "subject": f"New readiness plan — {lead.get('business_name')}",
-                    "html": body,
-                },
-            )
-            if r.status_code >= 400:
-                logger.warning(f"Resend error {r.status_code}: {r.text[:300]}")
+        resend.api_key = api_key
+        params = {
+            "from": f"{studio} <{from_email}>",
+            "to": [to_addr],
+            "subject": f"New readiness plan — {lead.get('business_name')}",
+            "html": body,
+        }
+        # Run the sync SDK call in a thread so we don't block the event loop
+        result = await asyncio.to_thread(resend.Emails.send, params)
+        logger.info(f"Resend email queued: {result.get('id') if isinstance(result, dict) else result}")
     except Exception as e:
         logger.exception(f"Resend send failed: {e}")
+
+
+@api_router.post("/admin/test-email", dependencies=[Depends(require_admin)])
+async def admin_test_email():
+    """Trigger a test Resend email so the admin can verify setup."""
+    api_key = await get_setting("resend_api_key")
+    to_addr = await get_setting("admin_notify_email")
+    studio = await get_setting("studioName", "Your Studio")
+    from_email = await get_setting("resend_from_email", "onboarding@resend.dev")
+    if not api_key:
+        raise HTTPException(400, "resend_api_key is not set in Admin → Integrations.")
+    if not to_addr:
+        raise HTTPException(400, "admin_notify_email is not set in Admin → Integrations.")
+    try:
+        resend.api_key = api_key
+        result = await asyncio.to_thread(
+            resend.Emails.send,
+            {
+                "from": f"{studio} <{from_email}>",
+                "to": [to_addr],
+                "subject": f"Test email from {studio}",
+                "html": f"<p>This is a test email from your {studio} admin dashboard. If you got this, Resend is wired up correctly. ✨</p>",
+            },
+        )
+        return {"ok": True, "id": result.get("id") if isinstance(result, dict) else None}
+    except Exception as e:
+        logger.exception(f"Resend test send failed: {e}")
+        raise HTTPException(500, f"Resend error: {e}")
 
 
 # Add your routes to the router instead of directly to app

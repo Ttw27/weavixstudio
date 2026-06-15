@@ -1,0 +1,52 @@
+{
+  "summary": "Iteration 12 — first full E2E of the Admin dashboard subsystem (Admin auth, /api/admin/*, dynamic SiteSettings, Resend error paths, shared ReadinessForm on /contact + /readiness-plan, sticky CTA cluster). Backend: 26/26 pytest tests pass. Frontend: login, all 4 tabs, leads list/filter/details, settings save, test-email error path, password rotation, SEO save all work. Contact-embedded readiness form submits end-to-end including ALL 4 'Other' free-text fields which persist to MongoDB. Sticky CTAs render correctly and are hidden on /contact and /readiness-plan as designed. Two BUGS found: seo_home and seo_default_description don't actually override the home page <title>/<meta description> at runtime even though they save successfully; and studioName change is reflected in the <title> (suffix) but NOT in the visible footer of the home page on full reload.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [
+      {"flow": "SEO per-page override", "issue": "Setting seo_home='QA Home Title' via admin saves OK (PUT returns 200, GET reflects), but home <title> still renders 'Bespoke digital ecosystems & custom AI · QA Studio' — seo_home is NOT being read by SEO.jsx / SiteSettingsProvider for the / route. Per-page title override broken.", "affected_selectors": ["setting-seo_home", "settings-save"]},
+      {"flow": "SEO default meta description", "issue": "Setting seo_default_description='QA test description' saves OK but home <meta name='description'> still shows 'A product of emergent.sh' (the static index.html default). React-helmet-async is not overriding the head meta description, OR an upstream layer is rewriting it.", "affected_selectors": ["setting-seo_default_description"]},
+      {"flow": "studioName in footer", "issue": "After saving studioName='QA Studio', the document.title suffix updates to 'QA Studio' on home reload (good), but footer body text 'QA Studio' was not detected — footer may still use the hardcoded siteConfig default instead of SiteSettings.studioName.", "affected_selectors": ["footer"]}
+    ],
+    "design_issues": []
+  },
+  "test_report_links": [
+    "/app/backend/tests/test_admin_api.py",
+    "/app/backend/tests/test_leads_api.py",
+    "/app/test_reports/pytest/admin_api_results.xml"
+  ],
+  "verified_behaviour": [
+    "POST /api/admin/login: wrong pw → 401, correct pw → 200 + JWT",
+    "All 6 admin protected endpoints return 401 without Bearer token and 200/expected with valid token",
+    "POST /api/leads with full payload incl. industry_other / biggest_time_drain_other / interested_in_other / current_tools_other returns Lead with those fields populated; GET /api/admin/leads echoes them back",
+    "Public GET /api/settings excludes sensitive keys (resend_api_key/admin_password/admin_notify_email/resend_from_email) and includes _has_resend boolean",
+    "PUT /api/admin/settings ignores unknown keys, only updates whitelist (PUBLIC_SETTINGS_KEYS + ADMIN_ONLY_KEYS + SEO_PAGE_KEYS)",
+    "Changing admin_password via PUT /api/admin/settings rotates the login password (old fails, new works); restored to default at end of test",
+    "PATCH /api/admin/leads/{id} sets status, PATCH on missing id → 404, DELETE removes lead",
+    "POST /api/admin/test-email: no resend_api_key → 400 with 'resend_api_key is not set'; no admin_notify_email → 400; invalid key → 500 with Resend error",
+    "Lead creation still returns 200 even with invalid resend_api_key configured (fire-and-forget). 'Resend not configured; skipping email notification.' log line present in backend.err.log (5 occurrences)",
+    "Sticky CTAs: sticky-readiness + sticky-whatsapp both visible on /, /work, /services, /process, /examples; sticky-readiness HIDDEN on /contact and /readiness-plan; sticky-whatsapp still visible on those",
+    "Contact-embedded ReadinessForm (testIdPrefix='contact-'): full 7-step submission with Other-industry/pain/interest/tools succeeds, contact-readiness-done card appears, lead 'TEST_QA Contact Co' visible in admin leads list with all 4 _other fields persisted ('QA test industry', 'QA pain other', 'QA interest other', 'QA tools other')",
+    "Admin UI: 4 tabs (Leads, Settings, SEO, Integrations) all clickable; leads-search filters list; settings-save persists; settings-test-email returns 'resend_api_key is not set in Admin → Integrations.' in settings-test-email-result"
+  ],
+  "action_items": [
+    "BUG (frontend): SEO.jsx / SiteSettingsProvider — seo_home per-page override is saved to /api/settings but home <title> does not honor it. Investigate the SEO component's settings.seo.perPage[page] lookup vs the actual key shape returned by GET /api/settings (returns flat seo_home, not nested seo.perPage.home).",
+    "BUG (frontend): seo_default_description saved successfully but home <meta name='description'> still shows the static index.html default 'A product of emergent.sh'. React-helmet-async <Helmet> with a <meta name='description'> tag likely missing in SEO.jsx, or component is not being rendered on the home route.",
+    "BUG (frontend): Footer studioName not updating after Settings save — Footer.jsx likely imports siteConfig directly instead of useSiteSettings()."
+  ],
+  "critical_code_review_comments": [
+    "server.py line 86-88: GET /api/leads with wrong admin_token returns 200 + [] (silent fail). Acceptable but unusual — most APIs return 401/403. Document or accept.",
+    "server.py PUT /api/admin/settings silently drops unknown keys (line 191) — there's no 4xx for unknown keys. Could surprise admins; consider returning {updated, ignored} for transparency.",
+    "server.py public_settings() drops keys with value=None (line 170) but admin_settings() coerces to '' (line 182) — slight inconsistency. Fine but worth noting.",
+    "server.py test-email endpoint hits Resend's real API. Good guard rails (400 if keys missing), but consider documenting that this WILL send a real email when configured.",
+    "Footer/SEO components likely import siteConfig directly instead of consuming SiteSettingsContext — see action items."
+  ],
+  "updated_files": ["/app/backend/tests/test_admin_api.py"],
+  "success_rate": {"backend": "100% (26/26)", "frontend": "~85% — login/tabs/leads/settings save/test-email/password rotation all OK; SEO + footer settings consumption broken on render"},
+  "test_credentials": "Admin password verified as `_tCp6XB8MAspxUOfSrNGuQ` (default). All settings (studioName/whatsapp/seo_*/resend_api_key/admin_notify_email/admin_password) reverted to defaults at end of run; default password login confirmed working post-cleanup.",
+  "seed_data_creation": "One frontend-submitted lead created during testing: business_name='TEST_QA Contact Co'. Several backend-pytest leads with TEST_ prefix also exist. None impact admin UX.",
+  "retest_needed": true,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "Backend admin subsystem fully covered in /app/backend/tests/test_admin_api.py (26 tests, all green). Focus next iteration on the 3 frontend bugs in action_items: SEO per-page title override, meta description override, and Footer studioName binding. Reproduction: set seo_home='X' / seo_default_description='Y' / studioName='Z' via /admin → Settings/SEO → reload / → inspect document.title, meta[name=description], and footer text. Settings have been wiped clean, so QA values won't linger.",
+  "rca_of_the_issue": "SEO/footer integration bugs root cause is that the frontend SEO.jsx and Footer.jsx do not consume the flat keys returned by GET /api/settings (seo_home, seo_default_description, studioName). They likely read from siteConfig (static import) or from a nested settings.seo.perPage[page] shape that the backend never emits."
+}

@@ -51,7 +51,7 @@ const Login = ({ onLogin }) => {
         <div className="font-hand text-2xl text-[var(--p-pink)]">admin</div>
         <h1 className="font-display text-2xl text-[var(--ink)] mt-1">Welcome back.</h1>
         <p className="font-body text-sm text-[var(--ink-soft)] mt-1">
-          Default password is <code>admin</code>. Change it in Settings ASAP.
+          Enter the admin password to manage leads, settings & SEO.
         </p>
         <input
           type="password"
@@ -214,6 +214,49 @@ const TextArea = ({ label, hint, ...rest }) => (
   </label>
 );
 
+const TestEmailButton = () => {
+  const [busy, setBusy] = useState(false);
+  const [msg, setMsg] = useState(null);
+  const send = async () => {
+    setBusy(true);
+    setMsg(null);
+    try {
+      const r = await axios.post(`${API}/admin/test-email`, {}, { headers: authHeader() });
+      setMsg({ ok: true, text: `Test email sent ✓ (id: ${r.data.id || "—"})` });
+    } catch (e) {
+      const detail = e.response?.data?.detail || "Could not send test email.";
+      setMsg({ ok: false, text: detail });
+    } finally {
+      setBusy(false);
+    }
+  };
+  return (
+    <div className="flex flex-col gap-2">
+      <button
+        type="button"
+        onClick={send}
+        disabled={busy}
+        data-testid="settings-test-email"
+        className="btn-pill !py-1.5 !px-3.5 text-xs self-start"
+      >
+        {busy ? "Sending…" : "Send test email"}
+      </button>
+      {msg && (
+        <div
+          data-testid="settings-test-email-result"
+          className={`font-body text-xs ${msg.ok ? "text-[var(--p-pink)]" : "text-red-600"}`}
+        >
+          {msg.text}
+        </div>
+      )}
+      <p className="font-body text-xs text-[var(--ink-soft)]">
+        Save your changes first, then click "Send test email" to verify Resend
+        is wired up.
+      </p>
+    </div>
+  );
+};
+
 const SettingsTab = () => {
   const [data, setData] = useState({});
   const [saving, setSaving] = useState(false);
@@ -257,6 +300,8 @@ const SettingsTab = () => {
       <Section icon={<Mail className="w-4 h-4" />} title="Email notifications & admin">
         <Field label="Admin notify email" hint="Where new lead emails get sent" value={data.admin_notify_email || ""} onChange={(e) => set("admin_notify_email", e.target.value)} data-testid="setting-admin_notify_email" />
         <Field label="Resend API key" hint="Get one at resend.com/api-keys" value={data.resend_api_key || ""} onChange={(e) => set("resend_api_key", e.target.value)} type="password" data-testid="setting-resend_api_key" />
+        <Field label="Resend sender email" hint="Defaults to onboarding@resend.dev. Once you verify your domain in Resend, switch to e.g. hello@yourstudio.com" value={data.resend_from_email || ""} onChange={(e) => set("resend_from_email", e.target.value)} placeholder="onboarding@resend.dev" data-testid="setting-resend_from_email" />
+        <TestEmailButton />
         <Field label="Change admin password" hint="Leave empty to keep current" value={data.admin_password || ""} onChange={(e) => set("admin_password", e.target.value)} type="password" data-testid="setting-admin_password" />
       </Section>
 
