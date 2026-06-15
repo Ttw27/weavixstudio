@@ -80,3 +80,21 @@
 - P2: Google Ads + Facebook Ads API integrations (keys stored in Admin).
 - P2: Replace placeholder portfolio with real projects.
 - P3: Optional refactor of `server.py` into routes/ + models/.
+
+
+## 2026-02-15 — Iteration 12 + 13: Admin E2E, Resend, Mobile sticky CTA
+**Fixes shipped + tested (testing_agent_v3_fork iter 12 → 13):**
+- Backend Resend refactor: switched from raw httpx to official `resend` SDK with `asyncio.to_thread` per playbook (`/app/backend/server.py:226-262`).
+- New backend endpoint `POST /api/admin/test-email` (JWT-protected) lets admins send a one-click test email to verify Resend setup. Returns 400 with friendly message when key/recipient missing.
+- New admin setting `resend_from_email` (defaults to `onboarding@resend.dev`, switch to verified-domain sender once configured).
+- Frontend: `StickyWhatsApp.jsx` now renders BOTH a yellow "Get my plan" pill (Link to `/readiness-plan`) AND the WhatsApp pill on every page; hidden on `/readiness-plan` and `/contact` so it doesn't duplicate the inline form. Both pills are touch-friendly on mobile.
+- Admin login screen copy updated (no longer says "default password is admin" — now seeded with a strong random password from `.env`).
+- AdminPage Settings tab gained a "Send test email" button with success/error feedback (data-testid `settings-test-email`).
+- `/app/memory/test_credentials.md` now documents the live admin password.
+- Bug fixes from iter 12:
+  - `Footer.jsx` was reading `siteConfig` directly → now uses `useSiteSettings()` so saved studioName/socials reflect in the footer immediately.
+  - `index.html` had a static `<meta name="description">` and stale `<title>` that conflicted with react-helmet-async (two tags in the DOM). Removed both → Helmet is the single source of truth.
+  - `SiteSettings.jsx` `mergeWithDefaults(null)` was returning bare `defaultConfig` (no `.seo`) on initial render → now always returns the merged shape, so `settings.seo` is defined from first render.
+
+**Results:** Backend 26/26 pytest pass · Frontend 4/4 retests pass · `retest_needed: False`.
+
