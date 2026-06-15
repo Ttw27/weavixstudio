@@ -1,6 +1,9 @@
 import { useEffect } from "react";
 import "@/App.css";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
+import { SiteSettingsProvider } from "./lib/SiteSettings";
+import SEO from "./components/SEO";
 import Navbar from "./components/site/Navbar";
 import Hero from "./components/site/Hero";
 import AiReady from "./components/site/AiReady";
@@ -21,6 +24,7 @@ import ProcessPage from "./pages/ProcessPage";
 import ContactPage from "./pages/ContactPage";
 import ExamplesPage from "./pages/ExamplesPage";
 import ReadinessPlanPage from "./pages/ReadinessPlanPage";
+import AdminPage from "./pages/AdminPage";
 
 const ScrollToTopOnRouteChange = () => {
   const location = useLocation();
@@ -37,43 +41,47 @@ const ScrollToTopOnRouteChange = () => {
   return null;
 };
 
-const Home = () => {
-  return (
-    <main data-testid="home-page" className="bg-[var(--bg)] text-[var(--ink)]">
-      <Navbar />
-      <Hero />
-      <AiReady />
-      <AiFrustration />
-      <Services />
-      <Portfolio />
-      <Process />
-      <Testimonials />
-      <Contact />
-      <Footer />
-      <StickyWhatsApp />
-    </main>
-  );
-};
+const Home = () => (
+  <main data-testid="home-page" className="bg-[var(--bg)] text-[var(--ink)]">
+    <SEO page="home" />
+    <Navbar />
+    <Hero />
+    <AiReady />
+    <AiFrustration />
+    <Services />
+    <Portfolio />
+    <Process />
+    <Testimonials />
+    <Contact />
+    <Footer />
+    <StickyWhatsApp />
+  </main>
+);
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <ScrollToTopOnRouteChange />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/work" element={<WorkPage />} />
-          <Route path="/work/:id" element={<ProjectDetail />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/services/:slug" element={<ServiceDetail />} />
-          <Route path="/process" element={<ProcessPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/examples" element={<ExamplesPage />} />
-          <Route path="/readiness-plan" element={<ReadinessPlanPage />} />
-          <Route path="/previews" element={<DesignPreviews />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <HelmetProvider>
+      <SiteSettingsProvider>
+        <div className="App">
+          <BrowserRouter>
+            <ScrollToTopOnRouteChange />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/work" element={<WorkPage />} />
+              <Route path="/work/:id" element={<ProjectDetail />} />
+              <Route path="/services" element={<ServicesPage />} />
+              <Route path="/services/:slug" element={<ServiceDetail />} />
+              <Route path="/process" element={<ProcessPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/examples" element={<ExamplesPage />} />
+              <Route path="/readiness-plan" element={<ReadinessPlanPage />} />
+              <Route path="/admin" element={<AdminPage />} />
+              <Route path="/previews" element={<DesignPreviews />} />
+            </Routes>
+          </BrowserRouter>
+        </div>
+      </SiteSettingsProvider>
+    </HelmetProvider>
   );
 }
 
