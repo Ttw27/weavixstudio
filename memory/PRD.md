@@ -65,3 +65,18 @@
 2. Share real project data + case study images
 3. Collect testimonials from past clients
 4. Pick analytics tool + we wire it up
+
+
+## 2026-02-15 — Readiness Plan embedded on Contact page
+- Extracted the multi-step questionnaire into `frontend/src/components/site/ReadinessForm.jsx` (single shared component).
+- `/readiness-plan` continues to host the full standalone page (now using the shared form).
+- `/contact` page now renders the existing Contact CTAs (Calendly + WhatsApp + FAQ) **and** embeds the full Readiness Plan questionnaire below — visitors can submit without leaving the page.
+- "Other" free-text inputs are now surfaced when the user picks "Something else" for industry / time-drain / interests, plus a free-text field for additional tools. Backend already supported these (`industry_other`, `biggest_time_drain_other`, `interested_in_other`, `current_tools_other`).
+
+## Backlog (open)
+- P0: End-to-end test of Admin auth + Settings + SEO flow (testing_agent_v3_fork) — never run after the big Admin rewrite.
+- P1: Document & lock down admin password in `/app/memory/test_credentials.md` (currently default `admin`).
+- P1: Wire Resend for real lead-notification emails (key managed in Admin).
+- P2: Google Ads + Facebook Ads API integrations (keys stored in Admin).
+- P2: Replace placeholder portfolio with real projects.
+- P3: Optional refactor of `server.py` into routes/ + models/.
