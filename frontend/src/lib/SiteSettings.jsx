@@ -13,37 +13,37 @@ const SiteSettingsContext = createContext({
 
 // Map flat backend keys to siteConfig shape
 const mergeWithDefaults = (live) => {
-  if (!live) return defaultConfig;
+  const safe = live || {};
   return {
     ...defaultConfig,
-    ...(live.studioName ? { studioName: live.studioName } : {}),
-    ...(live.tagline ? { tagline: live.tagline } : {}),
-    ...(live.location ? { location: live.location } : {}),
-    ...(live.establishedYear ? { establishedYear: live.establishedYear } : {}),
-    ...(live.whatsappNumber ? { whatsappNumber: live.whatsappNumber } : {}),
-    ...(live.whatsappMessage ? { whatsappMessage: live.whatsappMessage } : {}),
-    ...(live.calendlyUrl ? { calendlyUrl: live.calendlyUrl } : {}),
-    ...(live.email ? { email: live.email } : {}),
+    ...(safe.studioName ? { studioName: safe.studioName } : {}),
+    ...(safe.tagline ? { tagline: safe.tagline } : {}),
+    ...(safe.location ? { location: safe.location } : {}),
+    ...(safe.establishedYear ? { establishedYear: safe.establishedYear } : {}),
+    ...(safe.whatsappNumber ? { whatsappNumber: safe.whatsappNumber } : {}),
+    ...(safe.whatsappMessage ? { whatsappMessage: safe.whatsappMessage } : {}),
+    ...(safe.calendlyUrl ? { calendlyUrl: safe.calendlyUrl } : {}),
+    ...(safe.email ? { email: safe.email } : {}),
     socials: {
-      instagram: live.instagram || defaultConfig.socials.instagram,
-      linkedin: live.linkedin || defaultConfig.socials.linkedin,
-      x: live.x_url || defaultConfig.socials.x,
+      instagram: safe.instagram || defaultConfig.socials.instagram,
+      linkedin: safe.linkedin || defaultConfig.socials.linkedin,
+      x: safe.x_url || defaultConfig.socials.x,
     },
     seo: {
-      title: live.seo_default_title || "",
-      description: live.seo_default_description || "",
-      ogImage: live.seo_default_og_image || "",
+      title: safe.seo_default_title || "",
+      description: safe.seo_default_description || "",
+      ogImage: safe.seo_default_og_image || "",
       perPage: {
-        home: live.seo_home || "",
-        work: live.seo_work || "",
-        services: live.seo_services || "",
-        examples: live.seo_examples || "",
-        process: live.seo_process || "",
-        contact: live.seo_contact || "",
-        readiness: live.seo_readiness || "",
+        home: safe.seo_home || "",
+        work: safe.seo_work || "",
+        services: safe.seo_services || "",
+        examples: safe.seo_examples || "",
+        process: safe.seo_process || "",
+        contact: safe.seo_contact || "",
+        readiness: safe.seo_readiness || "",
       },
     },
-    ga: live.ga_measurement_id || "",
+    ga: safe.ga_measurement_id || "",
   };
 };
 

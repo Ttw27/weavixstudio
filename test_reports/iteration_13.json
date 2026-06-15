@@ -1,0 +1,41 @@
+{
+  "summary": "Iteration 13 — Frontend-only retest of 3 iteration-12 bugs (SEO per-page title, SEO default description, Footer studioName) plus 1 regression check on Helmet defaults. All 4 scenarios PASS. Backend was not re-tested (per request).",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "retest_results": {
+    "retest_1_seo_per_page_title": {
+      "status": "PASS",
+      "evidence": "After PUT /api/admin/settings {seo_home:'QA Home Title'}, GET / shows document.title === 'QA Home Title · Your Studio'; meta[property=og:title].content === 'QA Home Title · Your Studio'; meta[name=twitter:title].content === 'QA Home Title · Your Studio'. Reverted to '' afterwards."
+    },
+    "retest_2_seo_default_description": {
+      "status": "PASS",
+      "evidence": "After PUT {seo_default_description:'QA test description'}, document.querySelectorAll('meta[name=description]').length === 1 (no duplicate from static index.html) and the single meta description.content === 'QA test description'. Reverted to ''."
+    },
+    "retest_3_footer_studio_name": {
+      "status": "PASS",
+      "evidence": "After PUT {studioName:'QA Studio'}, [data-testid=footer-studio-name] innerText on / === 'QA Studio.' and on /work === 'QA Studio.' (trailing yellow dot preserved). Reverted to 'Your Studio'."
+    },
+    "retest_4_helmet_defaults_no_regression": {
+      "status": "PASS",
+      "evidence": "With all SEO overrides cleared, GET / shows document.title === 'Bespoke digital ecosystems & custom AI · Your Studio' (contains the SEO.jsx static fallback string AND the ' · Your Studio' suffix); the single meta[name=description] contains 'We design unified platforms'. Exactly 1 description meta on the page."
+    }
+  },
+  "test_report_links": ["/app/test_reports/iteration_13.json"],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "SiteSettings.jsx mergeWithDefaults now correctly normalises null/undefined input and seeds settings.seo on first render — fixes the previous race where SEO.jsx accessed settings.seo?.perPage before the first fetch resolved.",
+    "public/index.html static <meta name=description> was correctly removed; pre-React placeholder <title>Your Studio</title> avoids the old 'Emergent | Fullstack App' flash. Helmet now owns the description meta exclusively (descCount===1 verified).",
+    "Footer.jsx properly consumes useSiteSettings() and exposes data-testid='footer-studio-name'. Both copyright row (© <year> {studioName}) and the big display name now react to live settings."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "not retested (26/26 from iter 12)", "frontend": "100% (4/4 retests pass)"},
+  "test_credentials": "Admin password verified post-cleanup as `_tCp6XB8MAspxUOfSrNGuQ`. Login still returns a valid JWT. No password rotation performed during this iteration.",
+  "seed_data_creation": "None. All settings reverted: seo_home='', seo_default_description='', studioName='Your Studio'. Confirmed via GET /api/settings at end of run.",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "All three iteration-12 frontend bugs are confirmed fixed. SiteSettings now provides default seo shape from first render, SEO.jsx Helmet renders single canonical meta description, Footer.jsx consumes live studioName. If future regressions occur, the quick repro is: login /admin, save seo_home/seo_default_description/studioName, open / in a new tab, inspect document.title + meta tags + [data-testid=footer-studio-name]."
+}
