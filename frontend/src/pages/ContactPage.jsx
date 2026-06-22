@@ -15,9 +15,7 @@ export default function ContactPage() {
         className="relative px-5 md:px-10 pb-20 md:pb-28"
       >
         <div className="max-w-2xl mx-auto">
-          <div className="card-blunt p-6 md:p-8 bg-[var(--bg)]">
-            <ReadinessForm testIdPrefix="contact-" />
-          </div>
+          <ReadinessForm testIdPrefix="contact-" />
         </div>
       </section>
     </PageShell>
