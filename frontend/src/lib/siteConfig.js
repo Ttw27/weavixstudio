@@ -10,7 +10,7 @@ export const siteConfig = {
   whatsappNumber: "15551234567",
   whatsappMessage: "Hi! I'd like to discuss a project.",
   calendlyUrl: "https://calendly.com/your-studio/intro",
-  email: "hello@yourstudio.com",
+  email: "hello@weavixstudio.com",
   socials: {
     instagram: "https://instagram.com/yourstudio",
     linkedin: "https://linkedin.com/company/yourstudio",

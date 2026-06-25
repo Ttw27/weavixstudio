@@ -35,7 +35,7 @@ export const Navbar = () => {
         scrolled || open ? "bg-[var(--bg)]/90 backdrop-blur-md border-b-2 border-[var(--ink)]" : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto max-w-[1400px] px-5 md:px-10 h-14 md:h-16 flex items-center justify-between">
+      <nav className="mx-auto max-w-[1400px] px-5 md:px-10 h-16 md:h-20 flex items-center justify-between">
         <Link
           to="/"
           data-testid="nav-logo"
@@ -45,7 +45,7 @@ export const Navbar = () => {
           <img
             src="/weavix-logo.png"
             alt={settings.studioName}
-            className="h-9 md:h-11 w-auto select-none"
+            className="h-12 md:h-16 w-auto select-none"
             draggable={false}
           />
         </Link>
