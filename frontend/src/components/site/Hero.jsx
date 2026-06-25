@@ -21,7 +21,7 @@ export const Hero = () => {
       <div className="relative max-w-[1400px] mx-auto px-5 md:px-10 flex items-center justify-between font-body text-[11px] uppercase tracking-[0.18em] text-[var(--ink-soft)] font-bold">
         <div className="flex items-center gap-2">
           <span className="dot" />
-          <span>Booking · Spring '25</span>
+          <span>Open for projects</span>
         </div>
         <div className="hidden sm:flex items-center gap-2">
           <span>{siteConfig.location}</span>
