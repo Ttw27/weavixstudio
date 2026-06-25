@@ -262,7 +262,11 @@ class Project(ProjectInput):
 
 
 def _slugify(s: str) -> str:
-    return "".join(c if c.isalnum() else "-" for c in s.lower()).strip("-")
+    out = "".join(c if c.isalnum() else "-" for c in s.lower())
+    # Collapse consecutive dashes & trim
+    while "--" in out:
+        out = out.replace("--", "-")
+    return out.strip("-")
 
 
 def _project_to_doc(p: Project) -> dict:

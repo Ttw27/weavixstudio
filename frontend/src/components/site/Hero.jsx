@@ -51,12 +51,11 @@ export const Hero = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-5 max-w-2xl font-display text-base md:text-lg text-[var(--ink)] leading-snug"
         >
-          We build the digital ecosystem that{" "}
-          <span className="bg-[var(--p-yellow)] px-1 rounded">saves you time</span>,{" "}
-          <span className="bg-[var(--p-mint)] px-1 rounded">saves you money</span>, and{" "}
-          <span className="bg-[var(--p-pink)] px-1 rounded text-white">wins you customers</span>{" "}
-          — so your business doesn't just survive the next five years, it{" "}
-          <span className="font-hand text-2xl text-[var(--p-pink)]">outgrows itself</span>.
+          A standalone website? That's so{" "}
+          <span className="line-through opacity-60">2018</span>. Today it's
+          about whole <span className="text-[var(--p-pink)]">digital ecosystems</span> —
+          ones that <span className="bg-[var(--p-yellow)] px-1 rounded">lower costs</span>,
+          put AI to work, and give you back your time.
         </motion.p>
 
         <motion.p
