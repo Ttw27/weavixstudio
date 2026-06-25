@@ -119,7 +119,7 @@ body {
 
 /* Card with hard shadow */
 .card-blunt {
-    background: var(--surface);
+    background-color: var(--surface);
     border: 2px solid var(--ink);
     box-shadow: var(--shadow-blunt-sm);
     border-radius: 22px;
@@ -177,7 +177,7 @@ body {
     font-family: 'Fredoka', sans-serif;
     font-weight: 600;
     font-size: 0.78rem;
-    background: var(--surface);
+    background-color: var(--surface);
 }
 
 /* Ticker dot */

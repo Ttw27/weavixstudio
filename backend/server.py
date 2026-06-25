@@ -219,6 +219,177 @@ async def delete_lead(lead_id: str):
     return {"ok": True}
 
 
+# ========== PROJECTS (CMS for live projects + examples) ==========
+class ProjectInput(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+
+    # Required identity
+    title: str
+    slug: str = ""               # auto-generated from title if blank
+    summary: str                 # 1-2 sentence pitch shown on cards
+
+    # Category & taxonomy
+    category: str = "other"      # hospitality / trades / health / etc. or custom
+    tags: list[str] = []         # ["Website", "AI", "Ads", "Automation", "App", "Social"]
+
+    # Audience tier — controls which tier-blurb shows on /examples
+    tier: str = "growing"        # starter | growing | established
+
+    # Marketing copy
+    what_we_did: list[str] = []  # bullet points
+    outcomes: list[str] = []     # the "what changed / what helped" bullets
+    client_quote: str = ""
+    client_quote_by: str = ""
+
+    # Links + media
+    live_url: str = ""
+    image_url: str = ""          # hero image — paste ANY url for now
+    gallery: list[str] = []      # optional extra screenshots (urls)
+
+    # Display
+    featured: bool = False
+    published: bool = True
+    order: int = 0
+
+    # Card preview (for the playful mock-style cards on /work)
+    bg_color: str = ""           # e.g. "var(--p-pink)" or "#FFDD4A"
+    fg_color: str = ""
+
+class Project(ProjectInput):
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    updated_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+
+def _slugify(s: str) -> str:
+    return "".join(c if c.isalnum() else "-" for c in s.lower()).strip("-")
+
+
+def _project_to_doc(p: Project) -> dict:
+    d = p.model_dump()
+    d["created_at"] = d["created_at"].isoformat()
+    d["updated_at"] = d["updated_at"].isoformat()
+    return d
+
+
+def _doc_to_project(d: dict) -> dict:
+    """Strip Mongo internals & coerce datetime fields for Pydantic."""
+    d = {k: v for k, v in d.items() if k != "_id"}
+    for f in ("created_at", "updated_at"):
+        if isinstance(d.get(f), str):
+            try:
+                d[f] = datetime.fromisoformat(d[f])
+            except Exception:
+                d[f] = datetime.now(timezone.utc)
+    return d
+
+
+@api_router.get("/projects", response_model=List[Project])
+async def list_projects_public():
+    """Public — only published projects, ordered by featured then order then created."""
+    docs = await db.projects.find(
+        {"published": True},
+        {"_id": 0},
+    ).to_list(1000)
+    parsed = [_doc_to_project(d) for d in docs]
+    parsed.sort(key=lambda p: (
+        0 if p.get("featured") else 1,
+        p.get("order", 0),
+        p.get("created_at") or datetime.min,
+    ))
+    return parsed
+
+
+@api_router.get("/admin/projects", response_model=List[Project], dependencies=[Depends(require_admin)])
+async def list_projects_admin():
+    docs = await db.projects.find({}, {"_id": 0}).to_list(1000)
+    parsed = [_doc_to_project(d) for d in docs]
+    parsed.sort(key=lambda p: (
+        0 if p.get("featured") else 1,
+        p.get("order", 0),
+        p.get("created_at") or datetime.min,
+    ))
+    return parsed
+
+
+@api_router.post("/admin/projects", response_model=Project, dependencies=[Depends(require_admin)])
+async def create_project(input: ProjectInput):
+    data = input.model_dump()
+    if not data.get("slug"):
+        data["slug"] = _slugify(data["title"])
+    proj = Project(**data)
+    await db.projects.insert_one(_project_to_doc(proj))
+    return proj
+
+
+@api_router.put("/admin/projects/{project_id}", response_model=Project, dependencies=[Depends(require_admin)])
+async def update_project(project_id: str, input: ProjectInput):
+    data = input.model_dump()
+    if not data.get("slug"):
+        data["slug"] = _slugify(data["title"])
+    data["updated_at"] = datetime.now(timezone.utc).isoformat()
+    res = await db.projects.update_one({"id": project_id}, {"$set": data})
+    if res.matched_count == 0:
+        raise HTTPException(404, "Project not found")
+    doc = await db.projects.find_one({"id": project_id}, {"_id": 0})
+    return Project(**_doc_to_project(doc))
+
+
+@api_router.delete("/admin/projects/{project_id}", dependencies=[Depends(require_admin)])
+async def delete_project(project_id: str):
+    await db.projects.delete_one({"id": project_id})
+    return {"ok": True}
+
+
+# ========== CATEGORIES (lightweight: stored as a single setting list) ==========
+DEFAULT_CATEGORIES = [
+    {"id": "hospitality", "label": "Hospitality"},
+    {"id": "trades", "label": "Trades & home services"},
+    {"id": "health", "label": "Health & wellness"},
+    {"id": "pro-services", "label": "Professional services"},
+    {"id": "retail-ecom", "label": "Retail / e-commerce"},
+    {"id": "creator", "label": "Creator / digital business"},
+    {"id": "education", "label": "Education / coaching"},
+    {"id": "property", "label": "Property / estate"},
+    {"id": "other", "label": "Other"},
+]
+
+
+@api_router.get("/categories")
+async def public_categories():
+    custom = await get_setting("custom_categories", [])
+    return DEFAULT_CATEGORIES + (custom or [])
+
+
+@api_router.get("/admin/categories", dependencies=[Depends(require_admin)])
+async def admin_categories():
+    custom = await get_setting("custom_categories", [])
+    return {"defaults": DEFAULT_CATEGORIES, "custom": custom or []}
+
+
+class CategoryPayload(BaseModel):
+    label: str
+
+
+@api_router.post("/admin/categories", dependencies=[Depends(require_admin)])
+async def add_category(payload: CategoryPayload):
+    custom = await get_setting("custom_categories", []) or []
+    cid = _slugify(payload.label)
+    if cid in [c["id"] for c in DEFAULT_CATEGORIES + custom]:
+        raise HTTPException(400, "Category already exists")
+    custom.append({"id": cid, "label": payload.label})
+    await set_setting("custom_categories", custom)
+    return {"id": cid, "label": payload.label}
+
+
+@api_router.delete("/admin/categories/{cid}", dependencies=[Depends(require_admin)])
+async def delete_category(cid: str):
+    custom = await get_setting("custom_categories", []) or []
+    custom = [c for c in custom if c["id"] != cid]
+    await set_setting("custom_categories", custom)
+    return {"ok": True}
+
+
 # ========== EMAIL NOTIFICATION ==========
 async def send_lead_email(lead: dict):
     """Send admin notification via Resend if resend_api_key + admin_notify_email set."""

@@ -5,6 +5,7 @@ import { ArrowRight, Sparkles, Calendar, X } from "lucide-react";
 import PageShell from "./PageShell";
 import { siteConfig, waLink, colorMap } from "../lib/siteConfig";
 import { examples, categories } from "../lib/examplesContent";
+import AudienceTierPicker, { TIER_OPTIONS } from "../components/site/AudienceTierPicker";
 
 const FEATURED_COUNT = 4;
 const tilts = ["tilt-l", "tilt-r", "tilt-l-3", "tilt-r-3"];
@@ -253,6 +254,7 @@ const Drawer = ({ ex, onClose }) => {
 
 export default function ExamplesPage() {
   const [active, setActive] = useState("all");
+  const [tier, setTier] = useState(null);
   const [openId, setOpenId] = useState(null);
 
   useEffect(() => {
@@ -262,12 +264,17 @@ export default function ExamplesPage() {
     };
   }, [openId]);
 
-  // When 'all', split featured + rest. When filtered, show only filtered as compact (no featured).
+  // Filter by tier first (if picked) then by category.
+  const tierMatches = tier ? TIER_OPTIONS.find((t) => t.id === tier)?.matches || [] : null;
+  const tierFiltered = tierMatches
+    ? examples.filter((e) => tierMatches.includes(e.id))
+    : examples;
+
   const isAll = active === "all";
-  const featured = isAll ? examples.slice(0, FEATURED_COUNT) : [];
+  const featured = isAll && !tier ? tierFiltered.slice(0, FEATURED_COUNT) : [];
   const moreList = isAll
-    ? examples.slice(FEATURED_COUNT)
-    : examples.filter((e) =>
+    ? (tier ? tierFiltered : tierFiltered.slice(FEATURED_COUNT))
+    : tierFiltered.filter((e) =>
         categories.find((c) => c.id === active)?.ids?.includes(e.id)
       );
 
@@ -316,6 +323,9 @@ export default function ExamplesPage() {
           </div>
         </div>
       </section>
+
+      {/* Where are you now? — dual-audience picker */}
+      <AudienceTierPicker active={tier} onChange={setTier} />
 
       {/* Featured grid (2-col big cards) */}
       {featured.length > 0 && (

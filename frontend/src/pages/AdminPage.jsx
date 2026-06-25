@@ -12,7 +12,9 @@ import {
   Inbox,
   Search,
   Link2,
+  Briefcase,
 } from "lucide-react";
+import ProjectsTab from "../components/admin/ProjectsTab";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
@@ -425,6 +427,7 @@ const Section = ({ icon, title, children, ...rest }) => (
 // ============ MAIN ============
 const TABS = [
   { id: "leads", label: "Leads", icon: <Inbox className="w-4 h-4" /> },
+  { id: "projects", label: "Projects", icon: <Briefcase className="w-4 h-4" /> },
   { id: "settings", label: "Settings", icon: <SettingsIcon className="w-4 h-4" /> },
   { id: "seo", label: "SEO", icon: <Search className="w-4 h-4" /> },
   { id: "integrations", label: "Integrations", icon: <Link2 className="w-4 h-4" /> },
@@ -481,6 +484,7 @@ export default function AdminPage() {
 
       <main className="max-w-[1400px] mx-auto px-5 md:px-10 py-8">
         {tab === "leads" && <LeadsTab />}
+        {tab === "projects" && <ProjectsTab />}
         {tab === "settings" && <SettingsTab />}
         {tab === "seo" && <SeoTab />}
         {tab === "integrations" && <IntegrationsTab />}
