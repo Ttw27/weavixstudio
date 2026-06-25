@@ -182,6 +182,7 @@ const CategoryManager = ({ categories, onChange }) => {
             <button
               type="button"
               onClick={() => del(c.id)}
+              data-testid={`delete-category-${c.id}`}
               className="hover:text-red-600"
               aria-label={`Delete ${c.label}`}
             >

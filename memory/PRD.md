@@ -98,3 +98,24 @@
 
 **Results:** Backend 26/26 pytest pass · Frontend 4/4 retests pass · `retest_needed: False`.
 
+
+
+## 2026-02-22 — Iteration 14: Projects CMS + dual-audience messaging
+**Shipped:**
+- **Backend**: new `projects` MongoDB collection with full CRUD. Endpoints: public `GET /api/projects` (published-only, ordered by featured→order→created), admin `POST/GET/PUT/DELETE /api/admin/projects/{id}` (JWT). Auto-slug from title. Categories endpoints: `GET /api/categories` (9 defaults + custom), `POST/DELETE /api/admin/categories` for custom additions. All in `/app/backend/server.py` lines ~220-400. **45/45 pytest pass.**
+- **Admin UI**: new **Projects** tab in `/admin` (`/app/frontend/src/components/admin/ProjectsTab.jsx`). Full project form: title, slug, summary, category dropdown, audience tier, service tags, what_we_did bullets, outcomes bullets, client quote, live URL, image URL, gallery URLs, featured/published toggles, display order. Inline CategoryManager.
+- **Public `/work` page** rewired to fetch live CMS projects (`LiveProjects.jsx`). "Fresh start" empty state when CMS is empty.
+- **`/work/:slug` detail page** (`ProjectDetailPage.jsx`) with title, summary, hero image, what-we-did, what-changed, gallery, client quote, CTA band.
+- **Home auto-swap**: shows real projects when CMS populated, falls back to static Portfolio mockups when empty.
+- **Hero copy rewrite**: dual-audience messaging — "saves you time / saves you money / wins you customers" + addresses both AI-novices and AI-savvy users.
+- **New `SalesHooks` band** on home with three punchy cards + "are we a fit?" reassurance band.
+- **`AudienceTierPicker`** on `/examples`: three tiers (Just starting / Growing / Established) that filter the 33 examples to the audience-appropriate subset.
+- **CSS bug fix**: `.card-blunt` and `.sticker` changed from `background:` shorthand to `background-color:` so Tailwind overrides win consistently.
+
+**Backlog (open):**
+- 🟢 **P1** — Cloudflare R2 image upload integration (user has keys to share later; for now images are URL pastes).
+- 🟢 **P2** — Add the user's 7-8 real live projects content via Admin → Projects (user's task).
+- 🟢 **P2** — Resend "thanks, we'll be in touch" confirmation email to the lead themselves.
+- 🟢 **P2** — Google Ads + Facebook Ads API live reporting.
+- 🟢 **P3** — Optional refactor of `server.py` into routes/ + models/.
+
