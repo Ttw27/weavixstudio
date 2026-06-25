@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Calendar, MessageCircle, ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Calendar, MessageCircle, ArrowUpRight, Sparkles } from "lucide-react";
 import { siteConfig, waLink } from "../../lib/siteConfig";
 
 // ===== Reusable building blocks for /contact and Home =====
@@ -28,7 +29,7 @@ export const ContactHero = () => (
   </div>
 );
 
-export const ContactCTAs = ({ heading }) => (
+export const ContactCTAs = ({ heading, showReadinessCard = true }) => (
   <div className="max-w-[1400px] mx-auto relative">
     {heading && (
       <div className="mb-6 md:mb-8">
@@ -38,13 +39,36 @@ export const ContactCTAs = ({ heading }) => (
         </h3>
       </div>
     )}
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+    <div className={`grid grid-cols-1 ${showReadinessCard ? "md:grid-cols-3" : "md:grid-cols-2"} gap-5 md:gap-7`}>
+      {showReadinessCard && (
+        <Link
+          to="/readiness-plan"
+          data-testid="contact-readiness-cta"
+          className="card-blunt group p-7 md:p-9 flex flex-col justify-between min-h-[260px] relative"
+          style={{ background: "var(--p-mint)" }}
+        >
+          <div className="flex items-center justify-between">
+            <span className="sticker bg-white">90 seconds</span>
+            <Sparkles className="w-6 h-6 text-[var(--ink)]" />
+          </div>
+          <div>
+            <h3 className="display-xl text-[var(--ink)] !text-3xl md:!text-4xl leading-tight">
+              Get my plan
+            </h3>
+            <p className="mt-3 font-body text-sm text-[var(--ink)] opacity-80">
+              7 questions · we'll email a tailored plan · no call required
+            </p>
+          </div>
+          <ArrowUpRight className="absolute top-7 right-7 w-7 h-7 text-[var(--ink)] opacity-0 group-hover:opacity-100 transition" />
+        </Link>
+      )}
+
       <a
         href={siteConfig.calendlyUrl}
         target="_blank"
         rel="noreferrer"
         data-testid="contact-calendly-btn"
-        className="card-blunt group p-8 md:p-10 flex flex-col justify-between min-h-[260px] relative"
+        className="card-blunt group p-7 md:p-9 flex flex-col justify-between min-h-[260px] relative"
         style={{ background: "var(--p-pink)" }}
       >
         <div className="flex items-center justify-between">
@@ -52,14 +76,14 @@ export const ContactCTAs = ({ heading }) => (
           <Calendar className="w-6 h-6 text-[var(--ink)]" />
         </div>
         <div>
-          <h3 className="display-xl text-[var(--ink)] !text-4xl md:!text-5xl">
+          <h3 className="display-xl text-[var(--ink)] !text-3xl md:!text-4xl leading-tight">
             Book a chat
           </h3>
           <p className="mt-3 font-body text-sm text-[var(--ink)] opacity-80">
             25 min · Google Meet · no prep required
           </p>
         </div>
-        <ArrowUpRight className="absolute top-8 right-8 w-7 h-7 text-[var(--ink)] opacity-0 group-hover:opacity-100 transition" />
+        <ArrowUpRight className="absolute top-7 right-7 w-7 h-7 text-[var(--ink)] opacity-0 group-hover:opacity-100 transition" />
       </a>
 
       <a
@@ -67,7 +91,7 @@ export const ContactCTAs = ({ heading }) => (
         target="_blank"
         rel="noreferrer"
         data-testid="contact-whatsapp-btn"
-        className="card-blunt group p-8 md:p-10 flex flex-col justify-between min-h-[260px] relative"
+        className="card-blunt group p-7 md:p-9 flex flex-col justify-between min-h-[260px] relative"
         style={{ background: "var(--p-yellow)" }}
       >
         <div className="flex items-center justify-between">
@@ -75,14 +99,14 @@ export const ContactCTAs = ({ heading }) => (
           <MessageCircle className="w-6 h-6 text-[var(--ink)]" />
         </div>
         <div>
-          <h3 className="display-xl text-[var(--ink)] !text-4xl md:!text-5xl">
+          <h3 className="display-xl text-[var(--ink)] !text-3xl md:!text-4xl leading-tight">
             Message us
           </h3>
           <p className="mt-3 font-body text-sm text-[var(--ink)] opacity-80">
             Fastest reply · usually under 2h (business hours)
           </p>
         </div>
-        <ArrowUpRight className="absolute top-8 right-8 w-7 h-7 text-[var(--ink)] opacity-0 group-hover:opacity-100 transition" />
+        <ArrowUpRight className="absolute top-7 right-7 w-7 h-7 text-[var(--ink)] opacity-0 group-hover:opacity-100 transition" />
       </a>
     </div>
   </div>

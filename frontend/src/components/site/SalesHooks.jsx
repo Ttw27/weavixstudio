@@ -12,8 +12,8 @@ const HOOKS = [
       <>
         We sell <strong>time saved</strong>, <strong>money saved</strong>, and{" "}
         <strong>customers won</strong>. AI is just the cheapest, fastest way to
-        get there in 2026. If a spreadsheet did the job, we'd build you a
-        spreadsheet.
+        get there <strong>right now</strong>. If a spreadsheet did the job,
+        we'd build you a spreadsheet.
       </>
     ),
   },

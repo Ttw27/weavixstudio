@@ -117,17 +117,19 @@ body {
 .btn-pill-ink { background: var(--ink); color: var(--bg); }
 .btn-pill-blue { background: var(--p-blue); }
 
-/* Card with hard shadow */
-.card-blunt {
-    background-color: var(--surface);
-    border: 2px solid var(--ink);
-    box-shadow: var(--shadow-blunt-sm);
-    border-radius: 22px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.card-blunt:hover {
-    transform: translate(-1px, -1px);
-    box-shadow: var(--shadow-blunt);
+/* Card with hard shadow — inside @layer components so Tailwind bg-* utilities can override */
+@layer components {
+    .card-blunt {
+        background-color: var(--surface);
+        border: 2px solid var(--ink);
+        box-shadow: var(--shadow-blunt-sm);
+        border-radius: 22px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card-blunt:hover {
+        transform: translate(-1px, -1px);
+        box-shadow: var(--shadow-blunt);
+    }
 }
 
 /* Sticker rotation utilities */

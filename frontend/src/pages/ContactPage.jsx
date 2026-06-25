@@ -29,7 +29,10 @@ export default function ContactPage() {
         data-testid="contact-cta-section"
         className="relative px-5 md:px-10 pb-12 md:pb-16"
       >
-        <ContactCTAs heading="…or jump straight to a real conversation." />
+        <ContactCTAs
+          heading="…or jump straight to a real conversation."
+          showReadinessCard={false}
+        />
       </section>
 
       {/* FAQ — THIRD: common questions */}
