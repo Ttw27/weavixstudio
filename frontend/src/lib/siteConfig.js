@@ -1,8 +1,8 @@
-// Central config for Your Studio — Playful Neo-Retro edition.
+// Central config for Weavix Studio — Playful Neo-Retro edition.
 // Edit anything here to swap content site-wide.
 
 export const siteConfig = {
-  studioName: "Your Studio",
+  studioName: "Weavix Studio",
   tagline:
     "Bespoke digital ecosystems — websites, apps, customer portals, automations and custom AIs — designed as one unified platform around how your business actually runs.",
   location: "Remote · Worldwide",

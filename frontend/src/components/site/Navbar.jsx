@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { siteConfig, waLink } from "../../lib/siteConfig";
+import { useSiteSettings, liveWaLink } from "../../lib/SiteSettings";
 
 const links = [
   { label: "Work", to: "/work" },
@@ -14,6 +14,7 @@ export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const location = useLocation();
+  const { settings } = useSiteSettings();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -38,10 +39,15 @@ export const Navbar = () => {
         <Link
           to="/"
           data-testid="nav-logo"
-          className="font-display text-xl md:text-2xl text-[var(--ink)] flex items-center gap-1"
+          aria-label={settings.studioName}
+          className="flex items-center"
         >
-          {siteConfig.studioName}
-          <span className="dot ml-1" />
+          <img
+            src="/weavix-logo.png"
+            alt={settings.studioName}
+            className="h-9 md:h-11 w-auto select-none"
+            draggable={false}
+          />
         </Link>
 
         <ul className="hidden md:flex items-center gap-7 font-body font-bold text-sm">
@@ -65,7 +71,7 @@ export const Navbar = () => {
         <div className="hidden md:flex items-center gap-3">
           <a
             data-testid="nav-whatsapp-btn"
-            href={waLink()}
+            href={liveWaLink(settings)}
             target="_blank"
             rel="noreferrer"
             className="btn-pill btn-pill-yellow !py-1.5 !px-3.5 text-xs"
@@ -100,7 +106,7 @@ export const Navbar = () => {
             ))}
             <li className="pt-2">
               <a
-                href={waLink()}
+                href={liveWaLink(settings)}
                 target="_blank"
                 rel="noreferrer"
                 data-testid="nav-mobile-whatsapp"
