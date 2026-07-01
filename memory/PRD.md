@@ -119,3 +119,20 @@
 - 🟢 **P2** — Google Ads + Facebook Ads API live reporting.
 - 🟢 **P3** — Optional refactor of `server.py` into routes/ + models/.
 
+
+
+## 2026-07-01 — Iteration 15: Examples CMS + Weavix branding
+**Shipped:**
+- **Examples CMS**: new `examples` collection with full admin CRUD. Endpoints public `GET /api/examples`, admin `POST/GET/PUT/DELETE /api/admin/examples/{id}` (JWT). Startup seed from `seed_examples.json` populates 24 illustrative business examples. **58/58 backend pytest pass.**
+- **Admin Examples tab** (`ExamplesTab.jsx`): full form editor — emoji icon, industry, tagline, size, category, tier, colour, before/integrated/ai bullets, quote, results (k/v pairs), order, published. Search + reorder + inline delete.
+- **/examples** now fetches from API with static fallback. Tier picker uses DB `_tier` field + static `matches` for safety.
+- **Weavix Studio branding**: rename applied to DB settings + siteConfig defaults + index.html title. Logo image in navbar at h-12 md:h-16.
+- **Favicons**: 32/180/512/ico sizes generated from cropped W-mark and wired into index.html.
+- **Email**: `hello@weavixstudio.com` set in DB + static fallback.
+- **CSS fix**: `.card-blunt` moved to `@layer components` so Tailwind `bg-*` utilities override consistently.
+- **Home**: 3 CTA cards (Get my plan / Book a chat / Message us).
+- **/contact**: readiness form above CTAs, no duplicate Get-my-plan card.
+- **Copy**: hero reverted to "so 2018" opening + dual-audience paragraph. SalesHooks says "right now" (removed 2026).
+
+**Deployment status**: PASS · deployment_agent OK · 58/58 backend · 100% frontend · ready to deploy.
+
