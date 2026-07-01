@@ -522,6 +522,146 @@ class TestCategories:
         assert not any(c["id"] == "yoga-studios" for c in pub)
 
 
+# ---------- Examples CMS ----------
+def _full_example(suffix="qa"):
+    return {
+        "icon": "🧪",
+        "industry": f"TEST_QA Business {suffix} {uuid.uuid4().hex[:5]}",
+        "size": "Solo",
+        "color": "mint",
+        "tagline": "This is a QA test.",
+        "before": ["A", "B"],
+        "integrated": ["C", "D"],
+        "ai": ["E", "F"],
+        "quote": "Loved it.",
+        "quoteBy": "TEST_Reviewer",
+        "results": [{"k": "Time saved", "v": "10h/wk"}],
+        "category": "hospitality",
+        "tier": "starter",
+        "published": True,
+        "order": 999,
+    }
+
+
+class TestExamplesSeed:
+    def test_public_examples_returns_seeded_24(self, api):
+        r = api.get(f"{BASE_URL}/api/examples")
+        assert r.status_code == 200
+        data = r.json()
+        assert isinstance(data, list)
+        # Filter to seeded (published, order < 100 to exclude any test-created)
+        seeded = [e for e in data if e.get("order", 0) < 100]
+        assert len(seeded) >= 24, f"Expected >=24 seeded, got {len(seeded)}"
+        # order ascending
+        orders = [e.get("order", 0) for e in seeded]
+        assert orders == sorted(orders), "Public /api/examples must be sorted by order asc"
+        # No mongo _id leaks
+        for e in data:
+            assert "_id" not in e
+            # Basic shape
+            for k in ("id", "slug", "industry", "tagline", "category", "tier", "published"):
+                assert k in e
+
+    def test_public_examples_no_auth_required(self, api):
+        r = api.get(f"{BASE_URL}/api/examples")
+        assert r.status_code == 200
+
+
+class TestExamplesAuth:
+    @pytest.mark.parametrize("method,path,body", [
+        ("GET", "/api/admin/examples", None),
+        ("POST", "/api/admin/examples", {"industry": "x", "tagline": "y"}),
+        ("PUT", "/api/admin/examples/fake", {"industry": "x", "tagline": "y"}),
+        ("DELETE", "/api/admin/examples/fake", None),
+    ])
+    def test_admin_examples_require_auth(self, api, method, path, body):
+        r = api.request(method, f"{BASE_URL}{path}", json=body)
+        assert r.status_code == 401, f"{method} {path} expected 401 got {r.status_code}"
+
+
+class TestExamplesCRUD:
+    created_id = None
+
+    def test_create_example_full_payload(self, api, admin_headers):
+        payload = _full_example("create")
+        r = api.post(f"{BASE_URL}/api/admin/examples", headers=admin_headers, json=payload)
+        assert r.status_code == 200, r.text
+        data = r.json()
+        assert data["industry"] == payload["industry"]
+        assert data["tagline"] == payload["tagline"]
+        assert data["icon"] == "🧪"
+        assert data["category"] == "hospitality"
+        assert data["tier"] == "starter"
+        assert data["color"] == "mint"
+        assert data["before"] == payload["before"]
+        assert data["integrated"] == payload["integrated"]
+        assert data["ai"] == payload["ai"]
+        assert data["results"] == payload["results"]
+        assert data["published"] is True
+        assert isinstance(data["id"], str) and len(data["id"]) > 10
+        # auto-slug from industry
+        assert isinstance(data["slug"], str) and len(data["slug"]) > 0
+        assert data["slug"].startswith("test-qa-business")
+        assert "_id" not in data
+        TestExamplesCRUD.created_id = data["id"]
+
+    def test_admin_list_includes_created(self, api, admin_headers):
+        r = api.get(f"{BASE_URL}/api/admin/examples", headers=admin_headers)
+        assert r.status_code == 200
+        ids = [e["id"] for e in r.json()]
+        assert TestExamplesCRUD.created_id in ids
+
+    def test_public_list_includes_when_published(self, api):
+        r = api.get(f"{BASE_URL}/api/examples")
+        assert r.status_code == 200
+        ids = [e["id"] for e in r.json()]
+        assert TestExamplesCRUD.created_id in ids
+
+    def test_update_example_persists(self, api, admin_headers):
+        upd = _full_example("create")
+        upd["tagline"] = "Updated tagline QA"
+        r = api.put(
+            f"{BASE_URL}/api/admin/examples/{TestExamplesCRUD.created_id}",
+            headers=admin_headers, json=upd,
+        )
+        assert r.status_code == 200
+        assert r.json()["tagline"] == "Updated tagline QA"
+        # verify via admin list
+        r2 = api.get(f"{BASE_URL}/api/admin/examples", headers=admin_headers)
+        match = [e for e in r2.json() if e["id"] == TestExamplesCRUD.created_id]
+        assert match and match[0]["tagline"] == "Updated tagline QA"
+
+    def test_toggle_published_off_hides_from_public(self, api, admin_headers):
+        upd = _full_example("create")
+        upd["tagline"] = "Updated tagline QA"
+        upd["published"] = False
+        r = api.put(
+            f"{BASE_URL}/api/admin/examples/{TestExamplesCRUD.created_id}",
+            headers=admin_headers, json=upd,
+        )
+        assert r.status_code == 200
+        assert r.json()["published"] is False
+        pub = api.get(f"{BASE_URL}/api/examples").json()
+        assert TestExamplesCRUD.created_id not in [e["id"] for e in pub]
+
+    def test_update_nonexistent_returns_404(self, api, admin_headers):
+        r = api.put(
+            f"{BASE_URL}/api/admin/examples/does-not-exist",
+            headers=admin_headers, json=_full_example("nope"),
+        )
+        assert r.status_code == 404
+
+    def test_delete_example(self, api, admin_headers):
+        r = api.delete(
+            f"{BASE_URL}/api/admin/examples/{TestExamplesCRUD.created_id}",
+            headers=admin_headers,
+        )
+        assert r.status_code == 200
+        # verify gone from admin
+        r2 = api.get(f"{BASE_URL}/api/admin/examples", headers=admin_headers)
+        assert TestExamplesCRUD.created_id not in [e["id"] for e in r2.json()]
+
+
 # ---------- Final cleanup of settings (revert QA strings) ----------
 class TestZ_Cleanup:
     """Run last (alphabetical) — revert settings touched during tests."""

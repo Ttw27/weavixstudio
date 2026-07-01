@@ -1,0 +1,1166 @@
+[
+  {
+    "id": "cafe",
+    "icon": "\u2615",
+    "industry": "Local Caf\u00e9 & Brunch Spot",
+    "size": "1 location \u00b7 8 staff",
+    "color": "yellow",
+    "tagline": "From a Squarespace site, a Google Sheet roster and a tray of paper receipts \u2014 to one branded HQ.",
+    "before": [
+      "Squarespace site for menu",
+      "Google Forms for catering",
+      "Square POS, takings in a sheet",
+      "WhatsApp group for shifts",
+      "Paper supplier orders"
+    ],
+    "integrated": [
+      "New site with online ordering & booking",
+      "Pickup/delivery via Stripe",
+      "Staff app for shifts, holidays, tips",
+      "Supplier ordering \u2014 one button per supplier",
+      "Live takings + costs dashboard for the owner"
+    ],
+    "ai": [
+      "AI receptionist that handles bookings & FAQs over WhatsApp",
+      "Auto-replies to Google reviews in their voice (with owner approval)",
+      "Weekly menu performance summary in plain English",
+      "Smart inventory: suggests reorders before you run out"
+    ],
+    "quote": "I used to spend Sundays catching up on emails, the till and shift swaps. Now it's all in one place \u2014 I get my weekends back.",
+    "quoteBy": "Owner \u00b7 brunch spot, Bristol",
+    "results": [
+      {
+        "k": "Owner time saved",
+        "v": "~8 hrs/wk"
+      },
+      {
+        "k": "Bookings handled by AI",
+        "v": "62%"
+      },
+      {
+        "k": "Review reply time",
+        "v": "<10 min"
+      }
+    ],
+    "category": "hospitality",
+    "tier": "starter",
+    "order": 0,
+    "published": true
+  },
+  {
+    "id": "dental",
+    "icon": "\ud83e\uddb7",
+    "industry": "Private Dental Clinic",
+    "size": "2 locations \u00b7 18 staff",
+    "color": "blue",
+    "tagline": "Replaced 6 tools (booking, reminders, files, intake, payments, comms) with one calm patient portal.",
+    "before": [
+      "Dentally for records (good, kept it)",
+      "Calendly for bookings",
+      "Mailchimp for newsletters",
+      "WhatsApp for reminders (manual)",
+      "PDF intake forms via email",
+      "Stripe links sent manually"
+    ],
+    "integrated": [
+      "Branded patient portal with login",
+      "Online booking + smart reminders (email & SMS)",
+      "Digital intake forms with allergy/history checks",
+      "Treatment plans + estimates with one-click payment",
+      "Post-visit care instructions auto-sent",
+      "GDPR-safe document vault"
+    ],
+    "ai": [
+      "Pre-appointment AI that answers nervous patient questions 24/7",
+      "Auto-summary of intake forms \u2014 surfacing risks to the dentist",
+      "Recall AI: gently nudges patients due for check-ups in their preferred channel",
+      "Internal 'ask the SOP' agent for the front desk team"
+    ],
+    "quote": "Front desk has stopped drowning. Patients arrive prepared. We've recovered 30+ hours a month between two practices.",
+    "quoteBy": "Practice manager \u00b7 dental group, Manchester",
+    "results": [
+      {
+        "k": "No-show rate",
+        "v": "\u221247%"
+      },
+      {
+        "k": "Admin hours saved",
+        "v": "30+/mo"
+      },
+      {
+        "k": "Recall conversions",
+        "v": "+38%"
+      }
+    ],
+    "category": "health",
+    "tier": "starter",
+    "order": 1,
+    "published": true
+  },
+  {
+    "id": "trades",
+    "icon": "\ud83d\udd27",
+    "industry": "Plumbing / Electrical Trades",
+    "size": "Owner + 4 engineers",
+    "color": "mint",
+    "tagline": "Job sheets on WhatsApp, quotes in a notebook, customers chasing for updates. Not anymore.",
+    "before": [
+      "Quotes scribbled, sent later",
+      "Jobs assigned via WhatsApp",
+      "Invoicing via QuickBooks, manually",
+      "Customer calls for ETAs all day",
+      "Lost time to admin every evening"
+    ],
+    "integrated": [
+      "Branded customer site with instant quote estimator",
+      "Mobile field-app for engineers \u2014 jobs, photos, signatures",
+      "Auto SMS to customer when engineer is on the way",
+      "Quote \u2192 job \u2192 invoice \u2192 payment, all linked",
+      "Live dashboard for the owner (jobs today, revenue, parts)"
+    ],
+    "ai": [
+      "AI quote drafter: customer describes the problem, gets a sensible estimate range",
+      "AI dispatcher: suggests which engineer + when, factoring travel & skill",
+      "Voice-to-job-note: engineer talks, AI fills the job sheet",
+      "Review request flows triggered automatically after a job completes"
+    ],
+    "quote": "I stopped doing paperwork at 9pm. Quotes go out the same hour. Customers think we've doubled in size.",
+    "quoteBy": "Owner \u00b7 plumbing co., Leeds",
+    "results": [
+      {
+        "k": "Quotes out same-day",
+        "v": "98%"
+      },
+      {
+        "k": "Avg jobs/engineer",
+        "v": "+22%"
+      },
+      {
+        "k": "5\u2605 reviews",
+        "v": "3\u00d7 more"
+      }
+    ],
+    "category": "service",
+    "tier": "starter",
+    "order": 2,
+    "published": true
+  },
+  {
+    "id": "coach",
+    "icon": "\ud83c\udfaf",
+    "industry": "Online Course & Coaching",
+    "size": "Solo founder + 2 contractors",
+    "color": "lilac",
+    "tagline": "Replaced Kajabi + Teachable + Notion + Calendly + ConvertKit with one branded student portal.",
+    "before": [
+      "Kajabi for course (expensive)",
+      "Notion for resources",
+      "Calendly for 1-1s",
+      "ConvertKit for emails",
+      "Discord for community"
+    ],
+    "integrated": [
+      "Branded student portal with course player",
+      "Cohort & 1-1 booking inside the portal",
+      "Email automations + payment links built-in",
+      "Community space (replaces Discord)",
+      "Affiliate / referral tracking"
+    ],
+    "ai": [
+      "An AI coach trained on the founder's frameworks \u2014 students ask anytime",
+      "Personalised next-step recommendations after each lesson",
+      "Auto-grader for written assignments with detailed feedback",
+      "Content multiplier: turns each podcast into 8 short clips + a newsletter"
+    ],
+    "quote": "I cancelled \u00a3400/mo of SaaS. My students are more active. The AI coach has saved me 10+ DM hours a week.",
+    "quoteBy": "Founder \u00b7 business coach",
+    "results": [
+      {
+        "k": "SaaS cost saved",
+        "v": "\u00a34.8k/yr"
+      },
+      {
+        "k": "Course completion",
+        "v": "+41%"
+      },
+      {
+        "k": "Coach hours saved",
+        "v": "10+/wk"
+      }
+    ],
+    "category": "digital",
+    "tier": "growing",
+    "order": 3,
+    "published": true
+  },
+  {
+    "id": "ecom",
+    "icon": "\ud83d\udecd\ufe0f",
+    "industry": "DTC Fashion Brand",
+    "size": "Founder + small team",
+    "color": "pink",
+    "tagline": "From Shopify + Klaviyo + Gorgias + ManyChat duct-tape \u2014 to a unified storefront with AI baked in.",
+    "before": [
+      "Shopify, default theme",
+      "Klaviyo flows (some broken)",
+      "Gorgias for support",
+      "Manual UGC sourcing",
+      "Ad creative outsourced (slow)"
+    ],
+    "integrated": [
+      "Headless Shopify storefront \u2014 fast, editorial, mobile-first",
+      "Loyalty & referral built into checkout",
+      "Connected reviews, UGC and product Q&A",
+      "Inventory + supplier dashboard",
+      "Single customer view across site, email, support"
+    ],
+    "ai": [
+      "AI product stylist: 'what goes with this?'",
+      "Support agent answering 70% of tickets (returns, sizing, shipping)",
+      "Ad creative generator using brand-approved templates",
+      "Personal subject-line writer for every Klaviyo campaign",
+      "Visual search: shoppers upload an image, see closest products"
+    ],
+    "quote": "Customer support cost halved. Conversion up 28%. We finally have time to design the next collection.",
+    "quoteBy": "Founder \u00b7 DTC fashion",
+    "results": [
+      {
+        "k": "Support cost",
+        "v": "\u221250%"
+      },
+      {
+        "k": "CVR",
+        "v": "+28%"
+      },
+      {
+        "k": "Email revenue",
+        "v": "+62%"
+      }
+    ],
+    "category": "retail",
+    "tier": "growing",
+    "order": 4,
+    "published": true
+  },
+  {
+    "id": "fitness",
+    "icon": "\ud83c\udfcb\ufe0f",
+    "industry": "Personal Trainer Studio",
+    "size": "Owner + 6 trainers",
+    "color": "orange",
+    "tagline": "Sticky-notes, Trainerize, MyFitnessPal, Insta DMs \u2014 into one branded member app.",
+    "before": [
+      "Trainerize for programs",
+      "DMs for check-ins",
+      "Google Sheet for sessions",
+      "PayPal links for invoices",
+      "MyFitnessPal logging (chaotic)"
+    ],
+    "integrated": [
+      "Branded member app (iOS + Android)",
+      "Booking + payments + class passes",
+      "Programs with video + form-check uploads",
+      "Trainer chat with shared media",
+      "Wearables + nutrition sync"
+    ],
+    "ai": [
+      "AI form-check: members upload a video, AI flags posture issues",
+      "Personalised weekly check-in survey + AI-summarised report to the trainer",
+      "Nutrition coach AI tailored to the member's goal & allergens",
+      "Auto-generated celebratory milestones (PRs, streaks) for social sharing"
+    ],
+    "quote": "Retention has never been this high. Members say it feels like having a coach in their pocket.",
+    "quoteBy": "Owner \u00b7 PT studio, Brighton",
+    "results": [
+      {
+        "k": "Member retention",
+        "v": "+34%"
+      },
+      {
+        "k": "Trainer admin",
+        "v": "\u22126 hrs/wk"
+      },
+      {
+        "k": "Referrals",
+        "v": "2\u00d7 more"
+      }
+    ],
+    "category": "health",
+    "tier": "starter",
+    "order": 5,
+    "published": true
+  },
+  {
+    "id": "football",
+    "icon": "\u26bd",
+    "industry": "1-to-1 Football Coach",
+    "size": "Solo coach \u00b7 40+ players",
+    "color": "mint",
+    "tagline": "Whiteboard drills, WhatsApp video reviews, payments in PayPal \u2014 to a branded coaching platform parents trust.",
+    "before": [
+      "WhatsApp groups for each player",
+      "Notes in a notebook",
+      "Drill videos lost in iPhone",
+      "Bank transfers, chased manually",
+      "Match-day clashes with the calendar"
+    ],
+    "integrated": [
+      "Player & parent portal with login",
+      "Session bookings + payments (block bookings, rescheduling)",
+      "Drill & technique video library, tagged by skill",
+      "Session reports auto-shared with parents",
+      "Match calendar with availability + RSVP"
+    ],
+    "ai": [
+      "AI video analysis: upload match clip \u2192 tagged moments (shots, passes, defensive errors)",
+      "Personalised drill plan per player based on their game footage",
+      "Parent-friendly progress reports auto-written from session notes",
+      "Smart scheduling AI that solves clashes across 40+ players",
+      "Voice-to-note: coach speaks after a session, AI writes the report"
+    ],
+    "quote": "Parents see real progress on paper, players love the videos, and I get my Sunday evenings back.",
+    "quoteBy": "Coach \u00b7 1-to-1 football, Surrey",
+    "results": [
+      {
+        "k": "Admin hours",
+        "v": "\u22129 hrs/wk"
+      },
+      {
+        "k": "Payment chasing",
+        "v": "Gone"
+      },
+      {
+        "k": "Players (capacity)",
+        "v": "+60%"
+      }
+    ],
+    "category": "health",
+    "tier": "starter",
+    "order": 6,
+    "published": true
+  },
+  {
+    "id": "etsy",
+    "icon": "\ud83e\uddf5",
+    "industry": "Etsy Maker & Designer",
+    "size": "Solo \u00b7 800 listings",
+    "color": "pink",
+    "tagline": "Canva, Midjourney, Etsy ads, Pinterest \u2014 endless tabs and burnt creative hours. Now a branded creator HQ.",
+    "before": [
+      "Canva for product mockups (slow)",
+      "Midjourney for design ideas (\u00a3100s wasted on bad prompts)",
+      "Spreadsheet of keywords",
+      "Etsy ads guessed at",
+      "Pinterest pinned manually"
+    ],
+    "integrated": [
+      "Own Shopify-style storefront (own customer data)",
+      "Branded creator dashboard: listings, sales, costs",
+      "Inventory + variant management",
+      "Bulk listing tool (Etsy + own site + Pinterest at once)",
+      "Customer support inbox (Etsy convos + email + Insta DMs unified)"
+    ],
+    "ai": [
+      "Branded design-prompt app: type a phrase \u2192 on-brand product mockup, first try",
+      "Etsy SEO assistant: paste a listing \u2192 keywords, title, tags, alt text \u2014 optimised",
+      "Ad creative generator using your brand colours + winning angles",
+      "Pinterest pin writer + scheduler in your voice",
+      "AI customer service drafting replies to common questions"
+    ],
+    "quote": "I used to spend 3 hours getting one product image right. Now it takes 5 minutes and looks better. The keyword AI alone changed everything.",
+    "quoteBy": "Maker \u00b7 home decor on Etsy",
+    "results": [
+      {
+        "k": "Listings / day",
+        "v": "10\u00d7 more"
+      },
+      {
+        "k": "Midjourney spend",
+        "v": "\u221270%"
+      },
+      {
+        "k": "Etsy CTR",
+        "v": "+58%"
+      }
+    ],
+    "category": "retail",
+    "tier": "growing",
+    "order": 7,
+    "published": true
+  },
+  {
+    "id": "accountant",
+    "icon": "\ud83e\uddee",
+    "industry": "Small Accountancy Practice",
+    "size": "Partner + 5 staff \u00b7 250 clients",
+    "color": "blue",
+    "tagline": "Email-based client chasing, lost PDFs, deadline panic. Replaced with a calm client portal + AI deadline guardian.",
+    "before": [
+      "Email chains for every client",
+      "PDFs scattered across Dropbox / inbox",
+      "Spreadsheet of deadlines (often out of date)",
+      "Manual data entry from receipts",
+      "Annual tax return = panic season"
+    ],
+    "integrated": [
+      "Branded client portal \u2014 secure document upload, e-sign",
+      "Engagement letters & onboarding automated",
+      "Stripe direct-debit for monthly fees",
+      "Deadline tracker \u2014 HMRC / Companies House / VAT",
+      "Internal staff dashboard with workload per client"
+    ],
+    "ai": [
+      "Receipt & invoice OCR: client snaps a photo \u2192 categorised entry in Xero",
+      "AI 'first-draft' tax computation reviewer flagging anomalies",
+      "Client question bot \u2014 answers FAQs (allowable expenses, deadlines, etc.) 24/7 in your firm's tone",
+      "AI deadline guardian \u2014 chases clients via SMS/email in increasing urgency",
+      "Annual report writer that pulls from the client's data"
+    ],
+    "quote": "Deadline season went from chaos to calm. Clients send receipts in seconds, and the AI catches what my juniors miss.",
+    "quoteBy": "Managing partner \u00b7 accountancy firm, Reading",
+    "results": [
+      {
+        "k": "Late filings",
+        "v": "\u221292%"
+      },
+      {
+        "k": "Avg client onboarding",
+        "v": "3 days \u2192 1"
+      },
+      {
+        "k": "Capacity per accountant",
+        "v": "+40%"
+      }
+    ],
+    "category": "pro",
+    "tier": "growing",
+    "order": 8,
+    "published": true
+  },
+  {
+    "id": "estate-agent",
+    "icon": "\ud83c\udfe1",
+    "industry": "Independent Estate Agency",
+    "size": "2 branches \u00b7 12 staff",
+    "color": "lilac",
+    "tagline": "Rightmove, Zoopla, three CRMs, 20 spreadsheets of viewings. Unified into one branded property platform.",
+    "before": [
+      "Two different CRMs (sales + lettings)",
+      "Excel viewing diaries",
+      "WhatsApp for landlord comms",
+      "DocuSign for contracts",
+      "Property photos lost on agents' phones"
+    ],
+    "integrated": [
+      "Branded property portal (with their own AVM tool)",
+      "Vendor & landlord login: status updates, offers, feedback",
+      "Tenant onboarding: referencing, signing, payments end-to-end",
+      "Viewing scheduler with auto-confirmations",
+      "Internal CRM tying valuations, offers, conveyancing in one view"
+    ],
+    "ai": [
+      "AI valuation explainer: shows the vendor why a property is priced that way, with comparables",
+      "Auto-written property descriptions (in your tone) from photos + bullet facts",
+      "AI lead qualifier: filters enquiries, books only serious ones into viewings",
+      "Feedback summariser: vendor sees themed comments after every viewing",
+      "After-viewing follow-up emails personalised per buyer's reactions"
+    ],
+    "quote": "Vendors finally feel informed. Junior agents close more because the AI does the chasing.",
+    "quoteBy": "Director \u00b7 independent agency, Surrey",
+    "results": [
+      {
+        "k": "Time on market",
+        "v": "\u221221%"
+      },
+      {
+        "k": "Listings won",
+        "v": "+47%"
+      },
+      {
+        "k": "Negotiator capacity",
+        "v": "+30%"
+      }
+    ],
+    "category": "pro",
+    "tier": "growing",
+    "order": 9,
+    "published": true
+  },
+  {
+    "id": "restaurant-chain",
+    "icon": "\ud83c\udf54",
+    "industry": "Multi-Location Restaurant Group",
+    "size": "5 sites \u00b7 80 staff",
+    "color": "orange",
+    "tagline": "Five tills, five rotas, five inboxes. Now one branded HQ that runs every site.",
+    "before": [
+      "Different POS at each site",
+      "Rotas printed and pinned",
+      "Stock counted on paper",
+      "Marketing run on personal Insta accounts",
+      "Customer feedback lost in DMs"
+    ],
+    "integrated": [
+      "Unified booking, ordering & loyalty across all sites",
+      "Staff app: rotas, swaps, payslips, training",
+      "Live KPI dashboard for the founders (covers, GP%, labour)",
+      "Supplier ordering with auto-replenishment",
+      "Branded review hub pulling Google, TripAdvisor, Open Table"
+    ],
+    "ai": [
+      "Demand forecasting per site, per shift, per dish",
+      "AI menu engineer suggests price/portion tweaks for margin",
+      "Customer feedback summariser: themes per site, per week",
+      "AI host chatbot handling reservations & dietaries in 12 languages"
+    ],
+    "quote": "I can run all five sites from my phone. The forecasting alone saved us a chef's salary in waste.",
+    "quoteBy": "Founder \u00b7 restaurant group, London",
+    "results": [
+      {
+        "k": "Food waste",
+        "v": "\u221231%"
+      },
+      {
+        "k": "Repeat covers",
+        "v": "+24%"
+      },
+      {
+        "k": "Manager admin",
+        "v": "\u221212 hrs/wk"
+      }
+    ],
+    "category": "hospitality",
+    "tier": "growing",
+    "order": 10,
+    "published": true
+  },
+  {
+    "id": "agency",
+    "icon": "\ud83c\udfa8",
+    "industry": "Branding & Marketing Agency",
+    "size": "Founder + 8 creatives",
+    "color": "pink",
+    "tagline": "Time-sheets in Toggl, briefs in Notion, decks in Keynote. Replaced with a branded studio OS.",
+    "before": [
+      "Toggl + spreadsheets for time",
+      "Notion + Drive for briefs",
+      "Slack for client comms",
+      "Keynote / Figma for decks",
+      "Invoices manual in QuickBooks"
+    ],
+    "integrated": [
+      "Branded studio OS: clients, briefs, time, files, invoices in one",
+      "Client portal \u2014 review proofs, approve, comment",
+      "Project Kanban tied to invoicing & budgets",
+      "Knowledge base / case-study library",
+      "Auto SOWs and contract signing"
+    ],
+    "ai": [
+      "AI proposal & SOW drafter trained on past wins",
+      "Creative brief co-pilot: turns sales notes into a designer-ready brief",
+      "On-brand image generator for moodboards & decks",
+      "Time auto-tracker via calendar + files (no more manual logging)",
+      "AI client-mood radar from email/Slack tone \u2014 flags red flags early"
+    ],
+    "quote": "We bill 30% more hours without working more. Briefs are clearer, decks faster, clients happier.",
+    "quoteBy": "Founder \u00b7 branding agency, London",
+    "results": [
+      {
+        "k": "Billable hours",
+        "v": "+30%"
+      },
+      {
+        "k": "Proposal turnaround",
+        "v": "1 day \u2192 2 hrs"
+      },
+      {
+        "k": "Client NPS",
+        "v": "62 \u2192 81"
+      }
+    ],
+    "category": "digital",
+    "tier": "established",
+    "order": 11,
+    "published": true
+  },
+  {
+    "id": "gp-clinic",
+    "icon": "\ud83e\ude7a",
+    "industry": "Private GP Clinic Group",
+    "size": "3 clinics \u00b7 22 staff",
+    "color": "blue",
+    "tagline": "Calmer waiting rooms, fewer no-shows, and an AI that triages questions before patients call.",
+    "before": [
+      "Phone-only bookings (long holds)",
+      "Reception drowning in repeat questions",
+      "Test results posted, lost, re-sent",
+      "Recall letters by post",
+      "Patient leaflets PDFs on a USB stick"
+    ],
+    "integrated": [
+      "Branded patient portal with secure messaging",
+      "Online booking & smart triage form",
+      "Digital results delivery with explainers",
+      "Recall + vaccination reminders",
+      "Document vault: histories, scripts, referrals"
+    ],
+    "ai": [
+      "AI receptionist that triages symptoms and books appropriately",
+      "Auto-summary of patient history before the appointment",
+      "Plain-English results explainer (with red flags surfaced)",
+      "Multilingual translation for consent & info sheets",
+      "Recall AI: nudges patients due for check-ups politely"
+    ],
+    "quote": "Reception have stopped putting people on hold. Patients feel heard before they even step in.",
+    "quoteBy": "Clinical director \u00b7 private GP, Surrey",
+    "results": [
+      {
+        "k": "Hold times",
+        "v": "\u221280%"
+      },
+      {
+        "k": "No-shows",
+        "v": "\u221239%"
+      },
+      {
+        "k": "Recall conversion",
+        "v": "+44%"
+      }
+    ],
+    "category": "health",
+    "tier": "starter",
+    "order": 12,
+    "published": true
+  },
+  {
+    "id": "boutique-hotel",
+    "icon": "\ud83c\udfe8",
+    "industry": "Boutique Hotel / B&B",
+    "size": "12 rooms \u00b7 family-run",
+    "color": "yellow",
+    "tagline": "Booking.com fees eating margin, repeat questions over email. Now a direct-booking ecosystem with an AI concierge.",
+    "before": [
+      "Booking.com & Airbnb only",
+      "Stripe links for extras (manual)",
+      "Email back-and-forth for arrival info",
+      "Excel housekeeping schedule",
+      "Local guide printed once a year"
+    ],
+    "integrated": [
+      "Branded direct-booking site (skip OTA fees)",
+      "Guest portal: arrival info, extras, upgrades, room service",
+      "Housekeeping app with checklists",
+      "Live availability + dynamic pricing engine",
+      "Local recommendations pulled from staff favourites"
+    ],
+    "ai": [
+      "AI concierge: answers guest questions 24/7 (in their language)",
+      "Auto-personalised welcome message based on booking source & history",
+      "Upsell AI: suggests spa, dinner, taxi at the right moment",
+      "Review-response drafter (approve in one tap)"
+    ],
+    "quote": "Direct bookings doubled. Guests think we're a boutique brand with a head office \u2014 we're still a family of four.",
+    "quoteBy": "Owner \u00b7 boutique hotel, Cotswolds",
+    "results": [
+      {
+        "k": "Direct bookings",
+        "v": "2\u00d7"
+      },
+      {
+        "k": "OTA fees saved",
+        "v": "\u00a318k/yr"
+      },
+      {
+        "k": "Avg upsell",
+        "v": "+\u00a342/stay"
+      }
+    ],
+    "category": "hospitality",
+    "tier": "growing",
+    "order": 13,
+    "published": true
+  },
+  {
+    "id": "driving-school",
+    "icon": "\ud83d\ude97",
+    "industry": "Driving Instructor / School",
+    "size": "Owner + 6 instructors",
+    "color": "mint",
+    "tagline": "Wall planner, cash payments, students texting at 11pm. Now a branded booking + progress app.",
+    "before": [
+      "Wall planner in the kitchen",
+      "Texts for booking & cancellations",
+      "Cash + bank transfers",
+      "Skills tracked in a notebook",
+      "Theory tests on paper"
+    ],
+    "integrated": [
+      "Branded student app with bookings, payments, lesson recap",
+      "Block-booking with discounts",
+      "Skill tracker (manoeuvres, mock test, etc.)",
+      "Instructor scheduling + pay calc",
+      "Theory practice mini-tests"
+    ],
+    "ai": [
+      "AI mock-test coach: explains why each answer is right/wrong",
+      "Lesson-debrief generator from instructor voice notes",
+      "Pass-prep planner: tells the student what to focus on this week",
+      "WhatsApp AI handles 'can I book Tuesday?' bookings"
+    ],
+    "quote": "Students learn faster, I drive less paper, and the WhatsApp AI books lessons while I'm teaching.",
+    "quoteBy": "Driving school owner, Bristol",
+    "results": [
+      {
+        "k": "Pass rate (first try)",
+        "v": "+22%"
+      },
+      {
+        "k": "Lessons booked online",
+        "v": "94%"
+      },
+      {
+        "k": "Admin hours",
+        "v": "\u22128 hrs/wk"
+      }
+    ],
+    "category": "education",
+    "tier": "starter",
+    "order": 14,
+    "published": true
+  },
+  {
+    "id": "tutor",
+    "icon": "\ud83d\udcda",
+    "industry": "Tutoring / Education Business",
+    "size": "Founder + 14 tutors",
+    "color": "lilac",
+    "tagline": "Tutors found on Wyzant + Superprof, parents emailing for updates. Now a branded learning platform.",
+    "before": [
+      "Tutors paid through Stripe Connect",
+      "Parents emailing for progress",
+      "Notes in tutors' own Google Docs",
+      "WhatsApp for scheduling",
+      "Reports written by hand"
+    ],
+    "integrated": [
+      "Branded student & parent portal",
+      "Lesson booking + payments",
+      "Tutor app with prep notes, materials, homework",
+      "Parent progress dashboard",
+      "Marketplace for in-house exam prep packs"
+    ],
+    "ai": [
+      "AI homework grader & explainer (per subject)",
+      "Tutor co-pilot: drafts lesson plans + practice questions tailored to the student",
+      "Parent-friendly progress report writer (auto from lesson notes)",
+      "Matchmaker: pairs new students with the right tutor based on style"
+    ],
+    "quote": "Parents finally see what they're paying for. Tutors feel supported. We grew 3\u00d7 without hiring an admin.",
+    "quoteBy": "Founder \u00b7 tutoring co., Manchester",
+    "results": [
+      {
+        "k": "Tutor capacity",
+        "v": "+45%"
+      },
+      {
+        "k": "Parent retention",
+        "v": "+38%"
+      },
+      {
+        "k": "Avg report time",
+        "v": "30 min \u2192 3 min"
+      }
+    ],
+    "category": "education",
+    "tier": "growing",
+    "order": 15,
+    "published": true
+  },
+  {
+    "id": "law-firm",
+    "icon": "\u2696\ufe0f",
+    "industry": "Independent Law Firm",
+    "size": "3 partners \u00b7 9 staff",
+    "color": "ink",
+    "tagline": "Word docs, paper signatures, lost emails. Replaced with a calm client portal and AI legal assistant.",
+    "before": [
+      "Outlook + a shared drive",
+      "Hard-copy client files",
+      "Phone calls for status updates",
+      "Manual billing in Xero",
+      "Discoveries in 4 different inboxes"
+    ],
+    "integrated": [
+      "Branded client portal with case status, documents, invoices",
+      "E-signature + ID verification flow",
+      "Matter management with automated milestones",
+      "Time tracking tied directly to billing",
+      "Conflict-check + intake automation"
+    ],
+    "ai": [
+      "AI document summariser: 80-page contract \u2192 1-page brief",
+      "Drafting co-pilot for standard letters & clauses (firm-approved templates)",
+      "Internal 'precedent search' agent across past matters",
+      "Client update auto-writer: lawyer voice-notes \u2192 polished status email",
+      "Compliance flagger for AML / KYC patterns"
+    ],
+    "quote": "Associates draft in half the time, clients hear from us proactively. We took on 30% more work with the same team.",
+    "quoteBy": "Senior partner \u00b7 independent law firm",
+    "results": [
+      {
+        "k": "Drafting time",
+        "v": "\u221252%"
+      },
+      {
+        "k": "Matters per fee-earner",
+        "v": "+30%"
+      },
+      {
+        "k": "Client satisfaction",
+        "v": "+41%"
+      }
+    ],
+    "category": "pro",
+    "tier": "growing",
+    "order": 16,
+    "published": true
+  },
+  {
+    "id": "vet",
+    "icon": "\ud83d\udc15",
+    "industry": "Vet Clinic / Pet Care",
+    "size": "1 clinic \u00b7 9 staff",
+    "color": "mint",
+    "tagline": "Worried owners calling at 6am. Now an AI-assisted pet portal that calms the chaos.",
+    "before": [
+      "Phone lines jammed in the morning",
+      "Reminders for vaccines by post",
+      "Owner photos lost in WhatsApp",
+      "Repeat prescriptions emailed",
+      "Records in a desktop system"
+    ],
+    "integrated": [
+      "Branded pet portal \u2014 one record per pet",
+      "Online booking + smart triage",
+      "Reminders for vaccines, flea, worming, check-ups",
+      "Repeat-script ordering with delivery",
+      "Photo/video upload for pre-consult"
+    ],
+    "ai": [
+      "AI triage: helps the owner know if it's urgent, can-wait or watch-and-see",
+      "Auto-summary of pet history before the appointment",
+      "Diet & weight coach for chronic conditions",
+      "AI grief support resource library after end-of-life visits"
+    ],
+    "quote": "Anxious owners now reach for the app, not the phone. We give pets more time, not paperwork.",
+    "quoteBy": "Lead vet \u00b7 Surrey",
+    "results": [
+      {
+        "k": "Phone volume",
+        "v": "\u221254%"
+      },
+      {
+        "k": "Recall uptake",
+        "v": "+47%"
+      },
+      {
+        "k": "Owner NPS",
+        "v": "+38"
+      }
+    ],
+    "category": "health",
+    "tier": "starter",
+    "order": 17,
+    "published": true
+  },
+  {
+    "id": "landscaping",
+    "icon": "\ud83c\udf31",
+    "industry": "Garden & Landscaping Co.",
+    "size": "Owner + 5 staff",
+    "color": "yellow",
+    "tagline": "Quoting from photos, weather-juggled jobs, invoices done on Sundays. A field-app changed everything.",
+    "before": [
+      "Site visits to quote anything",
+      "Paper job sheets",
+      "Weather killed scheduling",
+      "Customer photos lost",
+      "Invoices done on Sundays"
+    ],
+    "integrated": [
+      "Customer photo-upload quoting flow",
+      "Job dispatch app with weather-aware scheduling",
+      "Before / during / after photo log per job",
+      "Auto invoice + payment on job complete",
+      "Maintenance contracts on recurring billing"
+    ],
+    "ai": [
+      "AI sketch-to-quote: customer uploads garden photo + sketch, AI returns design ideas + cost range",
+      "Smart scheduler: shifts jobs around forecast rain",
+      "AI plant recommendation tool for clients",
+      "Voice-to-quote so the owner quotes while driving"
+    ],
+    "quote": "Quotes go out in 10 minutes instead of next week. The AI even suggests plants the client loves.",
+    "quoteBy": "Owner \u00b7 landscaping co., Bath",
+    "results": [
+      {
+        "k": "Quote \u2192 win rate",
+        "v": "+42%"
+      },
+      {
+        "k": "Weather wasted days",
+        "v": "\u221268%"
+      },
+      {
+        "k": "Recurring revenue",
+        "v": "4\u00d7 more"
+      }
+    ],
+    "category": "service",
+    "tier": "starter",
+    "order": 18,
+    "published": true
+  },
+  {
+    "id": "podcaster",
+    "icon": "\ud83c\udfa4",
+    "industry": "Podcaster / Content Creator",
+    "size": "Solo \u00b7 weekly episodes",
+    "color": "pink",
+    "tagline": "One podcast, ten platforms, zero time. Now a content engine that distributes everywhere automatically.",
+    "before": [
+      "Riverside / Squadcast for recording",
+      "Descript for editing (slow)",
+      "Manual reels in CapCut",
+      "Show notes in a Google Doc",
+      "Newsletter pasted into Substack"
+    ],
+    "integrated": [
+      "Branded podcast site with episode pages + transcripts",
+      "Membership tier (Patreon-replaced) on own domain",
+      "Newsletter signups + RSS in one place",
+      "Sponsorship marketplace inside the dashboard",
+      "Listener Q&A inbox + voicemail collector"
+    ],
+    "ai": [
+      "Auto chapters, transcripts, show notes, SEO titles",
+      "10 reels + 5 quote-cards + 3 tweets per episode (in your voice)",
+      "Newsletter draft from each episode (you just polish)",
+      "Question summariser for AMA episodes",
+      "Listener-matched ad sponsor recommender"
+    ],
+    "quote": "Ten hours of post-production gone. My audience grew 3\u00d7 this year because I finally show up across platforms.",
+    "quoteBy": "Independent podcaster",
+    "results": [
+      {
+        "k": "Audience growth",
+        "v": "3\u00d7"
+      },
+      {
+        "k": "Sponsorship rev",
+        "v": "+220%"
+      },
+      {
+        "k": "Post-prod time",
+        "v": "\u221280%"
+      }
+    ],
+    "category": "digital",
+    "tier": "growing",
+    "order": 19,
+    "published": true
+  },
+  {
+    "id": "removals",
+    "icon": "\ud83d\ude9a",
+    "industry": "Removals / Man-with-Van",
+    "size": "Owner + 2 vans",
+    "color": "blue",
+    "tagline": "Booking via phone, quote on the spot, cash in hand. Replaced with an instant-quote booking app.",
+    "before": [
+      "Phone calls only for bookings",
+      "Quote by gut feel",
+      "Calendar on the fridge",
+      "Receipts on paper",
+      "Reviews never asked for"
+    ],
+    "integrated": [
+      "Instant online quoting from address + photo of items",
+      "Branded booking site with payments + deposits",
+      "Driver app with route, photos, signatures",
+      "Customer comms (ETA SMS, live tracking)",
+      "Review request flow after every job"
+    ],
+    "ai": [
+      "AI quote engine: photo \u2192 estimated load + travel + crew + price",
+      "Voice-to-job-note for drivers between stops",
+      "Smart route + load planner",
+      "Damage detection from photos before/after",
+      "AI driver coach: tips per route based on past delays"
+    ],
+    "quote": "I doubled my jobs with the same vans. The instant quote tool wins us calls before competitors even reply.",
+    "quoteBy": "Owner \u00b7 removals co., Birmingham",
+    "results": [
+      {
+        "k": "Quotes / day",
+        "v": "5\u00d7 more"
+      },
+      {
+        "k": "Conversion",
+        "v": "+57%"
+      },
+      {
+        "k": "5\u2605 reviews",
+        "v": "3\u00d7 more"
+      }
+    ],
+    "category": "service",
+    "tier": "starter",
+    "order": 20,
+    "published": true
+  },
+  {
+    "id": "wedding-planner",
+    "icon": "\ud83d\udc8d",
+    "industry": "Wedding Planner / Venue",
+    "size": "Founder + 3 planners",
+    "color": "lilac",
+    "tagline": "Endless Pinterest boards, vendor emails, spreadsheet budgets. One calm planning portal per couple.",
+    "before": [
+      "Pinterest moodboards shared by link",
+      "Vendor coordination over email",
+      "Budget spreadsheet (always out of date)",
+      "Timeline in Word",
+      "Guest list in Excel"
+    ],
+    "integrated": [
+      "Couple's portal: moodboard, vendors, budget, timeline, RSVPs",
+      "Vendor marketplace + booking inside",
+      "Real-time budget tracker connected to invoices",
+      "Guest RSVP & dietary tracking",
+      "Day-of timeline shared with all suppliers"
+    ],
+    "ai": [
+      "Moodboard-to-vendor recommender (style + budget match)",
+      "AI script-writer for speeches, vows, MC intros (private to couple)",
+      "Smart budget warning AI: flags overspend early",
+      "Auto follow-up with vendors stuck on confirmations"
+    ],
+    "quote": "Brides cry happy tears in the portal. We handle 50% more weddings with the same team \u2014 calmer.",
+    "quoteBy": "Founder \u00b7 wedding planner, Yorkshire",
+    "results": [
+      {
+        "k": "Weddings / yr",
+        "v": "+50%"
+      },
+      {
+        "k": "Vendor coord time",
+        "v": "\u221265%"
+      },
+      {
+        "k": "Couple NPS",
+        "v": "+44"
+      }
+    ],
+    "category": "community",
+    "tier": "growing",
+    "order": 21,
+    "published": true
+  },
+  {
+    "id": "salon",
+    "icon": "\ud83d\udc87",
+    "industry": "Hair Salon / Barber Chain",
+    "size": "4 sites \u00b7 26 stylists",
+    "color": "orange",
+    "tagline": "Bookings on phone, products sold on paper, no idea who's loyal. Now a branded loyalty + booking app.",
+    "before": [
+      "Phone bookings (missed at busy times)",
+      "Product sales on paper",
+      "No-show texts manual",
+      "Loyalty cards (paper, often lost)",
+      "Marketing on personal Insta"
+    ],
+    "integrated": [
+      "Branded booking app with rebooking + waitlist",
+      "Product retail tied to client history",
+      "Stylist app: schedule, tips, client preferences",
+      "Loyalty points + birthday rewards",
+      "Branded reels & content kits per stylist"
+    ],
+    "ai": [
+      "AI rebooking nudges based on previous interval",
+      "Hair/colour mood-board generator from a client photo",
+      "Demand forecasting for retail stock",
+      "Personalised aftercare AI message after every visit"
+    ],
+    "quote": "Rebookings doubled. Stylists make more in tips and product. The whole team feels modern.",
+    "quoteBy": "Owner \u00b7 barber chain, Liverpool",
+    "results": [
+      {
+        "k": "Rebooking rate",
+        "v": "2\u00d7"
+      },
+      {
+        "k": "Retail revenue",
+        "v": "+58%"
+      },
+      {
+        "k": "Stylist retention",
+        "v": "+33%"
+      }
+    ],
+    "category": "retail",
+    "tier": "starter",
+    "order": 22,
+    "published": true
+  },
+  {
+    "id": "cycling-club",
+    "icon": "\ud83d\udeb4",
+    "industry": "Cycling Club / Sports Community",
+    "size": "Volunteer-run \u00b7 400 members",
+    "color": "mint",
+    "tagline": "Strava, Facebook events, WhatsApp groups, paper sign-ups. Replaced with one community platform.",
+    "before": [
+      "Facebook events for rides",
+      "WhatsApp for ride leaders",
+      "Strava for tracking",
+      "Spreadsheet for membership fees",
+      "Volunteer rotas on paper"
+    ],
+    "integrated": [
+      "Branded community portal & app",
+      "Ride calendar with grading + RSVPs",
+      "Membership payments & renewals",
+      "Routes library with maps & GPX downloads",
+      "Volunteer rota & comms"
+    ],
+    "ai": [
+      "AI ride-buddy matcher (pace, route, availability)",
+      "Auto-summary of every ride for socials (distance, climbing, photo)",
+      "Route suggester from preferences & weather",
+      "Newsletter writer from ride reports"
+    ],
+    "quote": "We added 120 new members in a year because the experience finally feels professional.",
+    "quoteBy": "Chair \u00b7 cycling club, Cornwall",
+    "results": [
+      {
+        "k": "New members",
+        "v": "+120"
+      },
+      {
+        "k": "Ride participation",
+        "v": "+62%"
+      },
+      {
+        "k": "Volunteer admin",
+        "v": "\u221210 hrs/wk"
+      }
+    ],
+    "category": "community",
+    "tier": "established",
+    "order": 23,
+    "published": true
+  }
+]

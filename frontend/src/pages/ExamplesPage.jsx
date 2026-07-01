@@ -2,10 +2,13 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, Sparkles, Calendar, X } from "lucide-react";
+import axios from "axios";
 import PageShell from "./PageShell";
 import { siteConfig, waLink, colorMap } from "../lib/siteConfig";
-import { examples, categories } from "../lib/examplesContent";
+import { examples as staticExamples, categories } from "../lib/examplesContent";
 import AudienceTierPicker, { TIER_OPTIONS } from "../components/site/AudienceTierPicker";
+
+const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 const FEATURED_COUNT = 4;
 const tilts = ["tilt-l", "tilt-r", "tilt-l-3", "tilt-r-3"];
@@ -256,6 +259,35 @@ export default function ExamplesPage() {
   const [active, setActive] = useState("all");
   const [tier, setTier] = useState(null);
   const [openId, setOpenId] = useState(null);
+  const [examples, setExamples] = useState(staticExamples);
+
+  // Fetch from CMS — fall back to static if empty or error
+  useEffect(() => {
+    axios.get(`${API}/examples`)
+      .then((r) => {
+        if (Array.isArray(r.data) && r.data.length > 0) {
+          // Map DB shape → page shape (use slug as the display id)
+          const mapped = r.data.map((e) => ({
+            id: e.slug || e.id,
+            icon: e.icon,
+            industry: e.industry,
+            size: e.size,
+            color: e.color,
+            tagline: e.tagline,
+            before: e.before || [],
+            integrated: e.integrated || [],
+            ai: e.ai || [],
+            quote: e.quote,
+            quoteBy: e.quoteBy,
+            results: e.results || [],
+            _tier: e.tier,
+            _category: e.category,
+          }));
+          setExamples(mapped);
+        }
+      })
+      .catch(() => { /* silently keep static */ });
+  }, []);
 
   useEffect(() => {
     document.body.style.overflow = openId ? "hidden" : "";
@@ -267,16 +299,18 @@ export default function ExamplesPage() {
   // Filter by tier first (if picked) then by category.
   const tierMatches = tier ? TIER_OPTIONS.find((t) => t.id === tier)?.matches || [] : null;
   const tierFiltered = tierMatches
-    ? examples.filter((e) => tierMatches.includes(e.id))
+    ? examples.filter((e) => tierMatches.includes(e.id) || e._tier === tier)
     : examples;
 
   const isAll = active === "all";
   const featured = isAll && !tier ? tierFiltered.slice(0, FEATURED_COUNT) : [];
   const moreList = isAll
     ? (tier ? tierFiltered : tierFiltered.slice(FEATURED_COUNT))
-    : tierFiltered.filter((e) =>
-        categories.find((c) => c.id === active)?.ids?.includes(e.id)
-      );
+    : tierFiltered.filter((e) => {
+        // Prefer DB-driven category on each example, fall back to static categories mapping
+        if (e._category && e._category === active) return true;
+        return categories.find((c) => c.id === active)?.ids?.includes(e.id);
+      });
 
   const openExample = examples.find((e) => e.id === openId);
 

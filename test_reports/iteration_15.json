@@ -1,0 +1,56 @@
+{
+  "summary": "Iteration 15 — Final regression + Examples CMS pre-deploy verification. Backend: extended /app/backend/tests/test_admin_api.py from 45 → 58 tests (added TestExamplesSeed, TestExamplesAuth, TestExamplesCRUD covering seed integrity, ordering, 401 auth guards on all 4 admin/examples methods, full-payload CREATE with auto-slug, admin & public list, UPDATE persists, publish toggle hides from public, 404 on nonexistent update, DELETE). ALL 58 PASS. Frontend: verified Weavix logo (h-16 desktop, 64px), favicon links + files (HTTP 200 for /favicon-32.png /apple-touch-icon.png /weavix-logo.png), footer 'Weavix Studio.' + email 'hello@weavixstudio.com', page title contains 'Weavix Studio', hero copy contains 'A standalone website... 2018 / never touched AI / ChatGPT / right now', 3 CTA cards on home (readiness/calendly/whatsapp), LiveProjects on home + /work show Lemonade & Rye + Halloway & Finch, Contact page has questionnaire above CTAs and only 2 CTA cards (no readiness on /contact), Examples public page renders 4 featured + tier picker + category filters + tier-starter click cycle works. Admin Examples tab shows 24 rows, search filters correctly (Dental→1), New Example opens editor with save + add-result buttons. NO regressions.",
+  "backend_issues": {
+    "critical": [],
+    "minor": []
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [],
+    "notes": [
+      {"item": "'2026' string on homepage", "detail": "The only '2026' occurrence in the DOM is the footer copyright '© 2026 Weavix Studio — All rights reserved.' — that is the current calendar year, dynamically rendered, NOT the disallowed hero/SalesHooks 2026 reference. The SalesHooks 'THE BORING HONEST TRUTH' card correctly says 'AI is just the cheapest, fastest way to get there right now.' No action needed."}
+    ]
+  },
+  "frontend_verified": {
+    "navbar_logo": "PASS — img src='/weavix-logo.png', alt='Weavix Studio', class 'h-12 md:h-16 w-auto', rendered 213×64 at desktop.",
+    "favicons_head": "PASS — <link rel='icon' href='/favicon-32.png' sizes='32x32' type='image/png'>, <link rel='icon' href='/favicon.ico' type='image/x-icon'>, <link rel='apple-touch-icon' href='/apple-touch-icon.png' sizes='180x180'> all present.",
+    "favicons_http_200": "PASS — /favicon-32.png=200, /apple-touch-icon.png=200, /weavix-logo.png=200.",
+    "page_title": "PASS — 'Bespoke digital ecosystems & custom AI · Weavix Studio'.",
+    "footer_studio_name_and_email": "PASS — 'Weavix Studio.' with trailing dot AND 'hello@weavixstudio.com' present.",
+    "hero_copy": "PASS — contains \"A standalone website\", \"2018\" (line-through), \"never touched AI\", \"ChatGPT\". Also contains \"right now\" in SalesHooks card.",
+    "home_3_cta_cards": "PASS — data-testid contact-readiness-cta / contact-calendly-btn / contact-whatsapp-btn all present.",
+    "live_projects_home_and_work": "PASS — Home shows LiveProjects section with Lemonade + Halloway. /work also shows both.",
+    "contact_page_ordering": "PASS — Readiness questionnaire (y=0..~1400) appears BEFORE Calendly + WhatsApp CTAs (y=1499). Only 2 CTA cards (Calendly + WhatsApp); no readiness-cta on /contact.",
+    "examples_public_page": "PASS — 4 featured cards + tier picker (audience-tier-picker) + filter-hospitality etc. Clicking tier-starter surfaces tier-clear; clicking again dismisses it (verified DOM state).",
+    "admin_examples_tab": "PASS — after login, data-testid='admin-tab-examples' present. Examples list renders 24 rows (example-row-*). Search 'Dental' narrows to 1 row. 'New example' opens editor (example-editor, example-save, add-result-btn present).",
+    "css_regression_dark_bands": "PASS — 'are we a fit' band (SalesHooks) has dark bg + light text; AiReady 'Don't let AI prompting frustrate you' band uses dark bg + light text. No white-on-white detected."
+  },
+  "test_report_links": [
+    "/app/backend/tests/test_admin_api.py",
+    "/app/test_reports/pytest/iteration_15_results.xml"
+  ],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "Examples CRUD is idiomatic and consistent with Projects CRUD — same _to_doc/_doc_to_ helper pattern, MongoDB _id excluded via projection, datetime ISO round-tripping is correct.",
+    "seed_examples_if_empty() runs only when db.examples is empty (count check first). Idempotent and safe across restarts.",
+    "Auto-slug via _slugify(industry) at POST/PUT time is a sensible default; explicit slug is preserved. Confirmed via TestExamplesCRUD.test_create_example_full_payload (slug starts with 'test-qa-business').",
+    "Public /api/examples correctly filters to published:true and sorts by (order asc, created_at). Non-published toggle round-trip verified.",
+    "PUT returns 404 on non-existent id (via matched_count==0) — good defensive behaviour.",
+    "Frontend Navbar uses env-driven studioName for aria-label but hard-codes /weavix-logo.png src — appropriate for a fixed brand asset.",
+    "Public examples page falls back to static JS when API returns empty — resilient. Currently API returns 24 seeded so fallback is inactive (correct)."
+  ],
+  "updated_files": [
+    "/app/backend/tests/test_admin_api.py (added 13 new tests: TestExamplesSeed×2, TestExamplesAuth×4, TestExamplesCRUD×7 — total 58 tests, all PASS)"
+  ],
+  "success_rate": {
+    "backend": "100% (58/58)",
+    "frontend": "100% on covered flows"
+  },
+  "test_credentials": "Admin password `_tCp6XB8MAspxUOfSrNGuQ` verified working; TestAdminPasswordOverride re-runs cleanly (rotates & restores default).",
+  "seed_data_creation": "All QA-created examples deleted by TestExamplesCRUD.test_delete_example. No test data pollution remaining. 24 seeded examples untouched.",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "All 58 backend tests in /app/backend/tests/test_admin_api.py are green. Run with `REACT_APP_BACKEND_URL=<url> pytest backend/tests/test_admin_api.py -v`. Note the test file must have REACT_APP_BACKEND_URL exported (from /app/frontend/.env). Site is ready for deployment: Examples CMS (24 seeded + full CRUD wired), Weavix Studio rename complete, logo + favicons in place, Contact page ordering correct, 3 home CTAs present, LiveProjects visible on home and /work. Only 'noise' observation: footer says '© 2026' — that's the current year, not a hero copy regression.",
+  "rca_of_the_issue": "N/A — no bugs found this iteration. All spec items verified via automated backend tests + Playwright DOM inspection."
+}

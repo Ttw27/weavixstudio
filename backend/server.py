@@ -345,6 +345,141 @@ async def delete_project(project_id: str):
     return {"ok": True}
 
 
+# ========== EXAMPLES (illustrative business types shown on /examples) ==========
+class ExampleInput(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+
+    slug: str = ""                # was `id` in the JS file (e.g. "cafe")
+    icon: str = ""                # emoji
+    industry: str
+    size: str = ""
+    color: str = "yellow"         # yellow / pink / mint / blue / ink
+    tagline: str
+
+    before: list[str] = []
+    integrated: list[str] = []
+    ai: list[str] = []
+
+    quote: str = ""
+    quoteBy: str = ""
+
+    results: list[dict] = []      # [{k: "...", v: "..."}]
+
+    category: str = "other"       # maps to categories on /examples page
+    tier: str = "growing"         # starter / growing / established
+
+    published: bool = True
+    order: int = 0
+
+class Example(ExampleInput):
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    updated_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+
+def _example_to_doc(e: Example) -> dict:
+    d = e.model_dump()
+    d["created_at"] = d["created_at"].isoformat()
+    d["updated_at"] = d["updated_at"].isoformat()
+    return d
+
+
+def _doc_to_example(d: dict) -> dict:
+    d = {k: v for k, v in d.items() if k != "_id"}
+    for f in ("created_at", "updated_at"):
+        if isinstance(d.get(f), str):
+            try:
+                d[f] = datetime.fromisoformat(d[f])
+            except Exception:
+                d[f] = datetime.now(timezone.utc)
+    return d
+
+
+@api_router.get("/examples", response_model=List[Example])
+async def list_examples_public():
+    docs = await db.examples.find({"published": True}, {"_id": 0}).to_list(1000)
+    parsed = [_doc_to_example(d) for d in docs]
+    parsed.sort(key=lambda e: (e.get("order", 0), e.get("created_at") or datetime.min))
+    return parsed
+
+
+@api_router.get("/admin/examples", response_model=List[Example], dependencies=[Depends(require_admin)])
+async def list_examples_admin():
+    docs = await db.examples.find({}, {"_id": 0}).to_list(1000)
+    parsed = [_doc_to_example(d) for d in docs]
+    parsed.sort(key=lambda e: (e.get("order", 0), e.get("created_at") or datetime.min))
+    return parsed
+
+
+@api_router.post("/admin/examples", response_model=Example, dependencies=[Depends(require_admin)])
+async def create_example(input: ExampleInput):
+    data = input.model_dump()
+    if not data.get("slug"):
+        data["slug"] = _slugify(data["industry"])
+    ex = Example(**data)
+    await db.examples.insert_one(_example_to_doc(ex))
+    return ex
+
+
+@api_router.put("/admin/examples/{example_id}", response_model=Example, dependencies=[Depends(require_admin)])
+async def update_example(example_id: str, input: ExampleInput):
+    data = input.model_dump()
+    if not data.get("slug"):
+        data["slug"] = _slugify(data["industry"])
+    data["updated_at"] = datetime.now(timezone.utc).isoformat()
+    res = await db.examples.update_one({"id": example_id}, {"$set": data})
+    if res.matched_count == 0:
+        raise HTTPException(404, "Example not found")
+    doc = await db.examples.find_one({"id": example_id}, {"_id": 0})
+    return Example(**_doc_to_example(doc))
+
+
+@api_router.delete("/admin/examples/{example_id}", dependencies=[Depends(require_admin)])
+async def delete_example(example_id: str):
+    await db.examples.delete_one({"id": example_id})
+    return {"ok": True}
+
+
+async def seed_examples_if_empty():
+    """One-time seed: if the examples collection is empty and we have a seed JSON, populate it."""
+    count = await db.examples.count_documents({})
+    if count > 0:
+        return
+    seed_path = ROOT_DIR / "seed_examples.json"
+    if not seed_path.exists():
+        return
+    try:
+        with open(seed_path) as f:
+            seed_data = json.load(f)
+        docs = []
+        for i, item in enumerate(seed_data):
+            # JS `id` becomes `slug` (stable business type identifier)
+            slug = item.get("id") or _slugify(item.get("industry", ""))
+            ex = Example(
+                slug=slug,
+                icon=item.get("icon", ""),
+                industry=item.get("industry", ""),
+                size=item.get("size", ""),
+                color=item.get("color", "yellow"),
+                tagline=item.get("tagline", ""),
+                before=item.get("before", []),
+                integrated=item.get("integrated", []),
+                ai=item.get("ai", []),
+                quote=item.get("quote", ""),
+                quoteBy=item.get("quoteBy", ""),
+                results=item.get("results", []),
+                category=item.get("category", "other"),
+                tier=item.get("tier", "growing"),
+                published=item.get("published", True),
+                order=item.get("order", i),
+            )
+            docs.append(_example_to_doc(ex))
+        await db.examples.insert_many(docs)
+        logger.info(f"Seeded {len(docs)} examples from {seed_path}")
+    except Exception as e:
+        logger.exception(f"Example seed failed: {e}")
+
+
 # ========== CATEGORIES (lightweight: stored as a single setting list) ==========
 DEFAULT_CATEGORIES = [
     {"id": "hospitality", "label": "Hospitality"},
@@ -507,6 +642,11 @@ logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger(__name__)
+
+@app.on_event("startup")
+async def startup_seed():
+    await seed_examples_if_empty()
+
 
 @app.on_event("shutdown")
 async def shutdown_db_client():
