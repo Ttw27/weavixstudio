@@ -136,3 +136,18 @@
 
 **Deployment status**: PASS · deployment_agent OK · 58/58 backend · 100% frontend · ready to deploy.
 
+
+
+## 2026-07-01 — Iteration 16: Business OS repositioning
+**Shipped (positioning + content upgrade — no new endpoints):**
+- **3 new hero examples** at order 0/1/2 (Florist, Workwear, Business OS design studio) with rich OS-flavored copy: full website + backend + AI spec, 4 metrics each, quotes.
+- **24 existing taglines** rewritten via `/app/backend/migrations/reframe_examples_as_os.py` (idempotent).
+- **Drawer labels renamed** on `/examples`: BEFORE → "before we started", INTEGRATED → "the operating system we built", AI → "custom AI running quietly".
+- **`/examples` hero rewritten**: "What does a business OS actually look like?" — "The website is just the doorway visitors walk through."
+- **New `OperatingSystemStrip` component** on home (between AiReady and AiFrustration): 8 capability cards — headline "The operating system is where the money is."
+- **Total examples**: 27 (was 24).
+
+**Tests**: 58/58 backend · 100% frontend · zero regressions · deployment_agent PASS.
+
+**Deploy-ready.**
+
