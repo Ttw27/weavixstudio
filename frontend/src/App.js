@@ -9,6 +9,7 @@ import Navbar from "./components/site/Navbar";
 import Hero from "./components/site/Hero";
 import SalesHooks from "./components/site/SalesHooks";
 import AiReady from "./components/site/AiReady";
+import OperatingSystemStrip from "./components/site/OperatingSystemStrip";
 import AiFrustration from "./components/site/AiFrustration";
 import Services from "./components/site/Services";
 import Portfolio from "./components/site/Portfolio";
@@ -86,6 +87,7 @@ const Home = () => (
     <Hero />
     <SalesHooks />
     <AiReady />
+    <OperatingSystemStrip />
     <AiFrustration />
     <Services />
     <HomeWork />

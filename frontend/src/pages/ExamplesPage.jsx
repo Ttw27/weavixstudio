@@ -51,7 +51,7 @@ const FeaturedCard = ({ ex, index }) => (
     {/* Body */}
     <div className="p-6 md:p-7 bg-[var(--surface)] space-y-5">
       <div>
-        <div className="font-hand text-2xl text-[var(--p-pink)] mb-1">before</div>
+        <div className="font-hand text-2xl text-[var(--p-pink)] mb-1">before we started</div>
         <ul className="flex flex-wrap gap-1.5">
           {ex.before.map((b) => (
             <li key={b} className="font-body text-[11px] text-[var(--ink)] bg-[var(--bg-2)] border border-[var(--ink)]/30 px-2 py-1 rounded-full line-through opacity-70">
@@ -62,7 +62,7 @@ const FeaturedCard = ({ ex, index }) => (
       </div>
 
       <div>
-        <div className="font-hand text-2xl text-[var(--ink)] mb-1">what we integrated</div>
+        <div className="font-hand text-2xl text-[var(--ink)] mb-1">the operating system we built</div>
         <ul className="space-y-1.5">
           {ex.integrated.map((it) => (
             <li key={it} className="flex items-start gap-2 font-body text-sm text-[var(--ink)]">
@@ -75,7 +75,7 @@ const FeaturedCard = ({ ex, index }) => (
 
       <div>
         <div className="font-hand text-2xl text-[var(--p-pink)] mb-1">
-          <Sparkles className="w-4 h-4 inline-block mr-1" /> custom AI we added
+          <Sparkles className="w-4 h-4 inline-block mr-1" /> custom AI running quietly
         </div>
         <ul className="space-y-1.5">
           {ex.ai.map((a) => (
@@ -185,7 +185,7 @@ const Drawer = ({ ex, onClose }) => {
 
         <div className="p-6 md:p-8 space-y-7">
           <section>
-            <div className="font-hand text-2xl text-[var(--p-pink)] mb-2">before</div>
+            <div className="font-hand text-2xl text-[var(--p-pink)] mb-2">before we started</div>
             <ul className="flex flex-wrap gap-1.5">
               {ex.before.map((b) => (
                 <li key={b} className="font-body text-xs text-[var(--ink)] bg-[var(--bg-2)] border border-[var(--ink)]/30 px-2 py-1 rounded-full line-through opacity-70">
@@ -196,7 +196,7 @@ const Drawer = ({ ex, onClose }) => {
           </section>
 
           <section>
-            <div className="font-hand text-2xl text-[var(--ink)] mb-2">what we integrated</div>
+            <div className="font-hand text-2xl text-[var(--ink)] mb-2">the operating system we built</div>
             <ul className="space-y-1.5">
               {ex.integrated.map((it) => (
                 <li key={it} className="flex items-start gap-2 font-body text-sm text-[var(--ink)]">
@@ -209,7 +209,7 @@ const Drawer = ({ ex, onClose }) => {
 
           <section>
             <div className="font-hand text-2xl text-[var(--p-pink)] mb-2">
-              <Sparkles className="w-4 h-4 inline-block mr-1" /> custom AI we added
+              <Sparkles className="w-4 h-4 inline-block mr-1" /> custom AI running quietly
             </div>
             <ul className="space-y-1.5">
               {ex.ai.map((a) => (
@@ -321,20 +321,26 @@ export default function ExamplesPage() {
         <div className="bg-dots absolute inset-0 pointer-events-none opacity-50" aria-hidden />
         <div className="max-w-[1400px] mx-auto relative">
           <span className="sticker bg-[var(--p-mint)] mb-4">
-            <Sparkles className="w-3.5 h-3.5" /> ecosystem examples
+            <Sparkles className="w-3.5 h-3.5" /> business operating systems
           </span>
-          <h1 className="display-xxl text-[var(--ink)] mt-3 max-w-[20ch]">
+          <h1 className="display-xxl text-[var(--ink)] mt-3 max-w-[22ch]">
             What does a <br />
             <span className="bg-[var(--p-yellow)] px-3 md:px-5 py-1 border-2 border-[var(--ink)] inline-block rounded-2xl shadow-[var(--shadow-blunt)]">
-              digital ecosystem
+              business OS
             </span>{" "}
-            look like?
+            actually look like?
           </h1>
           <p className="mt-5 max-w-3xl font-body text-base md:text-lg text-[var(--ink-soft)] leading-relaxed">
-            Below are four featured builds in full — then 20 more in compact
-            tiles you can tap to expand. Pick the one closest to{" "}
-            <span className="font-hand text-2xl text-[var(--p-pink)]">your</span>{" "}
-            business.
+            Most agencies build brochureware with a chatbot bolted on. We build
+            the <span className="font-hand text-2xl text-[var(--p-pink)]">operating system</span>{" "}
+            your business runs on. The website is just the doorway visitors
+            walk through. Everything else — quotes, ads, deposits, workshop
+            tickets, deliveries, lead chasers, dashboards — sits behind it.
+          </p>
+          <p className="mt-3 max-w-3xl font-body text-sm md:text-base text-[var(--ink-soft)] leading-relaxed">
+            Below are <strong>27 examples</strong> across every kind of
+            business. Pick the one closest to yours — the drawer shows the full
+            OS spec (website + backend + AI).
           </p>
 
           <div className="mt-7 flex flex-wrap gap-2.5">

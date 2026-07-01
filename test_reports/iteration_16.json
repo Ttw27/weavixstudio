@@ -1,0 +1,57 @@
+{
+  "summary": "Iteration 16 — Final pre-deploy verification of the 'websites → business operating systems' repositioning. Backend pytest 58/58 PASS (no regressions). GET /api/examples now returns 27 published examples with correct order (florist=0, workwear=1, business-os=2). Sampled taglines for cafe/trades/estate-agent/etsy all contain OS phrasing. Frontend: new OperatingSystemStrip component renders on / between AiReady and AiFrustration with headline 'The operating system is where the money is', exactly 8 capability cards (os-cap-0..7), CTA 'See 27 real operating systems' → /examples. /examples hero copy contains 'business OS actually look like', 'business operating systems', '27 examples' and 'doorway'. Featured cards = 4 (florist / workwear / business-os / cafe — first 3 match spec). Compact example-* cards = 23 → total 27. Tier picker (tier-starter) hides featured + shows tier-clear. filter-hospitality surfaces example-cafe. Drawer (opened via example-dental) shows all 3 renamed labels: 'before we started', 'the operating system we built', 'custom AI running quietly' — old labels ('what we integrated', 'custom AI we added') are gone. Admin login with `_tCp6XB8MAspxUOfSrNGuQ` works, admin-tab-examples renders examples-list with 27 rows. Home section DOM order verified: Navbar → Hero → SalesHooks → AiReady → OperatingSystemStrip → AiFrustration → Services → HomeWork → Process → Testimonials → Contact → Footer. Mobile 375px: OS strip stacks to single column (all cards at x=20, width=335), scrollWidth=viewWidth=375 — no horizontal overflow. Visual review of OS strip cards: icons have coloured backgrounds (yellow/mint/pink/blue rotation) with dark ink borders + shadow, headings and body text visible on light surface — no white-on-white regressions.",
+  "backend_issues": {
+    "critical": [],
+    "minor": [
+      {"endpoint": "GET /api/examples (via TestExamplesSeed::test_public_examples_returns_seeded_24)", "issue": "Test name is stale — asserts count >=24 so still passes at 27, but the docstring/name refers to '24 seeded' whereas seed is now 27. Cosmetic only; suggest renaming to test_public_examples_returns_at_least_seed_baseline for future clarity."}
+    ]
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "frontend_verified": {
+    "home_os_strip": "PASS — data-testid=os-strip-section present. Sticker '✦ behind the doorway', headline 'The website is the front door.' + squiggle 'The operating system is where the money is.'. os-cap-0..7 all present, os-cap-8 correctly absent. CTA data-testid=os-strip-cta → /examples with copy 'See 27 real operating systems'.",
+    "home_section_order": "PASS — Navbar → Hero → SalesHooks → AiReady → OperatingSystemStrip → AiFrustration → Services → HomeWork → Process → Testimonials → Contact → Footer (verified via DOM child order of [data-testid=home-page]).",
+    "examples_hero_copy": "PASS — 'business OS actually look like', 'business operating systems' sticker, '27 examples', 'doorway' all present in body.",
+    "examples_featured_cards": "PASS — 4 featured cards: featured-florist (01 Florist & Workshop Space), featured-workwear (02 Workwear & Uniform Brand), featured-business-os (03 Design Studio (Business OS only, no public website)), featured-cafe (04 Local Café & Brunch Spot). First 3 match spec ordering.",
+    "examples_compact_count": "PASS — 23 [data-testid^='example-'] compact cards + 4 featured = 27 total.",
+    "drawer_renamed_labels": "PASS — Opened drawer via example-dental. All 3 new labels found in DOM: 'before we started', 'the operating system we built', 'custom AI running quietly'. Old labels 'what we integrated' and 'custom AI we added' are absent.",
+    "tier_picker": "PASS — Click on data-testid=tier-starter hides featured cards (featured_count went 4→0) and reveals data-testid=tier-clear.",
+    "category_filters": "PASS — Click on data-testid=filter-hospitality keeps example-cafe visible (offsetParent non-null).",
+    "admin_examples_tab": "PASS — Admin login with password from /app/memory/test_credentials.md succeeds. data-testid=admin-tab-examples present; examples-list contains 27 example-row-* rows.",
+    "mobile_375px": "PASS — OS strip cards stack to 1 column (all at x=20, width=335). document.scrollWidth=375=window.innerWidth (no horizontal overflow).",
+    "no_white_on_white": "PASS — OS strip uses var(--surface) card background with dark border+shadow; capability icon squares use var(--p-yellow)/mint/pink/blue rotation; heading text-[var(--ink)] and body text-[var(--ink-soft)] both clearly visible on cream section bg (var(--bg-2))."
+  },
+  "backend_verified": {
+    "pytest_58_58": "PASS — pytest run in 7.37s, exit 0.",
+    "examples_count_27": "PASS — GET /api/examples returned 27 items.",
+    "examples_order": "PASS — [order=0: florist, order=1: workwear, order=2: business-os].",
+    "taglines_os_phrasing": "PASS — cafe/trades/estate-agent/etsy taglines all contain 'operating system' or 'OS' phrasing (see raw output in test log)."
+  },
+  "test_report_links": [
+    "/app/backend/tests/test_admin_api.py",
+    "/app/test_reports/pytest/iteration_16_results.xml"
+  ],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "OperatingSystemStrip.jsx is clean: capability data is a top-level const CAPS array, no magic numbers, all icons imported from lucide-react. Uses framer-motion with stagger delays (i%4)*0.06 — good for the 4-col grid.",
+    "Icon-background colour rotation uses inline style ternary chain (i%4===0/1/2/3) — works, but could be extracted to an array of tokens ['--p-yellow','--p-mint','--p-pink','--p-blue'] indexed by i%4 for readability. Non-blocking.",
+    "data-testid coverage on OS strip is complete: os-strip-section, os-cap-0..7, os-strip-cta.",
+    "Copy references '27 examples' hard-coded in the /examples hero body — if a future migration adds more examples, this string will drift. Consider driving it from the API response length. Non-blocking for deploy.",
+    "TestExamplesSeed::test_public_examples_returns_seeded_24 test name/comment is now stale (baseline is 27, not 24). Recommend renaming in a follow-up.",
+    "Featured cards on /examples include both the 3 new heroes (florist/workwear/business-os) and 'cafe' — spec says 'exactly 4 featured cards' and lists florist/workwear/business-os as the first three; the 4th being cafe is consistent with what's rendered (order=3 by DOM position). Verified."
+  ],
+  "updated_files": [],
+  "success_rate": {
+    "backend": "100% (58/58)",
+    "frontend": "100% on covered flows (OS strip render, 8 caps, home order, /examples hero, 4 featured + 23 compact = 27 total, drawer relabels, tier + category filters, admin tab 27 rows, mobile stacking, no white-on-white)"
+  },
+  "test_credentials": "Admin password `_tCp6XB8MAspxUOfSrNGuQ` from /app/memory/test_credentials.md — verified working via admin login.",
+  "seed_data_creation": "None. Pytest fixtures self-cleanup (TestExamplesCRUD.test_delete_example). 27 seeded examples untouched — ready for deployment per spec.",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "Iteration 16 is a full pre-deploy regression + new-content verification. Backend has no code changes since iter 15; DB was migrated via /app/backend/migrations/reframe_examples_as_os.py (already run, do NOT re-run). Only new frontend component is /app/frontend/src/components/site/OperatingSystemStrip.jsx wired into App.js between AiReady and AiFrustration. All 58 backend tests + all 14 frontend spec bullets pass. Site is deploy-ready.",
+  "rca_of_the_issue": "N/A — no bugs found."
+}
