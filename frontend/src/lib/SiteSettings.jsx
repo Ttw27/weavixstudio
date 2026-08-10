@@ -28,6 +28,8 @@ const mergeWithDefaults = (live) => {
       instagram: safe.instagram || defaultConfig.socials.instagram,
       linkedin: safe.linkedin || defaultConfig.socials.linkedin,
       x: safe.x_url || defaultConfig.socials.x,
+      facebook: safe.facebook || "",
+      tiktok: safe.tiktok || "",
     },
     seo: {
       title: safe.seo_default_title || "",
