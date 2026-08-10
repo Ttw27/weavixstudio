@@ -238,6 +238,11 @@ class ProjectInput(BaseModel):
     # Marketing copy
     what_we_did: list[str] = []  # bullet points
     outcomes: list[str] = []     # the "what changed / what helped" bullets
+    # Rich case-study copy (shown on the project detail page)
+    signature: str = ""          # the one clever mechanism
+    ownership: str = ""          # what the client owns outright
+    replaced: str = ""           # what it replaced
+    closing: str = ""            # the ownership stamp that ends every tile
     client_quote: str = ""
     client_quote_by: str = ""
 
