@@ -1,4 +1,4 @@
-from fastapi import FastAPI, APIRouter, HTTPException, Depends, Header
+from fastapi import FastAPI, APIRouter, HTTPException, Depends, Header, UploadFile, File, Form
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
@@ -7,6 +7,8 @@ import logging
 import json
 import asyncio
 import jwt
+import boto3
+from botocore.config import Config as _BotoConfig
 import resend
 from pathlib import Path
 from pydantic import BaseModel, Field, ConfigDict
@@ -631,6 +633,55 @@ async def get_status_checks():
     return status_checks
 
 # Include the router in the main app
+
+# ========== R2 IMAGE UPLOAD ==========
+_ALLOWED_IMAGE_TYPES = {
+    "image/jpeg": "jpg", "image/jpg": "jpg", "image/png": "png",
+    "image/webp": "webp", "image/gif": "gif",
+}
+_MAX_UPLOAD_BYTES = 10 * 1024 * 1024
+
+def _r2_client():
+    account_id = os.environ.get("R2_ACCOUNT_ID")
+    access_key = os.environ.get("R2_ACCESS_KEY_ID")
+    secret_key = os.environ.get("R2_SECRET_ACCESS_KEY")
+    if not (account_id and access_key and secret_key):
+        raise HTTPException(500, "R2 is not configured on the server")
+    return boto3.client(
+        "s3",
+        endpoint_url=f"https://{account_id}.r2.cloudflarestorage.com",
+        aws_access_key_id=access_key,
+        aws_secret_access_key=secret_key,
+        config=_BotoConfig(signature_version="s3v4"),
+        region_name="auto",
+    )
+
+@api_router.post("/admin/upload", dependencies=[Depends(require_admin)])
+async def admin_upload(file: UploadFile = File(...), folder: str = Form("website")):
+    bucket = os.environ.get("R2_BUCKET")
+    public_base = os.environ.get("R2_PUBLIC_URL", "").rstrip("/")
+    if not bucket or not public_base:
+        raise HTTPException(500, "R2 bucket or public URL not configured")
+    ext = _ALLOWED_IMAGE_TYPES.get((file.content_type or "").lower())
+    if not ext:
+        raise HTTPException(400, "Only JPG, PNG, WEBP or GIF images are allowed")
+    data = await file.read()
+    if len(data) > _MAX_UPLOAD_BYTES:
+        raise HTTPException(400, "Image is over the 10 MB limit")
+    safe_folder = "".join(c for c in folder if c.isalnum() or c in "-_") or "misc"
+    key = f"{safe_folder}/{uuid.uuid4().hex}.{ext}"
+    try:
+        _r2_client().put_object(
+            Bucket=bucket, Key=key, Body=data,
+            ContentType=file.content_type,
+            CacheControl="public, max-age=31536000",
+        )
+    except Exception as e:
+        logger.exception("R2 upload failed")
+        raise HTTPException(500, f"Upload failed: {e}")
+    return {"url": f"{public_base}/{key}", "key": key}
+
+
 app.include_router(api_router)
 
 app.add_middleware(
