@@ -149,7 +149,7 @@ class SettingsUpdate(BaseModel):
 PUBLIC_SETTINGS_KEYS = [
     "studioName", "tagline", "location", "establishedYear",
     "whatsappNumber", "whatsappMessage", "calendlyUrl", "email",
-    "instagram", "linkedin", "x_url",
+    "instagram", "linkedin", "x_url", "facebook", "tiktok",
     "seo_default_title", "seo_default_description", "seo_default_og_image",
     "ga_measurement_id",
 ]
