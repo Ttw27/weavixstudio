@@ -20,6 +20,42 @@ const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 const TOKEN_KEY = "admin_jwt";
 const authHeader = () => ({ Authorization: `Bearer ${localStorage.getItem(TOKEN_KEY)}` });
 
+function ImageUpload({ folder = "projects", ratioLabel, onUploaded }) {
+  const [busy, setBusy] = useState(false);
+  const [err, setErr] = useState("");
+  const handleFile = async (e) => {
+    const file = e.target.files?.[0];
+    e.target.value = "";
+    if (!file) return;
+    setErr(""); setBusy(true);
+    try {
+      const fd = new FormData();
+      fd.append("file", file);
+      fd.append("folder", folder);
+      const res = await axios.post(`${API}/admin/upload`, fd, {
+        headers: { ...authHeader(), "Content-Type": "multipart/form-data" },
+      });
+      if (res.data?.url) onUploaded(res.data.url);
+      else setErr("Upload returned no URL");
+    } catch (e2) {
+      setErr(e2?.response?.data?.detail || "Upload failed");
+    } finally { setBusy(false); }
+  };
+  return (
+    <div className="flex items-center gap-3 flex-wrap">
+      <label className="btn-pill btn-pill-ink !py-1.5 !px-4 cursor-pointer text-sm">
+        {busy ? "Uploading…" : "\u2b06 Upload image"}
+        <input type="file" accept="image/png,image/jpeg,image/webp,image/gif"
+          onChange={handleFile} disabled={busy} className="hidden" />
+      </label>
+      {ratioLabel && (
+        <span className="font-body text-xs text-[var(--ink-soft)]">Best ratio: <strong>{ratioLabel}</strong></span>
+      )}
+      {err && <span className="font-body text-xs text-red-600">{err}</span>}
+    </div>
+  );
+}
+
 const TIERS = [
   { id: "starter", label: "🌱 Just starting (low-AI, basics-first audience)" },
   { id: "growing", label: "🌿 Growing (some tools, want them to connect)" },
@@ -369,13 +405,20 @@ const ProjectEditor = ({ project, allCategories, onCancel, onSaved }) => {
           onChange={(e) => set("live_url", e.target.value)}
           data-testid="project-live-url"
         />
-        <TextField
-          label="Hero image URL"
-          hint="Paste any public image URL for now"
-          value={form.image_url}
-          onChange={(e) => set("image_url", e.target.value)}
-          data-testid="project-image-url"
-        />
+        <div className="space-y-2">
+          <TextField
+            label="Hero image URL"
+            hint="Upload below, or paste a public image URL"
+            value={form.image_url}
+            onChange={(e) => set("image_url", e.target.value)}
+            data-testid="project-image-url"
+          />
+          <ImageUpload
+            folder="website"
+            ratioLabel="16:10 (e.g. 1600\u00d71000) \u2014 shown as 4:3 on the card, keep the subject centred"
+            onUploaded={(url) => set("image_url", url)}
+          />
+        </div>
       </div>
 
       {form.image_url && (
@@ -390,14 +433,21 @@ const ProjectEditor = ({ project, allCategories, onCancel, onSaved }) => {
         </div>
       )}
 
-      <BulletList
-        label="Gallery image URLs (optional)"
-        hint="One URL per line — up to 4 extra screenshots"
-        value={form.gallery}
-        onChange={(v) => set("gallery", v.slice(0, 4))}
-        testId="project-gallery"
-        placeholder="https://...png&#10;https://...png"
-      />
+      <div className="space-y-2">
+        <BulletList
+          label="Gallery image URLs (optional)"
+          hint="Upload below or paste — up to 4 extra screenshots"
+          value={form.gallery}
+          onChange={(v) => set("gallery", v.slice(0, 4))}
+          testId="project-gallery"
+          placeholder="https://...png&#10;https://...png"
+        />
+        <ImageUpload
+          folder="website"
+          ratioLabel="16:10 (e.g. 1600\u00d71000)"
+          onUploaded={(url) => set("gallery", [...(form.gallery || []), url].slice(0, 4))}
+        />
+      </div>
 
       <div className="flex items-center gap-4 flex-wrap pt-2">
         <label className="flex items-center gap-2 font-body text-sm cursor-pointer">
