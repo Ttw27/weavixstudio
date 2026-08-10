@@ -415,7 +415,7 @@ const ProjectEditor = ({ project, allCategories, onCancel, onSaved }) => {
           />
           <ImageUpload
             folder="website"
-            ratioLabel="16:10 (e.g. 1600\u00d71000) \u2014 shown as 4:3 on the card, keep the subject centred"
+            ratioLabel="16:10 (e.g. 1600×1000) — shown as 4:3 on the card, keep the subject centred"
             onUploaded={(url) => set("image_url", url)}
           />
         </div>
@@ -444,7 +444,7 @@ const ProjectEditor = ({ project, allCategories, onCancel, onSaved }) => {
         />
         <ImageUpload
           folder="website"
-          ratioLabel="16:10 (e.g. 1600\u00d71000)"
+          ratioLabel="16:10 (e.g. 1600×1000)"
           onUploaded={(url) => set("gallery", [...(form.gallery || []), url].slice(0, 4))}
         />
       </div>
