@@ -299,6 +299,8 @@ const SettingsTab = () => {
         <Field label="Instagram URL" value={data.instagram || ""} onChange={(e) => set("instagram", e.target.value)} />
         <Field label="LinkedIn URL" value={data.linkedin || ""} onChange={(e) => set("linkedin", e.target.value)} />
         <Field label="X / Twitter URL" value={data.x_url || ""} onChange={(e) => set("x_url", e.target.value)} />
+        <Field label="Facebook URL" value={data.facebook || ""} onChange={(e) => set("facebook", e.target.value)} />
+        <Field label="TikTok URL" value={data.tiktok || ""} onChange={(e) => set("tiktok", e.target.value)} />
       </Section>
 
       <Section icon={<Mail className="w-4 h-4" />} title="Email notifications & admin">
