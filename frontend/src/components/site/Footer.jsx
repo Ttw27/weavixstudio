@@ -37,10 +37,12 @@ export const Footer = () => {
         <div>
           <div className="font-display text-xs uppercase text-[var(--p-yellow)] mb-3 tracking-wider">Elsewhere</div>
           <ul className="space-y-2 font-body text-sm">
-            <li><a data-testid="footer-instagram" href={socials.instagram} target="_blank" rel="noreferrer" className="hover:text-[var(--p-yellow)]">Instagram ↗</a></li>
-            <li><a data-testid="footer-linkedin" href={socials.linkedin} target="_blank" rel="noreferrer" className="hover:text-[var(--p-yellow)]">LinkedIn ↗</a></li>
-            <li><a data-testid="footer-x" href={socials.x} target="_blank" rel="noreferrer" className="hover:text-[var(--p-yellow)]">X / Twitter ↗</a></li>
-            <li><a data-testid="footer-email" href={`mailto:${settings.email}`} className="hover:text-[var(--p-yellow)]">{settings.email}</a></li>
+            {socials.instagram && <li><a data-testid="footer-instagram" href={socials.instagram} target="_blank" rel="noreferrer" className="hover:text-[var(--p-yellow)]">Instagram ↗</a></li>}
+            {socials.tiktok && <li><a data-testid="footer-tiktok" href={socials.tiktok} target="_blank" rel="noreferrer" className="hover:text-[var(--p-yellow)]">TikTok ↗</a></li>}
+            {socials.facebook && <li><a data-testid="footer-facebook" href={socials.facebook} target="_blank" rel="noreferrer" className="hover:text-[var(--p-yellow)]">Facebook ↗</a></li>}
+            {socials.linkedin && <li><a data-testid="footer-linkedin" href={socials.linkedin} target="_blank" rel="noreferrer" className="hover:text-[var(--p-yellow)]">LinkedIn ↗</a></li>}
+            {socials.x && <li><a data-testid="footer-x" href={socials.x} target="_blank" rel="noreferrer" className="hover:text-[var(--p-yellow)]">X / Twitter ↗</a></li>}
+            {settings.email && <li><a data-testid="footer-email" href={`mailto:${settings.email}`} className="hover:text-[var(--p-yellow)]">{settings.email}</a></li>}
           </ul>
         </div>
       </div>
