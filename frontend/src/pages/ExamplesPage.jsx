@@ -328,7 +328,7 @@ export default function ExamplesPage() {
             tickets, deliveries, lead chasers, dashboards — sits behind it.
           </p>
           <p className="mt-3 max-w-3xl font-body text-sm md:text-base text-[var(--ink-soft)] leading-relaxed">
-            Below are <strong>27 examples</strong> across every kind of
+            Below are <strong>{examples.length} examples</strong> across every kind of
             business. Pick the one closest to yours — the drawer shows the full
             OS spec (website + backend + AI).
           </p>
