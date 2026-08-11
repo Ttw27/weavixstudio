@@ -90,12 +90,7 @@ const FeaturedCard = ({ ex, index }) => (
 
     {/* Quote + results */}
     <div className="p-6 md:p-7 border-t-2 border-[var(--ink)]" style={{ background: bgFor(ex.color), color: fgFor(ex.color) }}>
-      <blockquote className="font-display text-lg md:text-xl leading-tight">
-        <span className="font-hand text-3xl text-[var(--p-pink)]">"</span>
-        {ex.quote}
-        <span className="font-hand text-3xl text-[var(--p-pink)]">"</span>
-      </blockquote>
-      <div className="mt-2 font-body text-xs opacity-80">— {ex.quoteBy}</div>
+      <div className="font-body text-xs uppercase tracking-wider opacity-70">Illustrative example — the kind of system we could build for a business like this. Not a real client.</div>
       <div className="mt-5 flex flex-wrap gap-2">
         {ex.results.map((r) => (
           <span key={r.k} className="font-body text-[11px] font-bold text-[var(--ink)] bg-[var(--surface)] border-2 border-[var(--ink)] px-2.5 py-1 rounded-full">
@@ -222,12 +217,7 @@ const Drawer = ({ ex, onClose }) => {
           </section>
 
           <section className="card-blunt p-5" style={{ background: bgFor(ex.color), color: fgFor(ex.color) }}>
-            <blockquote className="font-display text-lg md:text-xl leading-tight">
-              <span className="font-hand text-3xl text-[var(--p-pink)]">"</span>
-              {ex.quote}
-              <span className="font-hand text-3xl text-[var(--p-pink)]">"</span>
-            </blockquote>
-            <div className="mt-2 font-body text-xs opacity-80">— {ex.quoteBy}</div>
+            <div className="font-body text-xs uppercase tracking-wider opacity-70">Illustrative example — the kind of system we could build for a business like this. Not a real client.</div>
             <div className="mt-4 flex flex-wrap gap-2">
               {ex.results.map((r) => (
                 <span key={r.k} className="font-body text-[11px] font-bold text-[var(--ink)] bg-[var(--surface)] border-2 border-[var(--ink)] px-2.5 py-1 rounded-full">
