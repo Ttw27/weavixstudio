@@ -7,7 +7,7 @@ export const siteConfig = {
     "Bespoke digital ecosystems — websites, apps, customer portals, automations and custom AIs — designed as one unified platform around how your business actually runs.",
   location: "Remote · Worldwide",
   establishedYear: "2024",
-  whatsappNumber: "15551234567",
+  whatsappNumber: "447404680326",
   whatsappMessage: "Hi! I'd like to discuss a project.",
   calendlyUrl: "https://calendly.com/your-studio/intro",
   email: "hello@weavixstudio.com",

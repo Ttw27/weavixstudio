@@ -29,13 +29,10 @@ export const examples = [
       "Weekly menu performance summary in plain English",
       "Smart inventory: suggests reorders before you run out",
     ],
-    quote:
-      "I used to spend Sundays catching up on emails, the till and shift swaps. Now it's all in one place — I get my weekends back.",
-    quoteBy: "Owner · brunch spot, Bristol",
     results: [
-      { k: "Owner time saved", v: "~8 hrs/wk" },
-      { k: "Bookings handled by AI", v: "62%" },
-      { k: "Review reply time", v: "<10 min" },
+      { k: "Owner time saved", v: "Off the owner's plate" },
+      { k: "Bookings handled by AI", v: "Handled automatically" },
+      { k: "Review reply time", v: "Drafted, ready to send" },
     ],
   },
   {
@@ -67,13 +64,10 @@ export const examples = [
       "Recall AI: gently nudges patients due for check-ups in their preferred channel",
       "Internal 'ask the SOP' agent for the front desk team",
     ],
-    quote:
-      "Front desk has stopped drowning. Patients arrive prepared. We've recovered 30+ hours a month between two practices.",
-    quoteBy: "Practice manager · dental group, Manchester",
     results: [
-      { k: "No-show rate", v: "−47%" },
-      { k: "Admin hours saved", v: "30+/mo" },
-      { k: "Recall conversions", v: "+38%" },
+      { k: "No-show rate", v: "Smart reminders + deposits" },
+      { k: "Admin hours saved", v: "Front desk freed up" },
+      { k: "Recall conversions", v: "Recalls chased on their own" },
     ],
   },
   {
@@ -103,13 +97,10 @@ export const examples = [
       "Voice-to-job-note: engineer talks, AI fills the job sheet",
       "Review request flows triggered automatically after a job completes",
     ],
-    quote:
-      "I stopped doing paperwork at 9pm. Quotes go out the same hour. Customers think we've doubled in size.",
-    quoteBy: "Owner · plumbing co., Leeds",
     results: [
-      { k: "Quotes out same-day", v: "98%" },
-      { k: "Avg jobs/engineer", v: "+22%" },
-      { k: "5★ reviews", v: "3× more" },
+      { k: "Quotes out same-day", v: "Sent from the van" },
+      { k: "Avg jobs/engineer", v: "Less admin per job" },
+      { k: "5★ reviews", v: "Requested after every job" },
     ],
   },
   {
@@ -139,13 +130,10 @@ export const examples = [
       "Auto-grader for written assignments with detailed feedback",
       "Content multiplier: turns each podcast into 8 short clips + a newsletter",
     ],
-    quote:
-      "I cancelled £400/mo of SaaS. My students are more active. The AI coach has saved me 10+ DM hours a week.",
-    quoteBy: "Founder · business coach",
     results: [
-      { k: "SaaS cost saved", v: "£4.8k/yr" },
-      { k: "Course completion", v: "+41%" },
-      { k: "Coach hours saved", v: "10+/wk" },
+      { k: "SaaS cost saved", v: "Subscriptions replaced" },
+      { k: "Course completion", v: "Progress tracked + nudged" },
+      { k: "Coach hours saved", v: "Admin automated" },
     ],
   },
   {
@@ -176,13 +164,10 @@ export const examples = [
       "Personal subject-line writer for every Klaviyo campaign",
       "Visual search: shoppers upload an image, see closest products",
     ],
-    quote:
-      "Customer support cost halved. Conversion up 28%. We finally have time to design the next collection.",
-    quoteBy: "Founder · DTC fashion",
     results: [
-      { k: "Support cost", v: "−50%" },
-      { k: "CVR", v: "+28%" },
-      { k: "Email revenue", v: "+62%" },
+      { k: "Support cost", v: "AI handles routine queries" },
+      { k: "CVR", v: "Faster, clearer checkout" },
+      { k: "Email revenue", v: "Automated, owned flows" },
     ],
   },
   {
@@ -212,13 +197,10 @@ export const examples = [
       "Nutrition coach AI tailored to the member's goal & allergens",
       "Auto-generated celebratory milestones (PRs, streaks) for social sharing",
     ],
-    quote:
-      "Retention has never been this high. Members say it feels like having a coach in their pocket.",
-    quoteBy: "Owner · PT studio, Brighton",
     results: [
-      { k: "Member retention", v: "+34%" },
-      { k: "Trainer admin", v: "−6 hrs/wk" },
-      { k: "Referrals", v: "2× more" },
+      { k: "Member retention", v: "Progress they can see" },
+      { k: "Trainer admin", v: "Plans write themselves" },
+      { k: "Referrals", v: "Shareable results" },
     ],
   },
   {
@@ -249,13 +231,10 @@ export const examples = [
       "Smart scheduling AI that solves clashes across 40+ players",
       "Voice-to-note: coach speaks after a session, AI writes the report",
     ],
-    quote:
-      "Parents see real progress on paper, players love the videos, and I get my Sunday evenings back.",
-    quoteBy: "Coach · 1-to-1 football, Surrey",
     results: [
-      { k: "Admin hours", v: "−9 hrs/wk" },
-      { k: "Payment chasing", v: "Gone" },
-      { k: "Players (capacity)", v: "+60%" },
+      { k: "Admin hours", v: "Reports from a voice note" },
+      { k: "Payment chasing", v: "Automated away" },
+      { k: "Players (capacity)", v: "Limited by time, not admin" },
     ],
   },
   {
@@ -286,13 +265,10 @@ export const examples = [
       "Pinterest pin writer + scheduler in your voice",
       "AI customer service drafting replies to common questions",
     ],
-    quote:
-      "I used to spend 3 hours getting one product image right. Now it takes 5 minutes and looks better. The keyword AI alone changed everything.",
-    quoteBy: "Maker · home decor on Etsy",
     results: [
-      { k: "Listings / day", v: "10× more" },
-      { k: "Midjourney spend", v: "−70%" },
-      { k: "Etsy CTR", v: "+58%" },
+      { k: "Listings / day", v: "Bulk-listed, not one-by-one" },
+      { k: "Midjourney spend", v: "Owned prompt tools" },
+      { k: "Etsy CTR", v: "Sharper listing copy" },
     ],
   },
   {
@@ -323,13 +299,10 @@ export const examples = [
       "AI deadline guardian — chases clients via SMS/email in increasing urgency",
       "Annual report writer that pulls from the client's data",
     ],
-    quote:
-      "Deadline season went from chaos to calm. Clients send receipts in seconds, and the AI catches what my juniors miss.",
-    quoteBy: "Managing partner · accountancy firm, Reading",
     results: [
-      { k: "Late filings", v: "−92%" },
-      { k: "Avg client onboarding", v: "3 days → 1" },
-      { k: "Capacity per accountant", v: "+40%" },
+      { k: "Late filings", v: "The chase runs itself" },
+      { k: "Avg client onboarding", v: "One link, no email chain" },
+      { k: "Capacity per accountant", v: "No per-seat ceiling" },
     ],
   },
   {
@@ -360,13 +333,10 @@ export const examples = [
       "Feedback summariser: vendor sees themed comments after every viewing",
       "After-viewing follow-up emails personalised per buyer's reactions",
     ],
-    quote:
-      "Vendors finally feel informed. Junior agents close more because the AI does the chasing.",
-    quoteBy: "Director · independent agency, Surrey",
     results: [
-      { k: "Time on market", v: "−21%" },
-      { k: "Listings won", v: "+47%" },
-      { k: "Negotiator capacity", v: "+30%" },
+      { k: "Time on market", v: "Priced on evidence" },
+      { k: "Listings won", v: "Won on honesty" },
+      { k: "Negotiator capacity", v: "Enquiries auto-qualified" },
     ],
   },
   {
@@ -396,13 +366,10 @@ export const examples = [
       "Customer feedback summariser: themes per site, per week",
       "AI host chatbot handling reservations & dietaries in 12 languages",
     ],
-    quote:
-      "I can run all five sites from my phone. The forecasting alone saved us a chef's salary in waste.",
-    quoteBy: "Founder · restaurant group, London",
     results: [
-      { k: "Food waste", v: "−31%" },
-      { k: "Repeat covers", v: "+24%" },
-      { k: "Manager admin", v: "−12 hrs/wk" },
+      { k: "Food waste", v: "Forecast from covers" },
+      { k: "Repeat covers", v: "Own loyalty, own list" },
+      { k: "Manager admin", v: "One screen, not six" },
     ],
   },
   {
@@ -433,13 +400,10 @@ export const examples = [
       "Time auto-tracker via calendar + files (no more manual logging)",
       "AI client-mood radar from email/Slack tone — flags red flags early",
     ],
-    quote:
-      "We bill 30% more hours without working more. Briefs are clearer, decks faster, clients happier.",
-    quoteBy: "Founder · branding agency, London",
     results: [
-      { k: "Billable hours", v: "+30%" },
-      { k: "Proposal turnaround", v: "1 day → 2 hrs" },
-      { k: "Client NPS", v: "62 → 81" },
+      { k: "Billable hours", v: "Less time on admin" },
+      { k: "Proposal turnaround", v: "Drafted in minutes" },
+      { k: "Client NPS", v: "Always-visible progress" },
     ],
   },
   {
@@ -470,13 +434,10 @@ export const examples = [
       "Multilingual translation for consent & info sheets",
       "Recall AI: nudges patients due for check-ups politely",
     ],
-    quote:
-      "Reception have stopped putting people on hold. Patients feel heard before they even step in.",
-    quoteBy: "Clinical director · private GP, Surrey",
     results: [
-      { k: "Hold times", v: "−80%" },
-      { k: "No-shows", v: "−39%" },
-      { k: "Recall conversion", v: "+44%" },
+      { k: "Hold times", v: "AI handles the phones" },
+      { k: "No-shows", v: "Smart reminders" },
+      { k: "Recall conversion", v: "Recalls run on their own" },
     ],
   },
   {
@@ -506,13 +467,10 @@ export const examples = [
       "Upsell AI: suggests spa, dinner, taxi at the right moment",
       "Review-response drafter (approve in one tap)",
     ],
-    quote:
-      "Direct bookings doubled. Guests think we're a boutique brand with a head office — we're still a family of four.",
-    quoteBy: "Owner · boutique hotel, Cotswolds",
     results: [
-      { k: "Direct bookings", v: "2×" },
-      { k: "OTA fees saved", v: "£18k/yr" },
-      { k: "Avg upsell", v: "+£42/stay" },
+      { k: "Direct bookings", v: "Off the OTAs" },
+      { k: "OTA fees saved", v: "Commission-free direct" },
+      { k: "Avg upsell", v: "Upsells at booking" },
     ],
   },
   {
@@ -542,13 +500,10 @@ export const examples = [
       "Pass-prep planner: tells the student what to focus on this week",
       "WhatsApp AI handles 'can I book Tuesday?' bookings",
     ],
-    quote:
-      "Students learn faster, I drive less paper, and the WhatsApp AI books lessons while I'm teaching.",
-    quoteBy: "Driving school owner, Bristol",
     results: [
-      { k: "Pass rate (first try)", v: "+22%" },
-      { k: "Lessons booked online", v: "94%" },
-      { k: "Admin hours", v: "−8 hrs/wk" },
+      { k: "Pass rate (first try)", v: "Readiness, evidenced" },
+      { k: "Lessons booked online", v: "Booked without a call" },
+      { k: "Admin hours", v: "Recaps from a voice note" },
     ],
   },
   {
@@ -578,13 +533,10 @@ export const examples = [
       "Parent-friendly progress report writer (auto from lesson notes)",
       "Matchmaker: pairs new students with the right tutor based on style",
     ],
-    quote:
-      "Parents finally see what they're paying for. Tutors feel supported. We grew 3× without hiring an admin.",
-    quoteBy: "Founder · tutoring co., Manchester",
     results: [
-      { k: "Tutor capacity", v: "+45%" },
-      { k: "Parent retention", v: "+38%" },
-      { k: "Avg report time", v: "30 min → 3 min" },
+      { k: "Tutor capacity", v: "Admin automated" },
+      { k: "Parent retention", v: "Progress parents can see" },
+      { k: "Avg report time", v: "Reports in minutes" },
     ],
   },
   {
@@ -615,13 +567,10 @@ export const examples = [
       "Client update auto-writer: lawyer voice-notes → polished status email",
       "Compliance flagger for AML / KYC patterns",
     ],
-    quote:
-      "Associates draft in half the time, clients hear from us proactively. We took on 30% more work with the same team.",
-    quoteBy: "Senior partner · independent law firm",
     results: [
-      { k: "Drafting time", v: "−52%" },
-      { k: "Matters per fee-earner", v: "+30%" },
-      { k: "Client satisfaction", v: "+41%" },
+      { k: "Drafting time", v: "Drafted from templates" },
+      { k: "Matters per fee-earner", v: "Less time on admin" },
+      { k: "Client satisfaction", v: "Always-visible progress" },
     ],
   },
   {
@@ -651,13 +600,10 @@ export const examples = [
       "Diet & weight coach for chronic conditions",
       "AI grief support resource library after end-of-life visits",
     ],
-    quote:
-      "Anxious owners now reach for the app, not the phone. We give pets more time, not paperwork.",
-    quoteBy: "Lead vet · Surrey",
     results: [
-      { k: "Phone volume", v: "−54%" },
-      { k: "Recall uptake", v: "+47%" },
-      { k: "Owner NPS", v: "+38" },
+      { k: "Phone volume", v: "AI handles routine calls" },
+      { k: "Recall uptake", v: "Recalls chased automatically" },
+      { k: "Owner NPS", v: "Clear, timely comms" },
     ],
   },
   {
@@ -687,13 +633,10 @@ export const examples = [
       "AI plant recommendation tool for clients",
       "Voice-to-quote so the owner quotes while driving",
     ],
-    quote:
-      "Quotes go out in 10 minutes instead of next week. The AI even suggests plants the client loves.",
-    quoteBy: "Owner · landscaping co., Bath",
     results: [
-      { k: "Quote → win rate", v: "+42%" },
-      { k: "Weather wasted days", v: "−68%" },
-      { k: "Recurring revenue", v: "4× more" },
+      { k: "Quote → win rate", v: "Visual quotes" },
+      { k: "Weather wasted days", v: "Weather-aware scheduling" },
+      { k: "Recurring revenue", v: "Maintenance plans built in" },
     ],
   },
   {
@@ -724,13 +667,10 @@ export const examples = [
       "Question summariser for AMA episodes",
       "Listener-matched ad sponsor recommender",
     ],
-    quote:
-      "Ten hours of post-production gone. My audience grew 3× this year because I finally show up across platforms.",
-    quoteBy: "Independent podcaster",
     results: [
-      { k: "Audience growth", v: "3×" },
-      { k: "Sponsorship rev", v: "+220%" },
-      { k: "Post-prod time", v: "−80%" },
+      { k: "Audience growth", v: "Owned audience + site" },
+      { k: "Sponsorship rev", v: "Own the sponsor relationship" },
+      { k: "Post-prod time", v: "Clips generated automatically" },
     ],
   },
   {
@@ -761,13 +701,10 @@ export const examples = [
       "Damage detection from photos before/after",
       "AI driver coach: tips per route based on past delays",
     ],
-    quote:
-      "I doubled my jobs with the same vans. The instant quote tool wins us calls before competitors even reply.",
-    quoteBy: "Owner · removals co., Birmingham",
     results: [
-      { k: "Quotes / day", v: "5× more" },
-      { k: "Conversion", v: "+57%" },
-      { k: "5★ reviews", v: "3× more" },
+      { k: "Quotes / day", v: "Guided self-quote" },
+      { k: "Conversion", v: "Answered before rivals" },
+      { k: "5★ reviews", v: "Requested after every job" },
     ],
   },
   {
@@ -797,13 +734,10 @@ export const examples = [
       "Smart budget warning AI: flags overspend early",
       "Auto follow-up with vendors stuck on confirmations",
     ],
-    quote:
-      "Brides cry happy tears in the portal. We handle 50% more weddings with the same team — calmer.",
-    quoteBy: "Founder · wedding planner, Yorkshire",
     results: [
-      { k: "Weddings / yr", v: "+50%" },
-      { k: "Vendor coord time", v: "−65%" },
-      { k: "Couple NPS", v: "+44" },
+      { k: "Weddings / yr", v: "Less coordination overhead" },
+      { k: "Vendor coord time", v: "One shared timeline" },
+      { k: "Couple NPS", v: "Everything in one place" },
     ],
   },
   {
@@ -833,13 +767,10 @@ export const examples = [
       "Demand forecasting for retail stock",
       "Personalised aftercare AI message after every visit",
     ],
-    quote:
-      "Rebookings doubled. Stylists make more in tips and product. The whole team feels modern.",
-    quoteBy: "Owner · barber chain, Liverpool",
     results: [
-      { k: "Rebooking rate", v: "2×" },
-      { k: "Retail revenue", v: "+58%" },
-      { k: "Stylist retention", v: "+33%" },
+      { k: "Rebooking rate", v: "Rebooking at the chair" },
+      { k: "Retail revenue", v: "Aftercare sells itself" },
+      { k: "Stylist retention", v: "Records stay with the salon" },
     ],
   },
   {
@@ -869,13 +800,10 @@ export const examples = [
       "Route suggester from preferences & weather",
       "Newsletter writer from ride reports",
     ],
-    quote:
-      "We added 120 new members in a year because the experience finally feels professional.",
-    quoteBy: "Chair · cycling club, Cornwall",
     results: [
-      { k: "New members", v: "+120" },
-      { k: "Ride participation", v: "+62%" },
-      { k: "Volunteer admin", v: "−10 hrs/wk" },
+      { k: "New members", v: "Easy join + pay" },
+      { k: "Ride participation", v: "One place for everything" },
+      { k: "Volunteer admin", v: "Automated away" },
     ],
   },
 ];
