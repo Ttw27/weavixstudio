@@ -12,9 +12,11 @@ export const siteConfig = {
   calendlyUrl: "https://calendly.com/your-studio/intro",
   email: "hello@weavixstudio.com",
   socials: {
-    instagram: "https://instagram.com/yourstudio",
-    linkedin: "https://linkedin.com/company/yourstudio",
-    x: "https://x.com/yourstudio",
+    instagram: "",
+    linkedin: "",
+    x: "",
+    facebook: "",
+    tiktok: "",
   },
 
   services: [
