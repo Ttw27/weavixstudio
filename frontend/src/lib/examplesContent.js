@@ -805,7 +805,7 @@ export const examples = [
       { k: "Ride participation", v: "One place for everything" },
       { k: "Volunteer admin", v: "Automated away" },
     ],
-  },,
+  },
   {
     id: "event-production",
     icon: "🎪",
