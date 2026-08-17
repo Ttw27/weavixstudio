@@ -207,6 +207,38 @@ export default function EnterprisePage() {
           </div>
         </section>
 
+        {/* WHY IT'S ILLUSTRATIVE — the bespoke pitch */}
+        <section className="px-5 md:px-10 mt-16 md:mt-20">
+          <div className="max-w-[1400px] mx-auto rounded-[28px] p-8 md:p-12" style={{ background: DARK, border: `3px solid ${DARK}` }}>
+            <h2 className="font-display font-semibold leading-tight" style={{ color: CREAM, fontSize: "clamp(24px, 3.4vw, 38px)" }}>
+              Why these are only examples.
+            </h2>
+            <p className="font-body mt-4 max-w-3xl text-base leading-relaxed" style={{ color: "rgba(255,251,240,0.75)" }}>
+              Because none of it is off a template. Every one of these is bespoke — which makes it genuinely hard to show you "the product," because there isn't one. We build the system around <span style={{ color: YELLOW, fontWeight: 600 }}>your</span> business, not a generic mould.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-9">
+              <div>
+                <p className="font-display font-medium text-base" style={{ color: CREAM }}>1 · We learn how you work</p>
+                <p className="font-body text-sm mt-1.5 leading-relaxed" style={{ color: "rgba(255,251,240,0.65)" }}>
+                  We sit with your team and map the actual processes — the real ones, including the workarounds nobody documented. The system is shaped around those, not the other way round.
+                </p>
+              </div>
+              <div>
+                <p className="font-display font-medium text-base" style={{ color: CREAM }}>2 · We consolidate what you have</p>
+                <p className="font-body text-sm mt-1.5 leading-relaxed" style={{ color: "rgba(255,251,240,0.65)" }}>
+                  The tools that already work stay and get connected. The spreadsheets and manual bridges holding everything together get replaced by something that just runs.
+                </p>
+              </div>
+              <div>
+                <p className="font-display font-medium text-base" style={{ color: CREAM }}>3 · We add what's missing</p>
+                <p className="font-body text-sm mt-1.5 leading-relaxed" style={{ color: "rgba(255,251,240,0.65)" }}>
+                  Where there's a gap — reporting you've never had, an AI assistant on your own data, an automation that removes a whole job — we build it in. All in one place, all owned by you.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* WHAT GETS IT SIGNED OFF */}
         <section className="px-5 md:px-10 mt-20 md:mt-28">
           <div className="max-w-[1400px] mx-auto card-blunt p-8 md:p-12" style={{ background: "var(--bg-2)" }}>
