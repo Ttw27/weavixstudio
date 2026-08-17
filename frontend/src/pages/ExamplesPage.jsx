@@ -354,6 +354,38 @@ export default function ExamplesPage() {
         </div>
       </section>
 
+      {/* Bigger team? Enterprise band */}
+      <section className="px-5 md:px-10 mt-4 mb-2">
+        <div className="max-w-[1400px] mx-auto">
+          <Link
+            to="/enterprise"
+            data-testid="examples-enterprise-band"
+            className="group block rounded-[24px] overflow-hidden"
+            style={{ background: "#161616", border: "1px solid rgba(255,255,255,0.12)" }}
+          >
+            <div className="px-6 md:px-10 py-7 md:py-9 flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
+              <div className="flex-1">
+                <span className="font-body text-xs uppercase tracking-widest" style={{ color: "#FFDD4A" }}>
+                  15–20+ people?
+                </span>
+                <p className="font-display font-semibold mt-2 leading-tight" style={{ color: "#FFFBF0", fontSize: "clamp(22px, 3vw, 32px)" }}>
+                  These examples are for smaller teams. Bigger operation?
+                </p>
+                <p className="font-body text-sm mt-2 max-w-2xl" style={{ color: "rgba(255,251,240,0.66)" }}>
+                  When you're past a handful of staff, the problem isn't the cost of tools — it's that none of them talk to each other. See how we build integrated, owned systems around your existing stack.
+                </p>
+              </div>
+              <span
+                className="shrink-0 rounded-full font-display font-semibold text-[15px] px-7 py-3 inline-flex items-center gap-2 self-start md:self-auto"
+                style={{ background: "#FFDD4A", color: "#161616" }}
+              >
+                For enterprise <ArrowRight className="w-4 h-4" />
+              </span>
+            </div>
+          </Link>
+        </div>
+      </section>
+
       {/* Where are you now? — dual-audience picker */}
       <AudienceTierPicker active={tier} onChange={setTier} />
 
