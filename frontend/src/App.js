@@ -30,6 +30,7 @@ import ContactPage from "./pages/ContactPage";
 import ExamplesPage from "./pages/ExamplesPage";
 import ReadinessPlanPage from "./pages/ReadinessPlanPage";
 import AdminPage from "./pages/AdminPage";
+import EnterprisePage from "./pages/EnterprisePage";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
@@ -116,6 +117,7 @@ function App() {
               <Route path="/process" element={<ProcessPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/examples" element={<ExamplesPage />} />
+              <Route path="/enterprise" element={<EnterprisePage />} />
               <Route path="/readiness-plan" element={<ReadinessPlanPage />} />
               <Route path="/admin" element={<AdminPage />} />
               <Route path="/previews" element={<DesignPreviews />} />
