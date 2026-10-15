@@ -9,6 +9,7 @@ const titles = {
   process: "Process - how we work",
   contact: "Contact - let's build something",
   readiness: "Free AI readiness plan - find out what you'd save",
+  advertising: "Advertising for small businesses - ads and social you own",
 };
 
 const descriptions = {
@@ -18,6 +19,7 @@ const descriptions = {
   examples: "20+ illustrative digital ecosystem builds for cafés, clinics, agencies, trades, creators and more.",
   process: "Four phases, weekly demos, senior operators. Less theatre, more shipping.",
   contact: "Book a chat or get a free personalised readiness plan emailed back within 24 hours.",
+  advertising: "A full media plan for your business: the offer, ads, a daily social calendar, creative and tracking. All run on your own accounts.",
   readiness: "Answer 7 quick questions about your business. We'll email you a free, personalised plan showing what we'd build and what it'd save.",
 };
 

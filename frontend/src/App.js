@@ -15,7 +15,6 @@ import Services from "./components/site/Services";
 import Portfolio from "./components/site/Portfolio";
 import LiveProjects from "./components/site/LiveProjects";
 import Process from "./components/site/Process";
-import Testimonials from "./components/site/Testimonials";
 import Contact from "./components/site/Contact";
 import Footer from "./components/site/Footer";
 import StickyWhatsApp from "./components/site/StickyWhatsApp";
@@ -32,6 +31,8 @@ import ReadinessPlanPage from "./pages/ReadinessPlanPage";
 import AdminPage from "./pages/AdminPage";
 import EnterprisePage from "./pages/EnterprisePage";
 import MetaPixel from "./components/MetaPixel";
+import AdvertisingPage from "./pages/AdvertisingPage";
+import OwnSystem from "./components/site/OwnSystem";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
@@ -87,6 +88,7 @@ const Home = () => (
     <SEO page="home" />
     <Navbar />
     <Hero />
+    <OwnSystem />
     <SalesHooks />
     <AiReady />
     <OperatingSystemStrip />
@@ -94,7 +96,6 @@ const Home = () => (
     <Services />
     <HomeWork />
     <Process />
-    <Testimonials />
     <Contact />
     <Footer />
     <StickyWhatsApp />
@@ -120,6 +121,7 @@ function App() {
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/examples" element={<ExamplesPage />} />
               <Route path="/enterprise" element={<EnterprisePage />} />
+              <Route path="/advertising" element={<AdvertisingPage />} />
               <Route path="/readiness-plan" element={<ReadinessPlanPage />} />
               <Route path="/admin" element={<AdminPage />} />
               <Route path="/previews" element={<DesignPreviews />} />

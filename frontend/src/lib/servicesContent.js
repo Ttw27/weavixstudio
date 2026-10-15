@@ -322,7 +322,7 @@ export const servicesContent = {
     ],
     relatedProjects: ["brava"],
     faq: [
-      { q: "Minimum ad spend?", a: "We work best with $5k+/month in media spend. Below that we recommend organic first." },
+      { q: "Minimum ad spend?", a: "None. Many businesses start with a few pounds a day while we find the message that works, then scale what proves itself." },
       { q: "How's pricing?", a: "Flat monthly retainer for management + creative. No % of spend games." },
     ],
   },
