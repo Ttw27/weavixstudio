@@ -151,7 +151,7 @@ PUBLIC_SETTINGS_KEYS = [
     "whatsappNumber", "whatsappMessage", "calendlyUrl", "email",
     "instagram", "linkedin", "x_url", "facebook", "tiktok",
     "seo_default_title", "seo_default_description", "seo_default_og_image",
-    "ga_measurement_id",
+    "ga_measurement_id", "meta_pixel_id",
 ]
 ADMIN_ONLY_KEYS = [
     "admin_password", "admin_notify_email",

@@ -31,6 +31,7 @@ import ExamplesPage from "./pages/ExamplesPage";
 import ReadinessPlanPage from "./pages/ReadinessPlanPage";
 import AdminPage from "./pages/AdminPage";
 import EnterprisePage from "./pages/EnterprisePage";
+import MetaPixel from "./components/MetaPixel";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
@@ -107,6 +108,7 @@ function App() {
         <div className="App">
           <BrowserRouter>
             <ScrollToTopOnRouteChange />
+            <MetaPixel />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/work" element={<WorkPage />} />

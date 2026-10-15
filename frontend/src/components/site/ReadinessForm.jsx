@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import axios from "axios";
+import { trackMeta } from "../MetaPixel";
 import {
   ArrowLeft,
   ArrowRight,
@@ -191,6 +192,7 @@ export default function ReadinessForm({ compact = false, testIdPrefix = "" }) {
     setError("");
     try {
       await axios.post(`${API}/leads`, data);
+      trackMeta("Lead", { content_name: "Readiness plan" });
       setDone(true);
     } catch (e) {
       setError("Something went wrong - please try again or message us on WhatsApp.");

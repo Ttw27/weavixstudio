@@ -46,6 +46,7 @@ const mergeWithDefaults = (live) => {
       },
     },
     ga: safe.ga_measurement_id || "",
+    metaPixel: safe.meta_pixel_id || "",
   };
 };
 

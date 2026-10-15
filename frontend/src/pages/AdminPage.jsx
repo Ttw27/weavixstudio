@@ -347,6 +347,7 @@ const SeoTab = () => {
         <TextArea label="Default meta description" hint="Used as fallback across pages" value={data.seo_default_description || ""} onChange={(e) => set("seo_default_description", e.target.value)} data-testid="setting-seo_default_description" />
         <Field label="Default OG image URL" hint="Used in social shares (1200x630 ideal)" value={data.seo_default_og_image || ""} onChange={(e) => set("seo_default_og_image", e.target.value)} />
         <Field label="Google Analytics measurement ID" hint="e.g. G-XXXXXXXX (optional)" value={data.ga_measurement_id || ""} onChange={(e) => set("ga_measurement_id", e.target.value)} />
+        <Field label="Meta (Facebook) pixel ID" hint="Numbers only, from Events Manager (optional)" value={data.meta_pixel_id || ""} onChange={(e) => set("meta_pixel_id", e.target.value)} />
       </Section>
 
       <Section icon={<Search className="w-4 h-4" />} title="Per-page titles">
