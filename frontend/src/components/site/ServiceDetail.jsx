@@ -141,7 +141,7 @@ export default function ServiceDetail() {
             Ideas you <span className="squiggle">might not have</span> thought of.
           </h2>
           <p className="mt-4 font-body text-base md:text-lg text-[var(--ink-soft)] max-w-2xl">
-            A taste of what we actually build. Pick 1, pick 3, or bring your own —
+            A taste of what we actually build. Pick 1, pick 3, or bring your own -
             we'll tell you which ones would move the needle for your business.
           </p>
 

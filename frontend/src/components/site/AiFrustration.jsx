@@ -81,8 +81,8 @@ export const AiFrustration = () => {
               <span className="bg-[var(--p-yellow)] text-[var(--ink)] px-1.5 rounded font-display">
                 custom prompt apps
               </span>{" "}
-              for your business — one-click tools, plugged straight into AI
-              systems (ChatGPT, Claude, Midjourney, Nano Banana, Sora) — that
+              for your business - one-click tools, plugged straight into AI
+              systems (ChatGPT, Claude, Midjourney, Nano Banana, Sora) - that
               know your brand, your pricing, your tone, your customers. You
               click. It works. First try.
             </p>

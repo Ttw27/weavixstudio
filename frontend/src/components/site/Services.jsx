@@ -16,7 +16,7 @@ export const Services = ({ hideHeader = false }) => {
             </h2>
           </div>
           <p className="font-body text-base text-[var(--ink-soft)] max-w-md leading-relaxed">
-            From first pixel to paid scale — pick one, or hand us the whole stack.
+            From first pixel to paid scale - pick one, or hand us the whole stack.
             Click any card for ideas you might not have thought of yet.
           </p>
         </div>

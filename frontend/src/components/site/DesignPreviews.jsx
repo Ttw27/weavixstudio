@@ -18,7 +18,7 @@ const archetypes = [
     id: 2,
     name: "Glassmorphism Futurist",
     theme: "Dark · Gradients · Glass panels",
-    vibe: "AI / SaaS (the 'AI-slop' look — avoid)",
+    vibe: "AI / SaaS (the 'AI-slop' look - avoid)",
   },
   {
     id: 3,
@@ -196,7 +196,7 @@ export default function DesignPreviews() {
             <span className="outline-text">Same content,</span> <span className="text-[var(--accent)]">different feel.</span>
           </h1>
           <p className="mt-6 font-mono text-sm text-[var(--text-dim)] max-w-2xl">
-            Each tile below is a miniature hero in that archetype's style —
+            Each tile below is a miniature hero in that archetype's style -
             same studio name, different aesthetic. Tell me the number you want
             and I'll redesign the whole site to match.
           </p>
@@ -255,7 +255,7 @@ export default function DesignPreviews() {
             Just reply with a number (01–06) and I'll redesign the whole site.
           </h3>
           <p className="mt-4 font-mono text-sm text-[var(--text-dim)] max-w-2xl">
-            Or combine — e.g. "03 but with the red accent from 04". Content
+            Or combine - e.g. "03 but with the red accent from 04". Content
             stays the same; only the aesthetic changes.
           </p>
         </div>

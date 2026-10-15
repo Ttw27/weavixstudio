@@ -32,7 +32,7 @@ const quickWins = [
     color: "lilac",
     icon: "🔁",
     title: "Turn 1 idea into 20 pieces of content",
-    body: "Feed in a podcast, voice note or blog. Out comes reels, emails, social posts, a newsletter — all in your voice.",
+    body: "Feed in a podcast, voice note or blog. Out comes reels, emails, social posts, a newsletter - all in your voice.",
   },
   {
     color: "orange",
@@ -72,7 +72,7 @@ export const AiReady = () => {
               <Sparkles className="w-3.5 h-3.5" /> AI for every business
             </span>
             <h2 className="display-xl text-[var(--ink)] mt-3">
-              Big or small — let's get your business{" "}
+              Big or small - let's get your business{" "}
               <span className="bg-[var(--p-yellow)] px-2 py-0.5 border-2 border-[var(--ink)] inline-block rounded-xl shadow-[var(--shadow-blunt-sm)]">
                 AI-ready
               </span>
@@ -81,10 +81,10 @@ export const AiReady = () => {
             <p className="mt-5 font-body text-base md:text-lg text-[var(--ink-soft)] leading-relaxed">
               We're not here to sell you robots or convince you the future is
               scary. We just plug AI into the bits of your business that drain
-              your time and bleed your money — quietly, in the background.
+              your time and bleed your money - quietly, in the background.
               You'd be{" "}
               <span className="font-hand text-2xl text-[var(--p-pink)]">shocked</span>{" "}
-              what it can do — and within a month you'll wonder how you ever
+              what it can do - and within a month you'll wonder how you ever
               ran things without it.
             </p>
           </div>
@@ -169,7 +169,7 @@ export const AiReady = () => {
             </h3>
             <p className="mt-3 font-body text-sm text-[var(--bg)] opacity-80">
               Answer 7 quick questions. We'll email back the exact AI moves
-              we'd make for your business — including estimated time and money
+              we'd make for your business - including estimated time and money
               saved. No call required.
             </p>
           </div>

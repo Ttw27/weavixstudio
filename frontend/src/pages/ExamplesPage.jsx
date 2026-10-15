@@ -90,7 +90,7 @@ const FeaturedCard = ({ ex, index }) => (
 
     {/* Quote + results */}
     <div className="p-6 md:p-7 border-t-2 border-[var(--ink)]" style={{ background: bgFor(ex.color), color: fgFor(ex.color) }}>
-      <div className="font-body text-xs uppercase tracking-wider opacity-70">Illustrative example — the kind of system we could build for a business like this. Not a real client.</div>
+      <div className="font-body text-xs uppercase tracking-wider opacity-70">Illustrative example - the kind of system we could build for a business like this. Not a real client.</div>
       <div className="mt-5 flex flex-wrap gap-2">
         {ex.results.map((r) => (
           <span key={r.k} className="font-body text-[11px] font-bold text-[var(--ink)] bg-[var(--surface)] border-2 border-[var(--ink)] px-2.5 py-1 rounded-full">
@@ -217,7 +217,7 @@ const Drawer = ({ ex, onClose }) => {
           </section>
 
           <section className="card-blunt p-5" style={{ background: bgFor(ex.color), color: fgFor(ex.color) }}>
-            <div className="font-body text-xs uppercase tracking-wider opacity-70">Illustrative example — the kind of system we could build for a business like this. Not a real client.</div>
+            <div className="font-body text-xs uppercase tracking-wider opacity-70">Illustrative example - the kind of system we could build for a business like this. Not a real client.</div>
             <div className="mt-4 flex flex-wrap gap-2">
               {ex.results.map((r) => (
                 <span key={r.k} className="font-body text-[11px] font-bold text-[var(--ink)] bg-[var(--surface)] border-2 border-[var(--ink)] px-2.5 py-1 rounded-full">
@@ -324,12 +324,12 @@ export default function ExamplesPage() {
             Most agencies build brochureware with a chatbot bolted on. We build
             the <span className="font-hand text-2xl text-[var(--p-pink)]">operating system</span>{" "}
             your business runs on. The website is just the doorway visitors
-            walk through. Everything else — quotes, ads, deposits, workshop
-            tickets, deliveries, lead chasers, dashboards — sits behind it.
+            walk through. Everything else - quotes, ads, deposits, workshop
+            tickets, deliveries, lead chasers, dashboards - sits behind it.
           </p>
           <p className="mt-3 max-w-3xl font-body text-sm md:text-base text-[var(--ink-soft)] leading-relaxed">
             Below are <strong>{examples.length} examples</strong> across every kind of
-            business. Pick the one closest to yours — the drawer shows the full
+            business. Pick the one closest to yours - the drawer shows the full
             OS spec (website + backend + AI).
           </p>
 
@@ -372,7 +372,7 @@ export default function ExamplesPage() {
                   These examples are for smaller teams. Bigger operation?
                 </p>
                 <p className="font-body text-sm mt-2 max-w-2xl" style={{ color: "rgba(255,251,240,0.66)" }}>
-                  When you're past a handful of staff, the problem isn't the cost of tools — it's that none of them talk to each other. See how we build integrated, owned systems around your existing stack.
+                  When you're past a handful of staff, the problem isn't the cost of tools - it's that none of them talk to each other. See how we build integrated, owned systems around your existing stack.
                 </p>
               </div>
               <span

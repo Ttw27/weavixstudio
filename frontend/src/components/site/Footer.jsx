@@ -48,7 +48,7 @@ export const Footer = () => {
       </div>
 
       <div className="border-t border-white/15 px-5 md:px-10 py-4 max-w-[1400px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-2 font-body text-xs text-[var(--bg)] opacity-70">
-        <div>© {year} {studioName} — All rights reserved.</div>
+        <div>© {year} {studioName} - All rights reserved.</div>
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-[var(--p-mint)] inline-block" />
           <span>Open for projects</span>

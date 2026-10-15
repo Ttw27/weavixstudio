@@ -53,7 +53,7 @@ export const Hero = () => {
         >
           A standalone website? That's so{" "}
           <span className="line-through opacity-60">2018</span>. Today it's
-          about whole <span className="text-[var(--p-pink)]">digital ecosystems</span> —
+          about whole <span className="text-[var(--p-pink)]">digital ecosystems</span> -
           ones that <span className="bg-[var(--p-yellow)] px-1 rounded">lower costs</span>,
           put AI to work, and give you back your time.
         </motion.p>
@@ -66,7 +66,7 @@ export const Hero = () => {
         >
           Whether you've{" "}
           <span className="font-bold text-[var(--ink)]">never touched AI</span>{" "}
-          or already have ChatGPT open in another tab — we meet you where you
+          or already have ChatGPT open in another tab - we meet you where you
           are. A modern website that actually converts, custom AI that runs
           your back office, customer portals, automations, ads, social. One
           studio. No juggling 8 SaaS tools. No wondering if you're "doing it

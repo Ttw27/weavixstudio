@@ -28,7 +28,7 @@ export default function ReadinessPlanPage() {
                 Prefer a real conversation?
               </div>
               <p className="font-body text-xs text-[var(--ink-soft)] mt-1">
-                Book a 25-min chat instead — same outcome, just live.
+                Book a 25-min chat instead - same outcome, just live.
               </p>
             </div>
             <div className="flex flex-wrap gap-2">

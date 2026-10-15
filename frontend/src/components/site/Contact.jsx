@@ -23,7 +23,7 @@ export const ContactHero = () => (
     </motion.h2>
 
     <p className="mt-8 max-w-2xl font-body text-base md:text-lg text-[var(--ink-soft)] leading-relaxed">
-      Tell us what you're working on. We'll tell you — honestly — whether
+      Tell us what you're working on. We'll tell you - honestly - whether
       we can help. Intro calls are free and last 25 minutes.
     </p>
   </div>

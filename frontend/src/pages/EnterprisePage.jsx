@@ -11,22 +11,22 @@ const CREAM = "#FFFBF0";
 const YELLOW = "#FFDD4A";
 
 const problems = [
-  { t: "Systems that don't talk", d: "CRM, accounts, operations, HR — each a separate island, bridged by someone re-keying data between them." },
-  { t: "Spreadsheets holding it together", d: "The real business runs on fragile spreadsheets only one person fully understands — and they're on holiday next week." },
+  { t: "Systems that don't talk", d: "CRM, accounts, operations, HR - each a separate island, bridged by someone re-keying data between them." },
+  { t: "Spreadsheets holding it together", d: "The real business runs on fragile spreadsheets only one person fully understands - and they're on holiday next week." },
   { t: "Software that fights your process", d: "Off-the-shelf platforms force the team to work the software's way, papered over with workarounds." },
-  { t: "Per-seat costs that scale badly", d: "Every new hire, every extra module, adds licence cost — forever, whether you use it or not." },
+  { t: "Per-seat costs that scale badly", d: "Every new hire, every extra module, adds licence cost - forever, whether you use it or not." },
 ];
 
 const builds = [
-  { icon: Plug, c: "#3ABEFF", t: "The integration layer", d: "One system that connects the tools you already own — Xero, Salesforce, HubSpot, your ERP — so data flows instead of being re-typed." },
+  { icon: Plug, c: "#3ABEFF", t: "The integration layer", d: "One system that connects the tools you already own - Xero, Salesforce, HubSpot, your ERP - so data flows instead of being re-typed." },
   { icon: LayoutDashboard, c: "#B6E388", t: "The operations platform", d: "The bespoke internal system built around your exact workflow, replacing the spreadsheet-and-email scaffolding you've outgrown." },
-  { icon: LineChart, c: "#FFDD4A", t: "The single source of truth", d: "Leadership dashboards pulling live from every department — not month-old exported reports stitched together by hand." },
-  { icon: Bot, c: "#C8A7F2", t: "AI on your own data", d: "Assistants and automations grounded in your processes and documents, running inside your infrastructure — not a public tool." },
+  { icon: LineChart, c: "#FFDD4A", t: "The single source of truth", d: "Leadership dashboards pulling live from every department - not month-old exported reports stitched together by hand." },
+  { icon: Bot, c: "#C8A7F2", t: "AI on your own data", d: "Assistants and automations grounded in your processes and documents, running inside your infrastructure - not a public tool." },
 ];
 
 const cares = [
   { icon: ShieldCheck, t: "Security & compliance", d: "Your data on your own infrastructure, GDPR-clean, with no third party holding it hostage at renewal." },
-  { icon: Layers, t: "It integrates, not replaces", d: "We work with the stack you've already invested in. We add the connective tissue — we don't rip it out." },
+  { icon: Layers, t: "It integrates, not replaces", d: "We work with the stack you've already invested in. We add the connective tissue - we don't rip it out." },
   { icon: Boxes, t: "You own the asset", d: "A bespoke system on your books adds company value. A subscription just adds cost. This is an asset, not a rental." },
 ];
 
@@ -35,7 +35,7 @@ const examples = [
     icon: "🏢",
     sector: "Multi-site services firm",
     size: "~40 staff · several depots",
-    mess: "Jobs in one system, accounts in Xero, engineers on a scheduling app, HR on spreadsheets — and a coordinator whose whole day is copying data between all four.",
+    mess: "Jobs in one system, accounts in Xero, engineers on a scheduling app, HR on spreadsheets - and a coordinator whose whole day is copying data between all four.",
     build: "One platform over the top: it pulls jobs, pushes invoices to Xero automatically, drives the live schedule, and gives leadership one dashboard instead of four exports. The tools stay; the re-keying stops.",
     tags: ["Xero + scheduler integrated", "One leadership view", "Coordinator freed up", "Owned, not per-seat"],
   },
@@ -95,7 +95,7 @@ export default function EnterprisePage() {
                 Your software should fit<br />how <span style={{ color: YELLOW }}>you</span> work.
               </motion.h1>
               <p className="font-body mt-6 max-w-2xl text-base md:text-lg leading-relaxed" style={{ color: "rgba(255,251,240,0.72)" }}>
-                Off-the-shelf platforms make your team bend to the software. We build the system around your process — integrated with your existing stack, secure on your own infrastructure, owned outright as a company asset.
+                Off-the-shelf platforms make your team bend to the software. We build the system around your process - integrated with your existing stack, secure on your own infrastructure, owned outright as a company asset.
               </p>
               <div className="mt-9 flex flex-wrap gap-4 items-center">
                 <a href={calendly} target="_blank" rel="noreferrer" data-testid="ent-calendly"
@@ -119,7 +119,7 @@ export default function EnterprisePage() {
               What breaks at 15–20+ people.
             </h2>
             <p className="font-body mt-4 max-w-2xl text-[var(--ink-soft)]">
-              The problem stops being the cost of tools. It becomes the fact that none of them talk to each other — and the workarounds bridging them are now load-bearing.
+              The problem stops being the cost of tools. It becomes the fact that none of them talk to each other - and the workarounds bridging them are now load-bearing.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-9">
               {problems.map((p, i) => (
@@ -172,7 +172,7 @@ export default function EnterprisePage() {
               The kind of thing we build.
             </h2>
             <p className="font-body mt-4 max-w-2xl text-[var(--ink-soft)]">
-              Illustrative scenarios — the shape of the systems we build for bigger teams, not named clients. Find the one closest to yours.
+              Illustrative scenarios - the shape of the systems we build for bigger teams, not named clients. Find the one closest to yours.
             </p>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-9">
               {examples.map((ex, i) => (
@@ -202,7 +202,7 @@ export default function EnterprisePage() {
               ))}
             </div>
             <p className="font-body text-xs text-[var(--ink-soft)] mt-5 max-w-2xl italic">
-              Illustrative scenarios showing the kind of system we build — not real named clients.
+              Illustrative scenarios showing the kind of system we build - not real named clients.
             </p>
           </div>
         </section>
@@ -214,13 +214,13 @@ export default function EnterprisePage() {
               Why these are only examples.
             </h2>
             <p className="font-body mt-4 max-w-3xl text-base leading-relaxed" style={{ color: "rgba(255,251,240,0.75)" }}>
-              Because none of it is off a template. Every one of these is bespoke — which makes it genuinely hard to show you "the product," because there isn't one. We build the system around <span style={{ color: YELLOW, fontWeight: 600 }}>your</span> business, not a generic mould.
+              Because none of it is off a template. Every one of these is bespoke - which makes it genuinely hard to show you "the product," because there isn't one. We build the system around <span style={{ color: YELLOW, fontWeight: 600 }}>your</span> business, not a generic mould.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-9">
               <div>
                 <p className="font-display font-medium text-base" style={{ color: CREAM }}>1 · We learn how you work</p>
                 <p className="font-body text-sm mt-1.5 leading-relaxed" style={{ color: "rgba(255,251,240,0.65)" }}>
-                  We sit with your team and map the actual processes — the real ones, including the workarounds nobody documented. The system is shaped around those, not the other way round.
+                  We sit with your team and map the actual processes - the real ones, including the workarounds nobody documented. The system is shaped around those, not the other way round.
                 </p>
               </div>
               <div>
@@ -232,7 +232,7 @@ export default function EnterprisePage() {
               <div>
                 <p className="font-display font-medium text-base" style={{ color: CREAM }}>3 · We add what's missing</p>
                 <p className="font-body text-sm mt-1.5 leading-relaxed" style={{ color: "rgba(255,251,240,0.65)" }}>
-                  Where there's a gap — reporting you've never had, an AI assistant on your own data, an automation that removes a whole job — we build it in. All in one place, all owned by you.
+                  Where there's a gap - reporting you've never had, an AI assistant on your own data, an automation that removes a whole job - we build it in. All in one place, all owned by you.
                 </p>
               </div>
             </div>
@@ -266,7 +266,7 @@ export default function EnterprisePage() {
         <section className="px-5 md:px-10 mt-20 md:mt-28 mb-24 md:mb-32">
           <div className="max-w-[1400px] mx-auto rounded-[28px] p-10 md:p-16 text-center shadow-[var(--shadow-blunt-lg)]" style={{ background: DARK, border: `3px solid ${DARK}` }}>
             <h2 className="font-display font-semibold leading-tight" style={{ color: CREAM, fontSize: "clamp(28px, 4.4vw, 48px)" }}>
-              Let's map what you've got<br />— and what it could be.
+              Let's map what you've got<br />- and what it could be.
             </h2>
             <p className="font-body mt-4 max-w-xl mx-auto text-base" style={{ color: "rgba(255,251,240,0.72)" }}>
               A no-pitch discovery call: we look at your current stack, where the friction is, and whether a bespoke system is the right call. If it isn't, we'll tell you.

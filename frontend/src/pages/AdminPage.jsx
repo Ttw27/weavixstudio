@@ -180,10 +180,10 @@ const LeadsTab = () => {
             {expanded === l.id && (
               <div className="mt-4 pt-4 border-t-2 border-[var(--ink)]/10 grid grid-cols-1 md:grid-cols-2 gap-3 font-body text-sm">
                 <div><strong>Biggest time drain:</strong> {l.biggest_time_drain} {l.biggest_time_drain_other && `(${l.biggest_time_drain_other})`}</div>
-                <div><strong>Industry other:</strong> {l.industry_other || "—"}</div>
+                <div><strong>Industry other:</strong> {l.industry_other || "-"}</div>
                 <div className="md:col-span-2"><strong>Interested in:</strong> {(l.interested_in || []).join(", ")} {l.interested_in_other && `· ${l.interested_in_other}`}</div>
-                <div className="md:col-span-2"><strong>Current tools:</strong> {(l.current_tools || []).join(", ") || "—"} {l.current_tools_other && `· ${l.current_tools_other}`}</div>
-                <div><strong>Monthly SaaS spend:</strong> {l.monthly_software_spend || "—"}</div>
+                <div className="md:col-span-2"><strong>Current tools:</strong> {(l.current_tools || []).join(", ") || "-"} {l.current_tools_other && `· ${l.current_tools_other}`}</div>
+                <div><strong>Monthly SaaS spend:</strong> {l.monthly_software_spend || "-"}</div>
                 {l.extra_notes && <div className="md:col-span-2"><strong>Notes:</strong> {l.extra_notes}</div>}
               </div>
             )}
@@ -226,7 +226,7 @@ const TestEmailButton = () => {
     setMsg(null);
     try {
       const r = await axios.post(`${API}/admin/test-email`, {}, { headers: authHeader() });
-      setMsg({ ok: true, text: `Test email sent ✓ (id: ${r.data.id || "—"})` });
+      setMsg({ ok: true, text: `Test email sent ✓ (id: ${r.data.id || "-"})` });
     } catch (e) {
       const detail = e.response?.data?.detail || "Could not send test email.";
       setMsg({ ok: false, text: detail });
@@ -393,9 +393,9 @@ const IntegrationsTab = () => {
   return (
     <div className="space-y-8">
       <Section icon={<Link2 className="w-4 h-4" />} title="Google Ads">
-        <Field label="Google Ads customer ID" hint="e.g. 123-456-7890 — paste it here once you have OAuth access" value={data.google_ads_id || ""} onChange={(e) => set("google_ads_id", e.target.value)} data-testid="setting-google_ads_id" />
+        <Field label="Google Ads customer ID" hint="e.g. 123-456-7890 - paste it here once you have OAuth access" value={data.google_ads_id || ""} onChange={(e) => set("google_ads_id", e.target.value)} data-testid="setting-google_ads_id" />
         <p className="font-body text-xs text-[var(--ink-soft)]">
-          Live reporting integration requires Google Ads OAuth — coming soon.
+          Live reporting integration requires Google Ads OAuth - coming soon.
           For now we store the ID and you can wire reporting on top.
         </p>
       </Section>
@@ -403,7 +403,7 @@ const IntegrationsTab = () => {
       <Section icon={<Link2 className="w-4 h-4" />} title="Facebook / Meta Ads">
         <Field label="Meta Ad Account ID" hint="e.g. act_1234567890" value={data.facebook_ads_id || ""} onChange={(e) => set("facebook_ads_id", e.target.value)} data-testid="setting-facebook_ads_id" />
         <p className="font-body text-xs text-[var(--ink-soft)]">
-          Like Google, full Meta reporting needs a Business System User token —
+          Like Google, full Meta reporting needs a Business System User token -
           contact us once you're ready and we'll wire live dashboards.
         </p>
       </Section>

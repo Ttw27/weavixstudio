@@ -3,18 +3,18 @@ import { useSiteSettings } from "../lib/SiteSettings";
 
 const titles = {
   home: "Bespoke digital ecosystems & custom AI",
-  work: "Work — selected projects",
-  services: "Services — websites, AI, apps, ads & more",
-  examples: "Examples — what a digital ecosystem looks like for your business",
-  process: "Process — how we work",
-  contact: "Contact — let's build something",
-  readiness: "Free AI readiness plan — find out what you'd save",
+  work: "Work - selected projects",
+  services: "Services - websites, AI, apps, ads & more",
+  examples: "Examples - what a digital ecosystem looks like for your business",
+  process: "Process - how we work",
+  contact: "Contact - let's build something",
+  readiness: "Free AI readiness plan - find out what you'd save",
 };
 
 const descriptions = {
-  home: "We design unified platforms — sites, apps, customer portals, automations and custom AIs — that lower costs and put AI to work for your business.",
+  home: "We design unified platforms - sites, apps, customer portals, automations and custom AIs - that lower costs and put AI to work for your business.",
   work: "Recent websites, AI automations, apps and campaigns we've shipped.",
-  services: "Eight services — from digital ecosystems and custom AI to ads and social — all built so you OWN what we build.",
+  services: "Eight services - from digital ecosystems and custom AI to ads and social - all built so you OWN what we build.",
   examples: "20+ illustrative digital ecosystem builds for cafés, clinics, agencies, trades, creators and more.",
   process: "Four phases, weekly demos, senior operators. Less theatre, more shipping.",
   contact: "Book a chat or get a free personalised readiness plan emailed back within 24 hours.",
