@@ -14,12 +14,12 @@ export default function ServicesPage() {
             Bespoke <span className="squiggle">digital</span> ecosystems.
           </h1>
           <p className="mt-4 max-w-3xl font-body text-base md:text-lg text-[var(--ink-soft)]">
-            We don't just build websites. We build unified platforms — sites,
-            apps, customer portals, automations and custom AIs — designed as one
+            We don't just build websites. We build unified platforms - sites,
+            apps, customer portals, automations and custom AIs - designed as one
             tailored system around how your business actually runs.
           </p>
           <p className="mt-3 max-w-3xl font-body text-base text-[var(--ink-soft)]">
-            Click any card for ideas you might not have thought of — the kind
+            Click any card for ideas you might not have thought of - the kind
             that make founders go <span className="font-hand text-2xl text-[var(--p-pink)]">"I need this."</span>
           </p>
           <div className="mt-6 flex flex-wrap gap-3">

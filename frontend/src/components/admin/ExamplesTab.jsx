@@ -215,7 +215,7 @@ const ExampleEditor = ({ example, onCancel, onSaved }) => {
         <div className="md:col-span-3">
           <Field
             label="Business type (industry) *"
-            hint="Card headline — the kind of business"
+            hint="Card headline - the kind of business"
             value={form.industry}
             onChange={(e) => set("industry", e.target.value)}
             placeholder="e.g. Local Café & Brunch Spot"
@@ -246,7 +246,7 @@ const ExampleEditor = ({ example, onCancel, onSaved }) => {
         hint="One-line story shown on card and drawer"
         value={form.tagline}
         onChange={(e) => set("tagline", e.target.value)}
-        placeholder="From a Squarespace site and paper receipts — to one branded HQ."
+        placeholder="From a Squarespace site and paper receipts - to one branded HQ."
         data-testid="example-tagline"
       />
 
@@ -275,7 +275,7 @@ const ExampleEditor = ({ example, onCancel, onSaved }) => {
       </div>
 
       <BulletList
-        label="BEFORE — what they had"
+        label="BEFORE - what they had"
         hint="One bullet per line"
         value={form.before}
         onChange={(v) => set("before", v)}
@@ -284,7 +284,7 @@ const ExampleEditor = ({ example, onCancel, onSaved }) => {
       />
 
       <BulletList
-        label="INTEGRATED — what we built"
+        label="INTEGRATED - what we built"
         value={form.integrated}
         onChange={(v) => set("integrated", v)}
         testId="example-integrated"
@@ -292,7 +292,7 @@ const ExampleEditor = ({ example, onCancel, onSaved }) => {
       />
 
       <BulletList
-        label="AI — where AI runs the shop"
+        label="AI - where AI runs the shop"
         value={form.ai}
         onChange={(v) => set("ai", v)}
         testId="example-ai"

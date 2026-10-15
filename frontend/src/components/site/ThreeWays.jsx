@@ -11,7 +11,7 @@ const modes = [
     badge: "01",
     title: "Set up. Hand over.",
     body:
-      "We build the whole system on YOUR accounts, YOUR data, YOUR brand. We train your team, hand over the keys, and step back. You own everything from day one — no lock-in, no black box.",
+      "We build the whole system on YOUR accounts, YOUR data, YOUR brand. We train your team, hand over the keys, and step back. You own everything from day one - no lock-in, no black box.",
     color: "var(--p-yellow)",
   },
   {
@@ -20,7 +20,7 @@ const modes = [
     badge: "02",
     title: "Set up + expert AI inside.",
     body:
-      "Everything above, plus we plug an expert AI specialist into your business — it watches the numbers, spots issues, suggests next moves and can even make changes for you. Like having a senior consultant on call 24/7, for a fraction of the cost.",
+      "Everything above, plus we plug an expert AI specialist into your business - it watches the numbers, spots issues, suggests next moves and can even make changes for you. Like having a senior consultant on call 24/7, for a fraction of the cost.",
     color: "var(--p-pink)",
     featured: true,
   },
@@ -30,7 +30,7 @@ const modes = [
     badge: "03",
     title: "We drive for 3–6 months.",
     body:
-      "Want us at the wheel while you learn? We run it fully for the first 3–6 months — strategy, optimisation, the lot — with weekly walk-throughs so you see exactly how it's done. Then we hand over a system your team understands inside-out.",
+      "Want us at the wheel while you learn? We run it fully for the first 3–6 months - strategy, optimisation, the lot - with weekly walk-throughs so you see exactly how it's done. Then we hand over a system your team understands inside-out.",
     color: "var(--p-blue)",
   },
 ];
@@ -89,7 +89,7 @@ export const ThreeWays = ({ serviceTitle = "this service" }) => {
         </div>
 
         <p className="mt-8 font-hand text-2xl text-[var(--p-pink)] text-center md:text-left">
-          mix & match — they're not mutually exclusive ✨
+          mix & match - they're not mutually exclusive ✨
         </p>
       </div>
     </section>

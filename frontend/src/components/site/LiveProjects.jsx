@@ -105,7 +105,7 @@ const EmptyState = ({ settings }) => (
     </h3>
     <p className="mt-3 font-body text-sm md:text-base text-[var(--ink)] max-w-md mx-auto">
       We're putting the finishing touches on our case studies. In the meantime, the
-      best way to see what we do is a 25-min chat — we'll show you live work, and
+      best way to see what we do is a 25-min chat - we'll show you live work, and
       sketch what your business could look like.
     </p>
     <div className="mt-5 flex flex-wrap gap-2 justify-center">

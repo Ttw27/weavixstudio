@@ -193,7 +193,7 @@ export default function ReadinessForm({ compact = false, testIdPrefix = "" }) {
       await axios.post(`${API}/leads`, data);
       setDone(true);
     } catch (e) {
-      setError("Something went wrong — please try again or message us on WhatsApp.");
+      setError("Something went wrong - please try again or message us on WhatsApp.");
     } finally {
       setSubmitting(false);
     }
@@ -243,7 +243,7 @@ export default function ReadinessForm({ compact = false, testIdPrefix = "" }) {
         <p className="mt-3 font-body text-sm md:text-base text-[var(--ink-soft)] leading-relaxed">
           Answer 7 quick questions (takes 90 seconds). We'll send back a free
           tailored plan with the AI & automation moves that would have the
-          biggest impact for your business — including estimated time and money
+          biggest impact for your business - including estimated time and money
           saved. No call needed.
         </p>
         <div className="mt-3 flex flex-wrap items-center gap-2 font-body text-xs text-[var(--ink-soft)]">
@@ -276,7 +276,7 @@ export default function ReadinessForm({ compact = false, testIdPrefix = "" }) {
             >
               {step === 1 && (
                 <Question
-                  title="First — what's your business called?"
+                  title="First - what's your business called?"
                   hint="So we can address the plan to the right people."
                 >
                   <input
@@ -364,7 +364,7 @@ export default function ReadinessForm({ compact = false, testIdPrefix = "" }) {
               {step === 5 && (
                 <Question
                   title="Which of these would actually move the needle?"
-                  hint="Pick anything that catches your eye — multiple is fine."
+                  hint="Pick anything that catches your eye - multiple is fine."
                 >
                   <div className="flex flex-wrap gap-2">
                     {INTERESTS.map((i) => (
@@ -437,7 +437,7 @@ export default function ReadinessForm({ compact = false, testIdPrefix = "" }) {
               {step === 7 && (
                 <Question
                   title="Where shall we send your plan?"
-                  hint="Email is enough. Phone optional — we won't cold-call you."
+                  hint="Email is enough. Phone optional - we won't cold-call you."
                 >
                   <div className="space-y-3">
                     <input

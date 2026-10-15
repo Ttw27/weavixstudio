@@ -152,7 +152,7 @@ export default function ProjectDetailPage() {
                 <span className="font-hand text-4xl text-[var(--p-pink)]">"</span>
               </blockquote>
               {project.client_quote_by && (
-                <div className="mt-3 font-body text-sm opacity-80">— {project.client_quote_by}</div>
+                <div className="mt-3 font-body text-sm opacity-80">- {project.client_quote_by}</div>
               )}
             </div>
           )}

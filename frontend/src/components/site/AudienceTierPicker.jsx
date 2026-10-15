@@ -9,7 +9,7 @@ export const TIER_OPTIONS = [
     sticker: "🌱 just starting",
     title: "I don't know what AI is. I just want my business to run smoother.",
     subtitle:
-      "Sole trader · café · salon · trades · clinic · gym · small shop. We'll handle the tech entirely — you'll feel the time and money saved within weeks.",
+      "Sole trader · café · salon · trades · clinic · gym · small shop. We'll handle the tech entirely - you'll feel the time and money saved within weeks.",
     matches: ["cafe", "nail-salon", "barber", "plumber", "dental", "florist", "cleaning", "yoga", "physio", "lash", "bookshop", "butcher", "footballer-coach"],
   },
   {

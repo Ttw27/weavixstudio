@@ -8,7 +8,7 @@ export const examples = [
     industry: "Local Café & Brunch Spot",
     size: "1 location · 8 staff",
     color: "yellow",
-    tagline: "From a Squarespace site, a Google Sheet roster and a tray of paper receipts — to one branded HQ.",
+    tagline: "From a Squarespace site, a Google Sheet roster and a tray of paper receipts - to one branded HQ.",
     before: [
       "Squarespace site for menu",
       "Google Forms for catering",
@@ -20,7 +20,7 @@ export const examples = [
       "New site with online ordering & booking",
       "Pickup/delivery via Stripe",
       "Staff app for shifts, holidays, tips",
-      "Supplier ordering — one button per supplier",
+      "Supplier ordering - one button per supplier",
       "Live takings + costs dashboard for the owner",
     ],
     ai: [
@@ -60,7 +60,7 @@ export const examples = [
     ],
     ai: [
       "Pre-appointment AI that answers nervous patient questions 24/7",
-      "Auto-summary of intake forms — surfacing risks to the dentist",
+      "Auto-summary of intake forms - surfacing risks to the dentist",
       "Recall AI: gently nudges patients due for check-ups in their preferred channel",
       "Internal 'ask the SOP' agent for the front desk team",
     ],
@@ -86,7 +86,7 @@ export const examples = [
     ],
     integrated: [
       "Branded customer site with instant quote estimator",
-      "Mobile field-app for engineers — jobs, photos, signatures",
+      "Mobile field-app for engineers - jobs, photos, signatures",
       "Auto SMS to customer when engineer is on the way",
       "Quote → job → invoice → payment, all linked",
       "Live dashboard for the owner (jobs today, revenue, parts)",
@@ -125,7 +125,7 @@ export const examples = [
       "Affiliate / referral tracking",
     ],
     ai: [
-      "An AI coach trained on the founder's frameworks — students ask anytime",
+      "An AI coach trained on the founder's frameworks - students ask anytime",
       "Personalised next-step recommendations after each lesson",
       "Auto-grader for written assignments with detailed feedback",
       "Content multiplier: turns each podcast into 8 short clips + a newsletter",
@@ -142,7 +142,7 @@ export const examples = [
     industry: "DTC Fashion Brand",
     size: "Founder + small team",
     color: "pink",
-    tagline: "From Shopify + Klaviyo + Gorgias + ManyChat duct-tape — to a unified storefront with AI baked in.",
+    tagline: "From Shopify + Klaviyo + Gorgias + ManyChat duct-tape - to a unified storefront with AI baked in.",
     before: [
       "Shopify, default theme",
       "Klaviyo flows (some broken)",
@@ -151,7 +151,7 @@ export const examples = [
       "Ad creative outsourced (slow)",
     ],
     integrated: [
-      "Headless Shopify storefront — fast, editorial, mobile-first",
+      "Headless Shopify storefront - fast, editorial, mobile-first",
       "Loyalty & referral built into checkout",
       "Connected reviews, UGC and product Q&A",
       "Inventory + supplier dashboard",
@@ -159,7 +159,7 @@ export const examples = [
     ],
     ai: [
       "AI product stylist: 'what goes with this?'",
-      "Support agent answering 70% of tickets (returns, sizing, shipping)",
+      "Support agent answering routine tickets (returns, sizing, shipping), handing the rest to a person",
       "Ad creative generator using brand-approved templates",
       "Personal subject-line writer for every Klaviyo campaign",
       "Visual search: shoppers upload an image, see closest products",
@@ -176,7 +176,7 @@ export const examples = [
     industry: "Personal Trainer Studio",
     size: "Owner + 6 trainers",
     color: "orange",
-    tagline: "Sticky-notes, Trainerize, MyFitnessPal, Insta DMs — into one branded member app.",
+    tagline: "Sticky-notes, Trainerize, MyFitnessPal, Insta DMs - into one branded member app.",
     before: [
       "Trainerize for programs",
       "DMs for check-ins",
@@ -209,7 +209,7 @@ export const examples = [
     industry: "1-to-1 Football Coach",
     size: "Solo coach · 40+ players",
     color: "mint",
-    tagline: "Whiteboard drills, WhatsApp video reviews, payments in PayPal — to a branded coaching platform parents trust.",
+    tagline: "Whiteboard drills, WhatsApp video reviews, payments in PayPal - to a branded coaching platform parents trust.",
     before: [
       "WhatsApp groups for each player",
       "Notes in a notebook",
@@ -243,7 +243,7 @@ export const examples = [
     industry: "Etsy Maker & Designer",
     size: "Solo · 800 listings",
     color: "pink",
-    tagline: "Canva, Midjourney, Etsy ads, Pinterest — endless tabs and burnt creative hours. Now a branded creator HQ.",
+    tagline: "Canva, Midjourney, Etsy ads, Pinterest - endless tabs and burnt creative hours. Now a branded creator HQ.",
     before: [
       "Canva for product mockups (slow)",
       "Midjourney for design ideas (£100s wasted on bad prompts)",
@@ -260,7 +260,7 @@ export const examples = [
     ],
     ai: [
       "Branded design-prompt app: type a phrase → on-brand product mockup, first try",
-      "Etsy SEO assistant: paste a listing → keywords, title, tags, alt text — optimised",
+      "Etsy SEO assistant: paste a listing → keywords, title, tags, alt text - optimised",
       "Ad creative generator using your brand colours + winning angles",
       "Pinterest pin writer + scheduler in your voice",
       "AI customer service drafting replies to common questions",
@@ -286,17 +286,17 @@ export const examples = [
       "Annual tax return = panic season",
     ],
     integrated: [
-      "Branded client portal — secure document upload, e-sign",
+      "Branded client portal - secure document upload, e-sign",
       "Engagement letters & onboarding automated",
       "Stripe direct-debit for monthly fees",
-      "Deadline tracker — HMRC / Companies House / VAT",
+      "Deadline tracker - HMRC / Companies House / VAT",
       "Internal staff dashboard with workload per client",
     ],
     ai: [
       "Receipt & invoice OCR: client snaps a photo → categorised entry in Xero",
       "AI 'first-draft' tax computation reviewer flagging anomalies",
-      "Client question bot — answers FAQs (allowable expenses, deadlines, etc.) 24/7 in your firm's tone",
-      "AI deadline guardian — chases clients via SMS/email in increasing urgency",
+      "Client question bot - answers FAQs (allowable expenses, deadlines, etc.) 24/7 in your firm's tone",
+      "AI deadline guardian - chases clients via SMS/email in increasing urgency",
       "Annual report writer that pulls from the client's data",
     ],
     results: [
@@ -388,7 +388,7 @@ export const examples = [
     ],
     integrated: [
       "Branded studio OS: clients, briefs, time, files, invoices in one",
-      "Client portal — review proofs, approve, comment",
+      "Client portal - review proofs, approve, comment",
       "Project Kanban tied to invoicing & budgets",
       "Knowledge base / case-study library",
       "Auto SOWs and contract signing",
@@ -398,7 +398,7 @@ export const examples = [
       "Creative brief co-pilot: turns sales notes into a designer-ready brief",
       "On-brand image generator for moodboards & decks",
       "Time auto-tracker via calendar + files (no more manual logging)",
-      "AI client-mood radar from email/Slack tone — flags red flags early",
+      "AI client-mood radar from email/Slack tone - flags red flags early",
     ],
     results: [
       { k: "Billable hours", v: "Less time on admin" },
@@ -588,7 +588,7 @@ export const examples = [
       "Records in a desktop system",
     ],
     integrated: [
-      "Branded pet portal — one record per pet",
+      "Branded pet portal - one record per pet",
       "Online booking + smart triage",
       "Reminders for vaccines, flea, worming, check-ups",
       "Repeat-script ordering with delivery",
@@ -1043,7 +1043,7 @@ export const examples = [
     industry: "Electrician / Solar & EV Installer",
     size: "Owner + a few installers",
     color: "yellow",
-    tagline: "Every install is a certificate, a warranty, a notification and a compliance deadline — filed four different places.",
+    tagline: "Every install is a certificate, a warranty, a notification and a compliance deadline - filed four different places.",
     before: [
       "Certificates written on site, typed up later",
       "Notifications to the scheme done manually",
@@ -1076,7 +1076,7 @@ export const examples = [
     industry: "Cleaning Company",
     size: "Owner + mobile teams",
     color: "mint",
-    tagline: "Rounds, keys, and cover — a business run entirely on who's where and who's off sick today.",
+    tagline: "Rounds, keys, and cover - a business run entirely on who's where and who's off sick today.",
     before: [
       "Rounds planned on a paper schedule",
       "Cover arranged by frantic phone call",
@@ -1175,7 +1175,7 @@ export const examples = [
     industry: "Independent Optician / Audiology",
     size: "Practice + small team",
     color: "blue",
-    tagline: "The whole business runs on recalls — and a recall that doesn't go out is a test that never gets booked.",
+    tagline: "The whole business runs on recalls - and a recall that doesn't go out is a test that never gets booked.",
     before: [
       "Recalls sent by post, if at all",
       "Bookings by phone only",
@@ -1208,7 +1208,7 @@ export const examples = [
     industry: "Nursery & Childcare",
     size: "Setting + staff team",
     color: "mint",
-    tagline: "Ratios, funded hours and daily updates — a regulated business run on paper registers and parent goodwill.",
+    tagline: "Ratios, funded hours and daily updates - a regulated business run on paper registers and parent goodwill.",
     before: [
       "Daily updates written on paper, sent home",
       "Funded-hours paperwork done by hand",

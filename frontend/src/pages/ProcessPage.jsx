@@ -14,7 +14,7 @@ export default function ProcessPage() {
           </h1>
           <p className="mt-4 max-w-2xl font-body text-base md:text-lg text-[var(--ink-soft)]">
             Senior operators, async by default, weekly demos. We'd rather ship
-            than present. Here's how a typical project unfolds — from first call
+            than present. Here's how a typical project unfolds - from first call
             to live launch and beyond.
           </p>
         </div>

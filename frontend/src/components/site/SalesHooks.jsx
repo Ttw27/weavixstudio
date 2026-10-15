@@ -25,7 +25,7 @@ const HOOKS = [
     body: (
       <>
         The businesses dominating in 5 years are the ones quietly automating{" "}
-        <strong>now</strong>. We make sure yours is one of them — without you
+        <strong>now</strong>. We make sure yours is one of them - without you
         having to learn a single prompt.
       </>
     ),
@@ -68,7 +68,7 @@ export const SalesHooks = () => {
             We're not here to ship you a pretty homepage and disappear. We're
             here to give your business an{" "}
             <span className="font-hand text-2xl text-[var(--p-pink)]">unfair edge</span>{" "}
-            — so the next five years are the best years it's ever had.
+            - so the next five years are the best years it's ever had.
           </p>
         </div>
 
@@ -123,7 +123,7 @@ export const SalesHooks = () => {
             <h3 className="font-display text-xl md:text-2xl mt-1 leading-tight text-[var(--bg)]">
               You might be a sole trader who's never used AI. You might be a
               50-person team with a Notion plan for it.
-              <span className="text-[var(--p-yellow)]"> Either way — we meet you where you are.</span>
+              <span className="text-[var(--p-yellow)]"> Either way - we meet you where you are.</span>
             </h3>
             <p className="mt-3 font-body text-sm text-[var(--bg)] opacity-80 max-w-xl">
               Plain English explanations. Honest pricing. Start small if you

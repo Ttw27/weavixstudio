@@ -364,7 +364,7 @@ const ProjectEditor = ({ project, allCategories, onCancel, onSaved }) => {
 
       <BulletList
         label="What we did"
-        hint="One bullet per line — high level work delivered"
+        hint="One bullet per line - high level work delivered"
         value={form.what_we_did}
         onChange={(v) => set("what_we_did", v)}
         testId="project-what-we-did"
@@ -373,7 +373,7 @@ const ProjectEditor = ({ project, allCategories, onCancel, onSaved }) => {
 
       <BulletList
         label="Outcomes / what changed"
-        hint="The 'what helped' bullets — measurable wins where possible"
+        hint="The 'what helped' bullets - measurable wins where possible"
         value={form.outcomes}
         onChange={(v) => set("outcomes", v)}
         testId="project-outcomes"
@@ -415,7 +415,7 @@ const ProjectEditor = ({ project, allCategories, onCancel, onSaved }) => {
           />
           <ImageUpload
             folder="website"
-            ratioLabel="16:10 (e.g. 1600×1000) — shown as 4:3 on the card, keep the subject centred"
+            ratioLabel="16:10 (e.g. 1600×1000) - shown as 4:3 on the card, keep the subject centred"
             onUploaded={(url) => set("image_url", url)}
           />
         </div>
@@ -436,7 +436,7 @@ const ProjectEditor = ({ project, allCategories, onCancel, onSaved }) => {
       <div className="space-y-2">
         <BulletList
           label="Gallery image URLs (optional)"
-          hint="Upload below or paste — up to 4 extra screenshots"
+          hint="Upload below or paste - up to 4 extra screenshots"
           value={form.gallery}
           onChange={(v) => set("gallery", v.slice(0, 4))}
           testId="project-gallery"
@@ -629,7 +629,7 @@ export default function ProjectsTab() {
           <Sparkles className="w-8 h-8 mx-auto text-[var(--ink)] mb-2" />
           <h3 className="font-display text-xl text-[var(--ink)]">No projects yet.</h3>
           <p className="font-body text-sm text-[var(--ink-soft)] mt-1 max-w-md mx-auto">
-            Add your first one — title, summary, live URL and an image link is enough to get on the site.
+            Add your first one - title, summary, live URL and an image link is enough to get on the site.
           </p>
           <button
             type="button"

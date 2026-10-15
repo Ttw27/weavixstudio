@@ -4,7 +4,7 @@
 export const siteConfig = {
   studioName: "Weavix Studio",
   tagline:
-    "Bespoke digital ecosystems — websites, apps, customer portals, automations and custom AIs — designed as one unified platform around how your business actually runs.",
+    "Bespoke digital ecosystems - websites, apps, customer portals, automations and custom AIs - designed as one unified platform around how your business actually runs.",
   location: "Remote · Worldwide",
   establishedYear: "2024",
   whatsappNumber: "447404680326",
@@ -25,7 +25,7 @@ export const siteConfig = {
       slug: "digital-ecosystems",
       title: "Digital Ecosystems",
       tag: "Flagship",
-      copy: "One unified platform — site, app, portal, integrations, automations, custom AIs — instead of 8 disconnected SaaS subscriptions.",
+      copy: "One unified platform - site, app, portal, integrations, automations, custom AIs - instead of 8 disconnected SaaS subscriptions.",
       deliverables: ["Unified platform", "Customer portal", "Integrations", "Custom AI layer"],
       color: "yellow",
     },
@@ -34,7 +34,7 @@ export const siteConfig = {
       slug: "websites",
       title: "Website Development",
       tag: "Web",
-      copy: "Fast, conversion-focused sites and web apps. Shipped end-to-end — design, build, deploy.",
+      copy: "Fast, conversion-focused sites and web apps. Shipped end-to-end - design, build, deploy.",
       deliverables: ["Design system", "React build", "CMS & analytics", "Speed audit"],
       color: "pink",
     },
@@ -43,7 +43,7 @@ export const siteConfig = {
       slug: "app-dev",
       title: "App Dev + AI",
       tag: "Apps",
-      copy: "Mobile & web apps with AI built-in — chat, vision, voice, recommendations.",
+      copy: "Mobile & web apps with AI built-in - chat, vision, voice, recommendations.",
       deliverables: ["Product scoping", "iOS / Android / Web", "LLM infra", "Launch support"],
       color: "blue",
     },
@@ -61,7 +61,7 @@ export const siteConfig = {
       slug: "custom-ai",
       title: "Custom AI & Prompts",
       tag: "Your AI",
-      copy: "Personal AIs and prompt libraries trained on YOUR business — so your team gets perfect outputs without endless prompt-fighting.",
+      copy: "Personal AIs and prompt libraries trained on YOUR business - so your team gets perfect outputs without endless prompt-fighting.",
       deliverables: ["Branded GPT", "Prompt library", "Personal AI assistant", "Design-tool AI"],
       color: "lilac",
     },
@@ -70,7 +70,7 @@ export const siteConfig = {
       slug: "ad-management",
       title: "Ad Management",
       tag: "Paid",
-      copy: "Meta & Google ads with in-house creative. Whole funnel — creative, buying, CRO.",
+      copy: "Meta & Google ads with in-house creative. Whole funnel - creative, buying, CRO.",
       deliverables: ["Creative production", "Campaign setup", "Daily optimisation", "Reports"],
       color: "orange",
     },
@@ -79,7 +79,7 @@ export const siteConfig = {
       slug: "social-media",
       title: "Social Media",
       tag: "Organic",
-      copy: "Content strategy, posting, community. We sound like your brand — not a template.",
+      copy: "Content strategy, posting, community. We sound like your brand - not a template.",
       deliverables: ["Content calendar", "Reels / posts", "Community", "Growth analytics"],
       color: "yellow",
     },
@@ -88,7 +88,7 @@ export const siteConfig = {
       slug: "creative-studio",
       title: "Creative Studio",
       tag: "Assets",
-      copy: "Standalone video & image creatives for ads, launches and organic — shot, edited, delivered.",
+      copy: "Standalone video & image creatives for ads, launches and organic - shot, edited, delivered.",
       deliverables: ["Concept & script", "Shoot / motion", "Edit & grade", "Platform cuts"],
       color: "blue",
     },
@@ -155,7 +155,7 @@ export const siteConfig = {
       id: "brava",
       brand: "Brava",
       title: "Brava Swim",
-      tagline: "DTC swimwear — site, ads and creative.",
+      tagline: "DTC swimwear - site, ads and creative.",
       client: "DTC E-commerce",
       year: "2025",
       kind: "Website + Ads",
@@ -189,7 +189,7 @@ export const siteConfig = {
       url: "https://example.com",
       preview: { type: "ai", bg: "#3ABEFF", fg: "#161616" },
       summary:
-        "Replaced a manual back-office process with an autonomous agent — saved 87% of operator time.",
+        "Replaced a manual back-office process with an autonomous agent - saved 87% of operator time.",
       features: [
         "OCR + structured data extraction",
         "Vendor matching with vector search",
@@ -235,7 +235,7 @@ export const siteConfig = {
     {
       id: "mellow",
       brand: "Mellow",
-      title: "Mellow — Social OS",
+      title: "Mellow - Social OS",
       tagline: "Content engine + community for a beauty brand.",
       client: "Beauty",
       year: "2025",
@@ -243,7 +243,7 @@ export const siteConfig = {
       url: "https://example.com",
       preview: { type: "social", bg: "#C8A7F2", fg: "#161616" },
       summary:
-        "Built a content system that runs the whole social presence — calendar, creative, community.",
+        "Built a content system that runs the whole social presence - calendar, creative, community.",
       features: [
         "Quarterly content calendar",
         "Reels production (8 / month)",
@@ -265,7 +265,7 @@ export const siteConfig = {
     { n: "01", title: "Discover", body: "We audit what you've got, your goals, and where the leverage is. Written brief in 72h.", color: "yellow" },
     { n: "02", title: "Design", body: "Fast, opinionated design. Less slide-decks, more clickable prototypes and real content.", color: "pink" },
     { n: "03", title: "Build", body: "Weekly demo loops. We ship in public to your team so nothing is a surprise at launch.", color: "blue" },
-    { n: "04", title: "Scale", body: "We run, measure and iterate — ads, content, automations. Growth doesn't stop at launch.", color: "mint" },
+    { n: "04", title: "Scale", body: "We run, measure and iterate - ads, content, automations. Growth doesn't stop at launch.", color: "mint" },
   ],
 
   testimonials: [
@@ -300,7 +300,7 @@ export const siteConfig = {
 
   faqs: [
     { q: "How do you price projects?", a: "Fixed scope for websites and apps, retainer for ads, automation and social. We scope on the first call." },
-    { q: "What do I need to get started?", a: "A goal and a rough timeline. We handle the rest — brief, design, copy, assets, build." },
+    { q: "What do I need to get started?", a: "A goal and a rough timeline. We handle the rest - brief, design, copy, assets, build." },
     { q: "Do you work with small businesses?", a: "Yes. We work with founders and small teams who want one partner for web + AI + growth." },
   ],
 };

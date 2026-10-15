@@ -21,12 +21,12 @@ const CAPS = [
   {
     icon: <Megaphone className="w-5 h-5" />,
     title: "Content & ad generators",
-    body: "Weekly ad creative, banner refreshes and captions — written and mocked in your brand voice.",
+    body: "Weekly ad creative, banner refreshes and captions - written and mocked in your brand voice.",
   },
   {
     icon: <Wand2 className="w-5 h-5" />,
     title: "Design AI (upscale · tidy · print-ready)",
-    body: "Turn a customer's fuzzy JPG into a clean vector. Prep one design for A3, socials, print — in a pass.",
+    body: "Turn a customer's fuzzy JPG into a clean vector. Prep one design for A3, socials, print - in a pass.",
   },
   {
     icon: <ImageIcon className="w-5 h-5" />,
@@ -41,17 +41,17 @@ const CAPS = [
   {
     icon: <Calendar className="w-5 h-5" />,
     title: "Bookings + deposit engines",
-    body: "Workshops, appointments, private hire — deposits taken, refunds handled, no-shows down.",
+    body: "Workshops, appointments, private hire - deposits taken, refunds handled, no-shows down.",
   },
   {
     icon: <Package className="w-5 h-5" />,
     title: "Inventory + delivery ops",
-    body: "Auto-reorder points, delivery-round optimiser, wastage tracker — behind the shop front.",
+    body: "Auto-reorder points, delivery-round optimiser, wastage tracker - behind the shop front.",
   },
   {
     icon: <Cpu className="w-5 h-5" />,
     title: "One-screen dashboards",
-    body: "Everything your business does — takings, ads, staff, reviews, stock — on a single calm screen.",
+    body: "Everything your business does - takings, ads, staff, reviews, stock - on a single calm screen.",
   },
 ];
 
@@ -78,7 +78,7 @@ export const OperatingSystemStrip = () => {
             Most agencies build you a pretty homepage and vanish. We build the
             actual system your business{" "}
             <span className="font-hand text-2xl text-[var(--p-pink)]">runs on</span>
-            {" "}every day — deposits, quotes, ads, deliveries, dashboards, lead
+            {" "}every day - deposits, quotes, ads, deliveries, dashboards, lead
             chasers. All under one login. Here's a taste.
           </p>
         </div>
