@@ -699,9 +699,48 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+EM_DASH = "—"
+
+def _strip_em_dashes(value):
+    """Return (value with em dashes swapped for hyphens, number replaced), walking lists and dicts."""
+    if isinstance(value, str):
+        n = value.count(EM_DASH)
+        return (value.replace(EM_DASH, "-") if n else value), n
+    if isinstance(value, list):
+        cleaned = [_strip_em_dashes(v) for v in value]
+        return [v for v, _ in cleaned], sum(n for _, n in cleaned)
+    if isinstance(value, dict):
+        cleaned = {k: _strip_em_dashes(v) for k, v in value.items()}
+        return {k: v for k, (v, _) in cleaned.items()}, sum(n for _, n in cleaned.values())
+    return value, 0
+
+async def strip_em_dashes_from_content():
+    """House style is plain hyphens only. Clean any em dashes out of the DB-backed
+    examples and projects copy. Idempotent: once clean, it finds nothing to write."""
+    for name in ("examples", "projects"):
+        docs = dashes = 0
+        async for doc in db[name].find({}):
+            patch = {}
+            for field, value in doc.items():
+                if field == "_id":
+                    continue
+                v, n = _strip_em_dashes(value)
+                if n:
+                    patch[field] = v
+                    dashes += n
+            if patch:
+                await db[name].update_one({"_id": doc["_id"]}, {"$set": patch})
+                docs += 1
+        if docs:
+            logger.info(f"Em dash cleanup: {name} - updated {docs} docs, replaced {dashes} em dashes")
+
 @app.on_event("startup")
 async def startup_seed():
     await seed_examples_if_empty()
+    try:
+        await strip_em_dashes_from_content()
+    except Exception:
+        logger.exception("Em dash cleanup failed")
 
 
 @app.on_event("shutdown")

@@ -5,7 +5,7 @@
     "industry": "Local Caf\u00e9 & Brunch Spot",
     "size": "1 location \u00b7 8 staff",
     "color": "yellow",
-    "tagline": "From a Squarespace site, a Google Sheet roster and a tray of paper receipts \u2014 to one branded HQ.",
+    "tagline": "From a Squarespace site, a Google Sheet roster and a tray of paper receipts - to one branded HQ.",
     "before": [
       "Squarespace site for menu",
       "Google Forms for catering",
@@ -17,7 +17,7 @@
       "New site with online ordering & booking",
       "Pickup/delivery via Stripe",
       "Staff app for shifts, holidays, tips",
-      "Supplier ordering \u2014 one button per supplier",
+      "Supplier ordering - one button per supplier",
       "Live takings + costs dashboard for the owner"
     ],
     "ai": [
@@ -26,7 +26,7 @@
       "Weekly menu performance summary in plain English",
       "Smart inventory: suggests reorders before you run out"
     ],
-    "quote": "I used to spend Sundays catching up on emails, the till and shift swaps. Now it's all in one place \u2014 I get my weekends back.",
+    "quote": "I used to spend Sundays catching up on emails, the till and shift swaps. Now it's all in one place - I get my weekends back.",
     "quoteBy": "Owner \u00b7 brunch spot, Bristol",
     "results": [
       {
@@ -72,7 +72,7 @@
     ],
     "ai": [
       "Pre-appointment AI that answers nervous patient questions 24/7",
-      "Auto-summary of intake forms \u2014 surfacing risks to the dentist",
+      "Auto-summary of intake forms - surfacing risks to the dentist",
       "Recall AI: gently nudges patients due for check-ups in their preferred channel",
       "Internal 'ask the SOP' agent for the front desk team"
     ],
@@ -113,7 +113,7 @@
     ],
     "integrated": [
       "Branded customer site with instant quote estimator",
-      "Mobile field-app for engineers \u2014 jobs, photos, signatures",
+      "Mobile field-app for engineers - jobs, photos, signatures",
       "Auto SMS to customer when engineer is on the way",
       "Quote \u2192 job \u2192 invoice \u2192 payment, all linked",
       "Live dashboard for the owner (jobs today, revenue, parts)"
@@ -167,7 +167,7 @@
       "Affiliate / referral tracking"
     ],
     "ai": [
-      "An AI coach trained on the founder's frameworks \u2014 students ask anytime",
+      "An AI coach trained on the founder's frameworks - students ask anytime",
       "Personalised next-step recommendations after each lesson",
       "Auto-grader for written assignments with detailed feedback",
       "Content multiplier: turns each podcast into 8 short clips + a newsletter"
@@ -199,7 +199,7 @@
     "industry": "DTC Fashion Brand",
     "size": "Founder + small team",
     "color": "pink",
-    "tagline": "From Shopify + Klaviyo + Gorgias + ManyChat duct-tape \u2014 to a unified storefront with AI baked in.",
+    "tagline": "From Shopify + Klaviyo + Gorgias + ManyChat duct-tape - to a unified storefront with AI baked in.",
     "before": [
       "Shopify, default theme",
       "Klaviyo flows (some broken)",
@@ -208,7 +208,7 @@
       "Ad creative outsourced (slow)"
     ],
     "integrated": [
-      "Headless Shopify storefront \u2014 fast, editorial, mobile-first",
+      "Headless Shopify storefront - fast, editorial, mobile-first",
       "Loyalty & referral built into checkout",
       "Connected reviews, UGC and product Q&A",
       "Inventory + supplier dashboard",
@@ -248,7 +248,7 @@
     "industry": "Personal Trainer Studio",
     "size": "Owner + 6 trainers",
     "color": "orange",
-    "tagline": "Sticky-notes, Trainerize, MyFitnessPal, Insta DMs \u2014 into one branded member app.",
+    "tagline": "Sticky-notes, Trainerize, MyFitnessPal, Insta DMs - into one branded member app.",
     "before": [
       "Trainerize for programs",
       "DMs for check-ins",
@@ -296,7 +296,7 @@
     "industry": "1-to-1 Football Coach",
     "size": "Solo coach \u00b7 40+ players",
     "color": "mint",
-    "tagline": "Whiteboard drills, WhatsApp video reviews, payments in PayPal \u2014 to a branded coaching platform parents trust.",
+    "tagline": "Whiteboard drills, WhatsApp video reviews, payments in PayPal - to a branded coaching platform parents trust.",
     "before": [
       "WhatsApp groups for each player",
       "Notes in a notebook",
@@ -345,7 +345,7 @@
     "industry": "Etsy Maker & Designer",
     "size": "Solo \u00b7 800 listings",
     "color": "pink",
-    "tagline": "Canva, Midjourney, Etsy ads, Pinterest \u2014 endless tabs and burnt creative hours. Now a branded creator HQ.",
+    "tagline": "Canva, Midjourney, Etsy ads, Pinterest - endless tabs and burnt creative hours. Now a branded creator HQ.",
     "before": [
       "Canva for product mockups (slow)",
       "Midjourney for design ideas (\u00a3100s wasted on bad prompts)",
@@ -362,7 +362,7 @@
     ],
     "ai": [
       "Branded design-prompt app: type a phrase \u2192 on-brand product mockup, first try",
-      "Etsy SEO assistant: paste a listing \u2192 keywords, title, tags, alt text \u2014 optimised",
+      "Etsy SEO assistant: paste a listing \u2192 keywords, title, tags, alt text - optimised",
       "Ad creative generator using your brand colours + winning angles",
       "Pinterest pin writer + scheduler in your voice",
       "AI customer service drafting replies to common questions"
@@ -403,17 +403,17 @@
       "Annual tax return = panic season"
     ],
     "integrated": [
-      "Branded client portal \u2014 secure document upload, e-sign",
+      "Branded client portal - secure document upload, e-sign",
       "Engagement letters & onboarding automated",
       "Stripe direct-debit for monthly fees",
-      "Deadline tracker \u2014 HMRC / Companies House / VAT",
+      "Deadline tracker - HMRC / Companies House / VAT",
       "Internal staff dashboard with workload per client"
     ],
     "ai": [
       "Receipt & invoice OCR: client snaps a photo \u2192 categorised entry in Xero",
       "AI 'first-draft' tax computation reviewer flagging anomalies",
-      "Client question bot \u2014 answers FAQs (allowable expenses, deadlines, etc.) 24/7 in your firm's tone",
-      "AI deadline guardian \u2014 chases clients via SMS/email in increasing urgency",
+      "Client question bot - answers FAQs (allowable expenses, deadlines, etc.) 24/7 in your firm's tone",
+      "AI deadline guardian - chases clients via SMS/email in increasing urgency",
       "Annual report writer that pulls from the client's data"
     ],
     "quote": "Deadline season went from chaos to calm. Clients send receipts in seconds, and the AI catches what my juniors miss.",
@@ -550,7 +550,7 @@
     ],
     "integrated": [
       "Branded studio OS: clients, briefs, time, files, invoices in one",
-      "Client portal \u2014 review proofs, approve, comment",
+      "Client portal - review proofs, approve, comment",
       "Project Kanban tied to invoicing & budgets",
       "Knowledge base / case-study library",
       "Auto SOWs and contract signing"
@@ -560,7 +560,7 @@
       "Creative brief co-pilot: turns sales notes into a designer-ready brief",
       "On-brand image generator for moodboards & decks",
       "Time auto-tracker via calendar + files (no more manual logging)",
-      "AI client-mood radar from email/Slack tone \u2014 flags red flags early"
+      "AI client-mood radar from email/Slack tone - flags red flags early"
     ],
     "quote": "We bill 30% more hours without working more. Briefs are clearer, decks faster, clients happier.",
     "quoteBy": "Founder \u00b7 branding agency, London",
@@ -659,7 +659,7 @@
       "Upsell AI: suggests spa, dinner, taxi at the right moment",
       "Review-response drafter (approve in one tap)"
     ],
-    "quote": "Direct bookings doubled. Guests think we're a boutique brand with a head office \u2014 we're still a family of four.",
+    "quote": "Direct bookings doubled. Guests think we're a boutique brand with a head office - we're still a family of four.",
     "quoteBy": "Owner \u00b7 boutique hotel, Cotswolds",
     "results": [
       {
@@ -840,7 +840,7 @@
       "Records in a desktop system"
     ],
     "integrated": [
-      "Branded pet portal \u2014 one record per pet",
+      "Branded pet portal - one record per pet",
       "Online booking + smart triage",
       "Reminders for vaccines, flea, worming, check-ups",
       "Repeat-script ordering with delivery",
@@ -1046,7 +1046,7 @@
       "Smart budget warning AI: flags overspend early",
       "Auto follow-up with vendors stuck on confirmations"
     ],
-    "quote": "Brides cry happy tears in the portal. We handle 50% more weddings with the same team \u2014 calmer.",
+    "quote": "Brides cry happy tears in the portal. We handle 50% more weddings with the same team - calmer.",
     "quoteBy": "Founder \u00b7 wedding planner, Yorkshire",
     "results": [
       {
