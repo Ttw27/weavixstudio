@@ -37,7 +37,7 @@ async def main():
         if res.modified_count:
             updated += 1
             print(f"  cleaned {slug}")
-    # also catch any without slug match — still blank their quotes
+    # also catch any without slug match - still blank their quotes
     await db.examples.update_many(
         {"$or": [{"quote": {"$ne": ""}}, {"quoteBy": {"$ne": ""}}]},
         {"$set": {"quote": "", "quoteBy": ""}},

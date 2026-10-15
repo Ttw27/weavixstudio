@@ -4,7 +4,7 @@ Seed: add 16 new illustrative example verticals to the examples collection.
 Run once:  python3 /app/migrations/seed_new_examples.py
 Idempotent: upserts by slug.
 
-All entries are ILLUSTRATIVE — no quotes, no names, no locations, no invented
+All entries are ILLUSTRATIVE - no quotes, no names, no locations, no invented
 numbers. results[] carry mechanisms only.
 """
 import asyncio, os, uuid
@@ -217,7 +217,7 @@ EXAMPLES = [   {   'slug': 'event-production',
         'industry': 'Electrician / Solar & EV Installer',
         'size': 'Owner + a few installers',
         'color': 'yellow',
-        'tagline': 'Every install is a certificate, a warranty, a notification and a compliance deadline — '
+        'tagline': 'Every install is a certificate, a warranty, a notification and a compliance deadline - '
                    'filed four different places.',
         'before': [   'Certificates written on site, typed up later',
                       'Notifications to the scheme done manually',
@@ -245,7 +245,7 @@ EXAMPLES = [   {   'slug': 'event-production',
         'industry': 'Cleaning Company',
         'size': 'Owner + mobile teams',
         'color': 'mint',
-        'tagline': "Rounds, keys, and cover — a business run entirely on who's where and who's off sick "
+        'tagline': "Rounds, keys, and cover - a business run entirely on who's where and who's off sick "
                    'today.',
         'before': [   'Rounds planned on a paper schedule',
                       'Cover arranged by frantic phone call',
@@ -329,7 +329,7 @@ EXAMPLES = [   {   'slug': 'event-production',
         'industry': 'Independent Optician / Audiology',
         'size': 'Practice + small team',
         'color': 'blue',
-        'tagline': "The whole business runs on recalls — and a recall that doesn't go out is a test that "
+        'tagline': "The whole business runs on recalls - and a recall that doesn't go out is a test that "
                    'never gets booked.',
         'before': [   'Recalls sent by post, if at all',
                       'Bookings by phone only',
@@ -357,7 +357,7 @@ EXAMPLES = [   {   'slug': 'event-production',
         'industry': 'Nursery & Childcare',
         'size': 'Setting + staff team',
         'color': 'mint',
-        'tagline': 'Ratios, funded hours and daily updates — a regulated business run on paper registers and '
+        'tagline': 'Ratios, funded hours and daily updates - a regulated business run on paper registers and '
                    'parent goodwill.',
         'before': [   'Daily updates written on paper, sent home',
                       'Funded-hours paperwork done by hand',
