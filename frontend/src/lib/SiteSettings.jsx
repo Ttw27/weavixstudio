@@ -46,7 +46,8 @@ const mergeWithDefaults = (live) => {
       },
     },
     ga: safe.ga_measurement_id || "",
-    metaPixel: safe.meta_pixel_id || "",
+    // Weavix Studio Website dataset; Admin > SEO can override it
+    metaPixel: safe.meta_pixel_id || "933858966471848",
   };
 };
 
