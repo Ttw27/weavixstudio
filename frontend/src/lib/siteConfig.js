@@ -268,36 +268,6 @@ export const siteConfig = {
     { n: "04", title: "Scale", body: "We run, measure and iterate - ads, content, automations. Growth doesn't stop at launch.", color: "mint" },
   ],
 
-  testimonials: [
-    {
-      quote:
-        "They replaced our old site, built an AI agent to handle inbound, and now run our ads. One partner for the whole stack.",
-      name: "Ana Mercado",
-      role: "COO, Northline",
-      image:
-        "https://images.unsplash.com/photo-1762522926157-bcc04bf0b10a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MTN8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdCUyMGhlYWRzaG90fGVufDB8fHx8MTc3ODA3ODY2MHww&ixlib=rb-4.1.0&q=85",
-      color: "yellow",
-    },
-    {
-      quote:
-        "The AI workflow they built cut our ops time by 87%. Payback in under two months. Calm, senior team.",
-      name: "Daniel Ohta",
-      role: "Founder, Halden",
-      image:
-        "https://images.unsplash.com/photo-1769636929388-99eff95d3bf1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MTN8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdCUyMGhlYWRzaG90fGVufDB8fHx8MTc3ODA3ODY2MHww&ixlib=rb-4.1.0&q=85",
-      color: "pink",
-    },
-    {
-      quote:
-        "Our launch video did what three agencies before couldn't. ROAS jumped 2.6x in the first month.",
-      name: "Priya Nair",
-      role: "CMO, Brava Swim",
-      image:
-        "https://images.pexels.com/photos/32721690/pexels-photo-32721690.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      color: "blue",
-    },
-  ],
-
   faqs: [
     { q: "How do you price projects?", a: "Fixed scope for websites and apps, retainer for ads, automation and social. We scope on the first call." },
     { q: "What do I need to get started?", a: "A goal and a rough timeline. We handle the rest - brief, design, copy, assets, build." },

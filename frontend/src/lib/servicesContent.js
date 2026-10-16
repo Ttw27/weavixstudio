@@ -58,7 +58,7 @@ export const servicesContent = {
       {
         tag: "knowledge",
         title: "A self-service knowledge base your AI runs",
-        body: "Customers and staff ask questions in plain English. The AI answers from your real docs, SOPs and history. Cuts inbound tickets by 60%+.",
+        body: "Customers and staff ask questions in plain English. The AI answers from your real docs, SOPs and history. Routine questions get answered without anyone stopping work.",
       },
       {
         tag: "replace",
@@ -74,7 +74,7 @@ export const servicesContent = {
       { t: "Custom AI layer", b: "AI agents, smart search and assistants embedded across the platform." },
       { t: "Ongoing care", b: "Monthly retainer for updates, new modules, monitoring." },
     ],
-    relatedProjects: ["northline", "halden"],
+    relatedProjects: [],
     faq: [
       { q: "Is this only for big companies?", a: "No - our sweet spot is small businesses doing £200k–£5m where complexity is starting to bite. The smaller you are, the more leverage a unified system gives." },
       { q: "Will it be hard to maintain?", a: "We build on standard stack (Next.js + Postgres + Supabase). Any developer can pick it up later. You're never locked in." },
@@ -111,7 +111,7 @@ export const servicesContent = {
       { tag: "content", title: "A blog you'll actually post on", body: "One-click publishing from Notion. No CMS training, no 'let me just email the dev'." },
       { tag: "speed", title: "A site that loads in under a second", body: "90+ Lighthouse scores, edge-deployed, image-optimised. Google (and your customers) will notice." },
       { tag: "portal", title: "A private client portal behind the marketing site", body: "Logins, documents, updates, invoices - all branded, all yours, no new SaaS subscription." },
-      { tag: "smart", title: "A site that personalises copy by industry", body: "A visitor from a restaurant sees restaurant wording. From a clinic, clinic wording. Same site, 2x conversion." },
+      { tag: "smart", title: "A site that personalises copy by industry", body: "A visitor from a restaurant sees restaurant wording. From a clinic, clinic wording. Same site, and every visitor feels it was written for them." },
       { tag: "ops", title: "Forms that write to Slack + CRM + spreadsheet at once", body: "No more copy-pasting leads. No more missed enquiries. Everyone sees everything in real time." },
     ],
     deliverables: [
@@ -122,7 +122,7 @@ export const servicesContent = {
       { t: "Lead routing", b: "Forms → CRM → Slack → email. One submission, everywhere it needs to be." },
       { t: "90+ Lighthouse", b: "Performance, SEO and accessibility audited before we ship." },
     ],
-    relatedProjects: ["northline", "orsino"],
+    relatedProjects: [],
     faq: [
       { q: "How long does a site take?", a: "Most marketing sites ship in 4–6 weeks. Web apps: 8–12 weeks depending on scope." },
       { q: "Do you do ongoing updates?", a: "Yes - flat monthly retainer for copy changes, new pages, A/B tests and maintenance." },
@@ -139,7 +139,7 @@ export const servicesContent = {
       "The best new apps don't bolt AI on at the end. They're built around it. We design and ship iOS, Android and web apps where the AI does the heavy lifting - chat, vision, voice, recommendations, even acting on your user's behalf. Idea → App Store in 10–14 weeks.",
     painPoints: [
       { title: "You have an idea but no dev team", body: "You've sketched it on napkins. You need someone senior enough to say 'yes, but simpler'." },
-      { title: "Your existing app is 'just a dashboard'", body: "Users log in, see numbers, log out. It could be 10x more useful with a little AI." },
+      { title: "Your existing app is 'just a dashboard'", body: "Users log in, see numbers, log out. It could be doing far more with a little AI." },
       { title: "You're stuck paying SaaS rent forever", body: "Three tools that barely talk to each other. You'd rather own the stack - if only it were affordable." },
     ],
     ideas: [
@@ -160,7 +160,7 @@ export const servicesContent = {
       { t: "Subscriptions & payments", b: "RevenueCat, Stripe, App Store / Play billing - configured and tested." },
       { t: "Launch support", b: "ASO, App Store review, analytics, first-30-day growth plan." },
     ],
-    relatedProjects: ["kairo"],
+    relatedProjects: [],
     faq: [
       { q: "How much does an app cost?", a: "MVP mobile apps typically $20–60k. Web apps slightly less. We scope fixed-price after the discovery sprint." },
       { q: "Who owns the code?", a: "You do. 100%. Private GitHub repo handed over, no lock-in." },
@@ -183,7 +183,7 @@ export const servicesContent = {
     ideas: [
       { tag: "inbound", title: "An AI that qualifies every lead overnight", body: "Reads their email, checks their website, scores them 0-100, drafts a personal reply, and books warm ones to Calendly - while you sleep." },
       { tag: "support", title: "A support agent that handles the routine tickets", body: "Trained on your docs, answers in your tone of voice, hands off gracefully when it's not sure. Available 24/7." },
-      { tag: "back-office", title: "Invoice & receipt auto-reconciliation", body: "Forwarded receipts get parsed, matched to vendors, categorised, and posted to Xero/QuickBooks. Saves one finance hire." },
+      { tag: "back-office", title: "Invoice & receipt auto-reconciliation", body: "Forwarded receipts get parsed, matched to vendors, categorised, and posted to Xero/QuickBooks. The month-end pile never builds up." },
       { tag: "meetings", title: "Calls that summarise themselves", body: "Every Zoom/Meet call auto-transcribed, summarised, action-items posted to Slack, CRM updated." },
       { tag: "sales", title: "AI-drafted follow-ups with your voice", body: "After every call, a draft follow-up email appears in your outbox - referencing what was actually said. You hit send." },
       { tag: "content", title: "A content multiplier", body: "Feed it one podcast / video / long-form post. Out comes 5 reels scripts, 10 tweets, 3 emails, a blog post. All in your voice." },
@@ -199,11 +199,11 @@ export const servicesContent = {
       { t: "Monitoring dashboard", b: "See exactly what the AI did, what it escalated, what it cost." },
       { t: "Training for your team", b: "So you own it, not us." },
     ],
-    relatedProjects: ["halden"],
+    relatedProjects: [],
     faq: [
-      { q: "Will it replace my staff?", a: "No - it amplifies them. Our clients usually redeploy people to higher-value work, not let them go." },
+      { q: "Will it replace my staff?", a: "No - it takes the repetitive work off them, so their time goes on the parts that need a person." },
       { q: "What about data privacy?", a: "We default to private deployments. No training on your data, ever." },
-      { q: "What does it cost to run?", a: "Typically $50–$500/month in API costs. Payback is usually < 8 weeks." },
+      { q: "What does it cost to run?", a: "Usually tens to a few hundred pounds a month in AI usage, depending on volume. We estimate it against the time it frees up before you commit." },
     ],
   },
 
@@ -284,10 +284,10 @@ export const servicesContent = {
       { t: "Design-tool playbooks", b: "Saved prompts for Midjourney / Nano Banana / Sora with your brand baked in." },
       { t: "Team training", b: "Live workshop + recorded SOPs + Slack support for 30 days." },
     ],
-    relatedProjects: ["halden", "kairo"],
+    relatedProjects: [],
     faq: [
       { q: "Is my data safe?", a: "Yes. We use private deployments and ChatGPT Enterprise / Claude Pro / Azure OpenAI for sensitive data. Nothing trains the public models." },
-      { q: "What if I already use ChatGPT?", a: "Perfect - we layer on top. Your team keeps the tool they know; we make it 10x more useful." },
+      { q: "What if I already use ChatGPT?", a: "Perfect - we layer on top. Your team keeps the tool they know; we connect it to your business so it's far more useful." },
       { q: "How much?", a: "Starter packages from £2k (prompt library + 1 custom GPT + training). Full ecosystem builds vary. We scope after a 30-min call." },
     ],
   },
@@ -307,8 +307,8 @@ export const servicesContent = {
     ],
     ideas: [
       { tag: "creative", title: "A fresh video ad every 48 hours", body: "We shoot a library of raw content once, then edit 3–4 new variants per week. The algorithm never gets bored." },
-      { tag: "ugc", title: "AI-generated UGC-style creatives", body: "A synthetic 'customer' holding your product, talking to camera. Yes, it's fake. Yes, it converts. Compliance-safe." },
-      { tag: "funnel", title: "A 3-step warm-up funnel", body: "Cold audience sees a story ad → retargeted with a demo → hit with an offer. 10x cheaper than cold → offer." },
+      { tag: "ugc", title: "Real customers, turned into ads", body: "With permission, we turn your customers' photos, reviews and short clips into ads. Real people doing the selling - nothing invented." },
+      { tag: "funnel", title: "A 3-step warm-up funnel", body: "Cold audience sees a story ad → retargeted with a demo → hit with an offer. Warm audiences are cheaper to convert than going straight for the sale." },
       { tag: "test", title: "Systematic creative testing", body: "Hook → visual → CTA, tested as separate variables. We find what actually moves the needle." },
       { tag: "search", title: "Intent capture on Google", body: "Your best prospects are typing something right now. Performance Max + smart negative keywords = cheap, hot leads." },
       { tag: "report", title: "A weekly human report in plain English", body: "What we spent, what worked, what we're testing next. No dashboards you won't read." },
@@ -320,7 +320,7 @@ export const servicesContent = {
       { t: "Landing page CRO", b: "A/B tests on your ad LPs. Turning traffic into revenue, not just clicks." },
       { t: "Reporting", b: "Weekly written report + monthly strategy call." },
     ],
-    relatedProjects: ["brava"],
+    relatedProjects: [],
     faq: [
       { q: "Minimum ad spend?", a: "None. Many businesses start with a few pounds a day while we find the message that works, then scale what proves itself." },
       { q: "How's pricing?", a: "Flat monthly retainer for management + creative. No % of spend games." },
@@ -355,7 +355,7 @@ export const servicesContent = {
       { t: "Community management", b: "DMs, comments, replies - done with care, in your voice." },
       { t: "Growth report", b: "Monthly: what's working, what's next, what we're killing." },
     ],
-    relatedProjects: ["mellow"],
+    relatedProjects: [],
     faq: [
       { q: "Will it sound like me?", a: "Yes - that's the whole point. We'll do a 90-min voice workshop before the first post goes live." },
       { q: "Is there a minimum contract?", a: "3 months minimum. Social needs time to find its rhythm." },
@@ -390,7 +390,7 @@ export const servicesContent = {
       { t: "Platform cuts", b: "9:16, 1:1, 16:9, 4:5 - all delivered, properly cropped." },
       { t: "Brand kit", b: "Fonts, LUTs, lower-thirds, sound beds. Your team can self-serve after." },
     ],
-    relatedProjects: ["brava", "mellow"],
+    relatedProjects: [],
     faq: [
       { q: "Can you travel to shoot?", a: "Yes - we cover travel + crew from the project budget, agreed upfront." },
       { q: "Turnaround?", a: "Typical shoot → first cut is 5 business days. Rush is possible." },

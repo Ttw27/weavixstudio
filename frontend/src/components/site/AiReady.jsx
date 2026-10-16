@@ -7,7 +7,7 @@ const quickWins = [
   {
     color: "yellow",
     icon: "📥",
-    title: "5+ hours / week back on email",
+    title: "Your inbox, sorted before you open it",
     body: "An AI reads your inbox, sorts the urgent from the noise, drafts replies in your voice, and books the warm ones to your calendar.",
   },
   {
@@ -45,7 +45,7 @@ const quickWins = [
 const reassurance = [
   { title: "Start tiny", body: "One win first. Scale from there. No giant project required." },
   { title: "Friendly pricing", body: "Most starter projects from £2k. You'll know the cost before we start." },
-  { title: "Pays for itself fast", body: "Typical payback in weeks, not months. Often a single hire saved." },
+  { title: "Built to earn its keep", body: "Every piece is aimed at a job that costs you time or money today, so you can see exactly what it's doing." },
   { title: "Your data stays yours", body: "Private deployments. Nothing trains the public models. Ever." },
 ];
 

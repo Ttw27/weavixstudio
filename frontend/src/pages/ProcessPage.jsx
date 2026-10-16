@@ -1,6 +1,5 @@
 import PageShell from "./PageShell";
 import Process from "../components/site/Process";
-import Testimonials from "../components/site/Testimonials";
 
 export default function ProcessPage() {
   return (
@@ -21,7 +20,6 @@ export default function ProcessPage() {
       </section>
 
       <Process hideHeader />
-      <Testimonials />
     </PageShell>
   );
 }
