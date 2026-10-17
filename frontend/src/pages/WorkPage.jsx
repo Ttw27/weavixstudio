@@ -1,5 +1,6 @@
 import PageShell from "./PageShell";
 import LiveProjects from "../components/site/LiveProjects";
+import RentVsOwn from "../components/site/RentVsOwn";
 import { useSiteSettings, liveWaLink } from "../lib/SiteSettings";
 
 export default function WorkPage() {
@@ -30,6 +31,7 @@ export default function WorkPage() {
           <LiveProjects />
         </div>
       </section>
+      <RentVsOwn />
     </PageShell>
   );
 }

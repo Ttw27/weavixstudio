@@ -33,6 +33,7 @@ import EnterprisePage from "./pages/EnterprisePage";
 import MetaPixel from "./components/MetaPixel";
 import AdvertisingPage from "./pages/AdvertisingPage";
 import OwnSystem from "./components/site/OwnSystem";
+import RentVsOwn from "./components/site/RentVsOwn";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
@@ -89,6 +90,7 @@ const Home = () => (
     <Navbar />
     <Hero />
     <OwnSystem />
+    <RentVsOwn />
     <SalesHooks />
     <AiReady />
     <OperatingSystemStrip />

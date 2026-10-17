@@ -132,6 +132,13 @@ export default function ProjectDetailPage() {
             )}
           </div>
 
+          {project.replaced && (
+            <div className="mt-6 card-blunt p-6 md:p-8 bg-[var(--ink)] text-[var(--bg)]">
+              <div className="font-hand text-2xl text-[var(--p-yellow)] mb-2">what it replaced</div>
+              <p className="font-body text-sm md:text-base leading-relaxed">{project.replaced}</p>
+            </div>
+          )}
+
           {/* Gallery */}
           {project.gallery?.length > 0 && (
             <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-5">
