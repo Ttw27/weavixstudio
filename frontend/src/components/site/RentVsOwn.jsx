@@ -8,7 +8,7 @@ const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 const swaps = [
   { rent: "A design app, paid per seat", own: "Your own designer tool, with your templates" },
   { rent: "A social scheduling subscription", own: "Posts created and scheduled from your back office" },
-  { rent: "A booking app taking a cut", own: "Bookings and deposits on your site, no commission" },
+  { rent: "A booking app taking a cut", own: "Bookings and deposits on your own site" },
   { rent: "A quiz or gift-finder app", own: "A finder that knows your whole catalogue" },
   { rent: "A size-chart plugin", own: "A fit finder built for your exact cut" },
   { rent: "A CRM charged per user", own: "Your customer list, any number of users" },
@@ -32,8 +32,8 @@ export const RentVsOwn = ({ limit = 6 }) => {
           </h2>
           <p className="mt-5 font-body text-base md:text-lg text-[var(--ink-soft)] leading-relaxed">
             Most businesses pay for a stack of tools that nearly work. We build the
-            parts you actually need into one system in your name - so the tenth
-            login costs the same as the first: nothing.
+            parts you actually need into one system in your name, built around how
+            your business works.
           </p>
         </div>
 
