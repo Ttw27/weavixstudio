@@ -177,7 +177,7 @@ export default function ProjectDetailPage() {
                 <Calendar className="w-4 h-4" /> Book a chat
               </a>
               <a href={liveWaLink(settings)} target="_blank" rel="noreferrer" className="btn-pill bg-[var(--surface)]">
-                <MessageCircle className="w-4 h-4" /> WhatsApp
+                <MessageCircle className="w-4 h-4" /> Email us
               </a>
               <Link to="/readiness-plan" className="btn-pill btn-pill-yellow">
                 Free readiness plan

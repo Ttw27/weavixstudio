@@ -7,6 +7,8 @@ export const siteConfig = {
     "Bespoke digital ecosystems - websites, apps, customer portals, automations and custom AIs - designed as one unified platform around how your business actually runs.",
   location: "Remote · Worldwide",
   establishedYear: "2024",
+  // WhatsApp is off while the number is down (Oct 2026). Set to true to bring every WhatsApp button back.
+  whatsappLive: false,
   whatsappNumber: "447404680326",
   whatsappMessage: "Hi! I'd like to discuss a project.",
   calendlyUrl: "https://calendly.com/your-studio/intro",
@@ -275,8 +277,13 @@ export const siteConfig = {
   ],
 };
 
+export const mailLink = (cfg = siteConfig) =>
+  `mailto:${cfg.email}?subject=${encodeURIComponent("Project enquiry")}`;
+
 export const waLink = (cfg = siteConfig) =>
-  `https://wa.me/${cfg.whatsappNumber}?text=${encodeURIComponent(cfg.whatsappMessage)}`;
+  siteConfig.whatsappLive
+    ? `https://wa.me/${cfg.whatsappNumber}?text=${encodeURIComponent(cfg.whatsappMessage)}`
+    : mailLink(cfg);
 
 // Tailwind-friendly color resolver for `color` keys used above.
 export const colorMap = {

@@ -235,7 +235,7 @@ const Drawer = ({ ex, onClose }) => {
                 <Calendar className="w-4 h-4" /> Book a chat
               </a>
               <a href={waLink()} target="_blank" rel="noreferrer" data-testid="drawer-whatsapp" className="btn-pill bg-[var(--surface)]">
-                WhatsApp
+                Email us
               </a>
             </div>
           </section>
@@ -487,7 +487,7 @@ export default function ExamplesPage() {
               Book a chat
             </a>
             <a href={waLink()} target="_blank" rel="noreferrer" data-testid="examples-cta-whatsapp" className="btn-pill bg-[var(--surface)]">
-              WhatsApp
+              Email us
             </a>
           </div>
         </div>

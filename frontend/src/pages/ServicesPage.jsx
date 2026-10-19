@@ -24,7 +24,7 @@ export default function ServicesPage() {
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a href={siteConfig.calendlyUrl} target="_blank" rel="noreferrer" className="btn-pill btn-pill-pink" data-testid="services-cta-calendly">Book a chat</a>
-            <a href={waLink()} target="_blank" rel="noreferrer" className="btn-pill btn-pill-yellow" data-testid="services-cta-whatsapp">WhatsApp →</a>
+            <a href={waLink()} target="_blank" rel="noreferrer" className="btn-pill btn-pill-yellow" data-testid="services-cta-whatsapp">Email us →</a>
           </div>
         </div>
       </section>

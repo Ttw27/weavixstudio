@@ -83,7 +83,7 @@ export default function ServiceDetail() {
               data-testid="service-whatsapp-btn"
               className="btn-pill btn-pill-yellow"
             >
-              WhatsApp →
+              Email us →
             </a>
             {slug === "digital-ecosystems" && (
               <Link
@@ -305,7 +305,7 @@ export default function ServiceDetail() {
                 data-testid="service-cta-whatsapp"
                 className="btn-pill bg-[var(--surface)]"
               >
-                Message on WhatsApp
+                Email us
               </a>
             </div>
           </div>

@@ -21,7 +21,7 @@ export default function WorkPage() {
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a href={settings.calendlyUrl} target="_blank" rel="noreferrer" className="btn-pill btn-pill-pink" data-testid="work-cta-calendly">Book a chat</a>
-            <a href={liveWaLink(settings)} target="_blank" rel="noreferrer" className="btn-pill btn-pill-yellow" data-testid="work-cta-whatsapp">WhatsApp →</a>
+            <a href={liveWaLink(settings)} target="_blank" rel="noreferrer" className="btn-pill btn-pill-yellow" data-testid="work-cta-whatsapp">Email us →</a>
           </div>
         </div>
       </section>

@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
-import { siteConfig as defaultConfig } from "./siteConfig";
+import { siteConfig as defaultConfig, waLink } from "./siteConfig";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
@@ -81,5 +81,4 @@ export const SiteSettingsProvider = ({ children }) => {
 export const useSiteSettings = () => useContext(SiteSettingsContext);
 
 // Convenience helper for WhatsApp link using live settings
-export const liveWaLink = (cfg) =>
-  `https://wa.me/${cfg.whatsappNumber}?text=${encodeURIComponent(cfg.whatsappMessage)}`;
+export const liveWaLink = (cfg) => waLink(cfg);
