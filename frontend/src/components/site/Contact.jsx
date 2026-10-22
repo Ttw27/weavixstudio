@@ -95,15 +95,15 @@ export const ContactCTAs = ({ heading, showReadinessCard = true }) => (
         style={{ background: "var(--p-yellow)" }}
       >
         <div className="flex items-center justify-between">
-          <span className="sticker bg-white">Email</span>
+          <span className="sticker bg-white">WhatsApp</span>
           <MessageCircle className="w-6 h-6 text-[var(--ink)]" />
         </div>
         <div>
           <h3 className="display-xl text-[var(--ink)] !text-3xl md:!text-4xl leading-tight">
-            Email us
+            Message us
           </h3>
           <p className="mt-3 font-body text-sm text-[var(--ink)] opacity-80">
-            hello@weavixstudio.com
+            Message us about your project
           </p>
         </div>
         <ArrowUpRight className="absolute top-7 right-7 w-7 h-7 text-[var(--ink)] opacity-0 group-hover:opacity-100 transition" />

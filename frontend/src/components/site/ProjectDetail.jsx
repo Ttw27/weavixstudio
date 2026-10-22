@@ -324,7 +324,7 @@ export default function ProjectDetail() {
                 data-testid="detail-whatsapp"
                 className="btn-pill btn-pill-ink"
               >
-                Email us
+                WhatsApp us
               </a>
             </div>
           </div>

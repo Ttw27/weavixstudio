@@ -195,7 +195,7 @@ export default function ReadinessForm({ compact = false, testIdPrefix = "" }) {
       trackMeta("Lead", { content_name: "Readiness plan" });
       setDone(true);
     } catch (e) {
-      setError("Something went wrong - please try again or email hello@weavixstudio.com.");
+      setError("Something went wrong - please try again or message us on WhatsApp.");
     } finally {
       setSubmitting(false);
     }

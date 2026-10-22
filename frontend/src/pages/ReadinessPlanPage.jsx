@@ -48,7 +48,7 @@ export default function ReadinessPlanPage() {
                 data-testid="readiness-whatsapp"
                 className="btn-pill !py-1.5 !px-3.5 text-xs"
               >
-                Email us
+                WhatsApp
               </a>
             </div>
           </div>

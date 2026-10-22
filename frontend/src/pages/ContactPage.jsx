@@ -24,7 +24,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* CTA cards — SECOND: book a chat or email us instead */}
+      {/* CTA cards — SECOND: book a chat or WhatsApp us instead */}
       <section
         data-testid="contact-cta-section"
         className="relative px-5 md:px-10 pb-12 md:pb-16"

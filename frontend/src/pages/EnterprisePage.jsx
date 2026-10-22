@@ -280,7 +280,7 @@ export default function EnterprisePage() {
               <a href={wa} target="_blank" rel="noreferrer" data-testid="ent-cta-wa"
                  className="rounded-full font-display font-semibold text-[15px] px-8 py-3.5"
                  style={{ background: "transparent", color: CREAM, border: `2px solid ${CREAM}` }}>
-                Email us
+                WhatsApp us
               </a>
             </div>
           </div>

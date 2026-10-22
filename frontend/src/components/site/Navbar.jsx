@@ -114,7 +114,7 @@ export const Navbar = () => {
                 data-testid="nav-mobile-whatsapp"
                 className="btn-pill btn-pill-yellow w-full justify-center"
               >
-                Say hi 👋
+                WhatsApp 👋
               </a>
             </li>
           </ul>
